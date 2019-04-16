@@ -6,8 +6,10 @@
 package controlador;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import vista.*;
+import modelo.*;
 
 /**
  *
@@ -54,19 +56,27 @@ public class ControladorCrear {
         dato.add("Comida");
         dato.add("Excursion");
         dato.add("Transporte");
-           for (String col : dato) {
+              for (String col : dato) {
               ventc.getjComboBox1().addItem(col);
           }
         }
      public static void cargarGrillaDestino(){
         ArrayList<Object> dato =new ArrayList<Object>();
-        dato.add("Nro");
-        dato.add("Ciudad de origen");
-        dato.add("Ciudad de destino");
-        dato.add("Dias");
-           for (Object col : dato) {
+        dato.add("Nombre");
+        dato.add("Codigo Postal");
+              for (Object col : dato) {
               model.addColumn(col);
           }
         ventc.getjTable1().setModel(model);
               }
+     
+     public static void agregarDestino(){
+           Object[] obj = new Object[1];
+           obj[0] = (String) ventc.getjComboBox4().getSelectedItem();
+           model.addRow(obj);
+     }              
+                   
+     
+     
+     
 }
