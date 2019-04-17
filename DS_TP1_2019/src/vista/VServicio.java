@@ -6,18 +6,24 @@
 package vista;
 
 import javax.swing.JRadioButton;
+import javax.swing.JTextField;
 
 /**
  *
- * @author CESAR
+ * @author Admin
  */
-public class VServicio extends javax.swing.JFrame {
+public class VServicio extends javax.swing.JDialog {
 
     /**
-     * Creates new form VServicios
+     * Creates new form VServicio2
      */
-    public VServicio() {
+    public VServicio(java.awt.Frame parent, boolean modal) {
+        super(parent, modal);
+        
+        
         initComponents();
+        setLocationRelativeTo(null);
+        setVisible(true);
     }
 
     /**
@@ -29,619 +35,437 @@ public class VServicio extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonGroup2 = new javax.swing.ButtonGroup();
+        buttonGroup3 = new javax.swing.ButtonGroup();
+        buttonGroup4 = new javax.swing.ButtonGroup();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
+        jCheckBox1 = new javax.swing.JCheckBox();
+        jCheckBox2 = new javax.swing.JCheckBox();
+        jCheckBox3 = new javax.swing.JCheckBox();
+        jCheckBox4 = new javax.swing.JCheckBox();
+        jSeparator5 = new javax.swing.JSeparator();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        txtDesdeA = new javax.swing.JTextField();
+        txtHastaA = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
-        jLabel5 = new javax.swing.JLabel();
         jRadioButton3 = new javax.swing.JRadioButton();
-        jLabel6 = new javax.swing.JLabel();
         jRadioButton4 = new javax.swing.JRadioButton();
         jRadioButton5 = new javax.swing.JRadioButton();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton6 = new javax.swing.JRadioButton();
-        jPanel2 = new javax.swing.JPanel();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        txtCiudadA = new javax.swing.JTextField();
+        txtPEC = new javax.swing.JTextField();
+        txtDesdeC = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        txtHastaC = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
+        jRadioButton6 = new javax.swing.JRadioButton();
         jRadioButton7 = new javax.swing.JRadioButton();
         jRadioButton8 = new javax.swing.JRadioButton();
-        jLabel12 = new javax.swing.JLabel();
         jRadioButton9 = new javax.swing.JRadioButton();
+        jLabel9 = new javax.swing.JLabel();
+        txtPEA = new javax.swing.JTextField();
+        txtDesdeT = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        txtHastaT = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
         jRadioButton10 = new javax.swing.JRadioButton();
         jRadioButton11 = new javax.swing.JRadioButton();
-        jPanel3 = new javax.swing.JPanel();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jLabel11 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jTextField9 = new javax.swing.JTextField();
-        jTextField10 = new javax.swing.JTextField();
-        jTextField11 = new javax.swing.JTextField();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField12 = new javax.swing.JTextField();
-        jRadioButton16 = new javax.swing.JRadioButton();
-        jPanel4 = new javax.swing.JPanel();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jTextField13 = new javax.swing.JTextField();
-        jTextField14 = new javax.swing.JTextField();
-        jTextField15 = new javax.swing.JTextField();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        jTextField16 = new javax.swing.JTextField();
         jRadioButton12 = new javax.swing.JRadioButton();
         jRadioButton13 = new javax.swing.JRadioButton();
-        jRadioButton14 = new javax.swing.JRadioButton();
-        jRadioButton15 = new javax.swing.JRadioButton();
-        jRadioButton17 = new javax.swing.JRadioButton();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        txtPET = new javax.swing.JTextField();
+        txtSeguroT = new javax.swing.JTextField();
+        jSeparator4 = new javax.swing.JSeparator();
+        jSeparator6 = new javax.swing.JSeparator();
+        txtDesdeE = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        txtHastaE = new javax.swing.JTextField();
+        jLabel18 = new javax.swing.JLabel();
+        txtLugarE = new javax.swing.JTextField();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        txtSeguroE = new javax.swing.JTextField();
+        txtPEE = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jSeparator7 = new javax.swing.JSeparator();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jSeparator3 = new javax.swing.JSeparator();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Servicios");
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Servicios - TurismoARG");
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 1060, 12));
+        getContentPane().add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, 1060, 10));
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-
-        jButton1.setText("Agregar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jCheckBox1.setText("Alojamiento");
+        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jCheckBox1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
 
-        jButton2.setText("Cancelar");
-
-        jLabel1.setText("Seguro:");
-
-        jLabel2.setText("Desde:");
-
-        jLabel3.setText("Hasta:");
-
-        jLabel4.setText("Precio Especial:");
-
-        jRadioButton2.setText("Basico");
-        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+        jCheckBox2.setText("Comida");
+        jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton2ActionPerformed(evt);
+                jCheckBox2ActionPerformed(evt);
             }
         });
+        getContentPane().add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, -1));
 
-        jLabel5.setText("Comodidad:");
-
-        jRadioButton3.setText("Ejecutivo");
-        jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
+        jCheckBox3.setText("Transporte");
+        jCheckBox3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton3ActionPerformed(evt);
+                jCheckBox3ActionPerformed(evt);
             }
         });
+        getContentPane().add(jCheckBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, -1, -1));
 
-        jLabel6.setText("Tipo de Vehiculo:");
-
-        jRadioButton4.setText("Omnibus");
-        jRadioButton4.addActionListener(new java.awt.event.ActionListener() {
+        jCheckBox4.setText("Excursion");
+        jCheckBox4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton4ActionPerformed(evt);
+                jCheckBox4ActionPerformed(evt);
             }
         });
+        getContentPane().add(jCheckBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, -1, -1));
 
-        jRadioButton5.setText("Avion");
-        jRadioButton5.addActionListener(new java.awt.event.ActionListener() {
+        jSeparator5.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        getContentPane().add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(143, 10, 10, 490));
+
+        jLabel1.setText("Desde:");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(159, 39, -1, -1));
+
+        jLabel2.setText("Hasta:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(159, 94, -1, -1));
+
+        txtDesdeA.setEnabled(false);
+        getContentPane().add(txtDesdeA, new org.netbeans.lib.awtextra.AbsoluteConstraints(203, 36, 80, -1));
+
+        txtHastaA.setEnabled(false);
+        getContentPane().add(txtHastaA, new org.netbeans.lib.awtextra.AbsoluteConstraints(203, 91, 80, -1));
+
+        jLabel3.setText("Categoria:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(336, 39, -1, -1));
+
+        buttonGroup1.add(jRadioButton1);
+        jRadioButton1.setText("*");
+        jRadioButton1.setEnabled(false);
+        getContentPane().add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(405, 35, -1, -1));
+
+        buttonGroup1.add(jRadioButton2);
+        jRadioButton2.setText("**");
+        jRadioButton2.setEnabled(false);
+        getContentPane().add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(454, 35, -1, -1));
+
+        buttonGroup1.add(jRadioButton3);
+        jRadioButton3.setText("***");
+        jRadioButton3.setEnabled(false);
+        getContentPane().add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(509, 35, -1, -1));
+
+        buttonGroup1.add(jRadioButton4);
+        jRadioButton4.setText("****");
+        jRadioButton4.setEnabled(false);
+        getContentPane().add(jRadioButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 35, -1, -1));
+
+        buttonGroup1.add(jRadioButton5);
+        jRadioButton5.setText("*****");
+        jRadioButton5.setEnabled(false);
+        getContentPane().add(jRadioButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(637, 35, -1, -1));
+
+        jLabel4.setText("Ciudad:");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(336, 94, -1, -1));
+
+        jLabel5.setText("Precio Especial:");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(667, 94, -1, -1));
+
+        txtCiudadA.setEnabled(false);
+        getContentPane().add(txtCiudadA, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 90, 230, -1));
+
+        txtPEC.setEnabled(false);
+        txtPEC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton5ActionPerformed(evt);
+                txtPECActionPerformed(evt);
             }
         });
+        getContentPane().add(txtPEC, new org.netbeans.lib.awtextra.AbsoluteConstraints(769, 205, 120, -1));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
-                            .addComponent(jTextField3))
-                        .addGap(25, 25, 25)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel5))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jRadioButton4)
-                                .addGap(18, 18, 18)
-                                .addComponent(jRadioButton5))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jRadioButton2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jRadioButton3))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel1)
-                        .addGap(7, 7, 7)
-                        .addComponent(jTextField1)))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jRadioButton4)
-                            .addComponent(jLabel6)
-                            .addComponent(jRadioButton5))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5)
-                            .addComponent(jRadioButton2)
-                            .addComponent(jRadioButton3))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        txtDesdeC.setEnabled(false);
+        getContentPane().add(txtDesdeC, new org.netbeans.lib.awtextra.AbsoluteConstraints(203, 152, 80, -1));
 
-        jRadioButton1.setText("Transporte");
+        jLabel6.setText("Desde:");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(159, 155, -1, -1));
 
-        jRadioButton6.setText("Comida");
+        jLabel7.setText("Hasta:");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(159, 208, -1, -1));
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        txtHastaC.setEnabled(false);
+        getContentPane().add(txtHastaC, new org.netbeans.lib.awtextra.AbsoluteConstraints(203, 205, 80, -1));
 
-        jButton3.setText("Agregar");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        jLabel8.setText("Tipo:");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(335, 155, -1, -1));
+
+        buttonGroup2.add(jRadioButton6);
+        jRadioButton6.setText("Desayuno");
+        jRadioButton6.setEnabled(false);
+        jRadioButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                jRadioButton6ActionPerformed(evt);
             }
         });
+        getContentPane().add(jRadioButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(394, 151, -1, -1));
 
-        jButton4.setText("Cancelar");
-
-        jLabel8.setText("Desde:");
-
-        jLabel9.setText("Hasta:");
-
-        jLabel10.setText("Precio Especial:");
-
+        buttonGroup2.add(jRadioButton7);
         jRadioButton7.setText("Almuerzo");
-        jRadioButton7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton7ActionPerformed(evt);
-            }
-        });
+        jRadioButton7.setEnabled(false);
+        getContentPane().add(jRadioButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(485, 151, -1, -1));
 
-        jRadioButton8.setText("Cena");
-        jRadioButton8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton8ActionPerformed(evt);
-            }
-        });
+        buttonGroup2.add(jRadioButton8);
+        jRadioButton8.setText("Merienda");
+        jRadioButton8.setEnabled(false);
+        getContentPane().add(jRadioButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(572, 151, -1, -1));
 
-        jLabel12.setText("Tipo:");
+        buttonGroup2.add(jRadioButton9);
+        jRadioButton9.setText("Cena");
+        jRadioButton9.setEnabled(false);
+        getContentPane().add(jRadioButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(659, 151, -1, -1));
 
-        jRadioButton9.setText("Desayuno");
-        jRadioButton9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton9ActionPerformed(evt);
-            }
-        });
+        jLabel9.setText("Precio Especial:");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(668, 208, -1, -1));
 
-        jRadioButton10.setText("Merienda");
-        jRadioButton10.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton10ActionPerformed(evt);
-            }
-        });
+        txtPEA.setEnabled(false);
+        getContentPane().add(txtPEA, new org.netbeans.lib.awtextra.AbsoluteConstraints(768, 91, 120, -1));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel9))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField6, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
-                            .addComponent(jTextField7))
-                        .addGap(25, 25, 25)
-                        .addComponent(jLabel12)
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jRadioButton9)
-                            .addComponent(jRadioButton7))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jRadioButton8)
-                            .addComponent(jRadioButton10))
-                        .addGap(36, 36, 36)))
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8)
-                            .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jRadioButton9)
-                            .addComponent(jLabel12)
-                            .addComponent(jRadioButton10))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel9)
-                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jRadioButton7)
-                            .addComponent(jRadioButton8))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel10)
-                            .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 10, Short.MAX_VALUE))
-        );
+        txtDesdeT.setEnabled(false);
+        getContentPane().add(txtDesdeT, new org.netbeans.lib.awtextra.AbsoluteConstraints(203, 275, 80, -1));
 
-        jRadioButton11.setText("Excursion");
-        jRadioButton11.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton11ActionPerformed(evt);
-            }
-        });
+        jLabel10.setText("Desde:");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(159, 278, -1, -1));
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        jLabel11.setText("Hasta:");
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(159, 324, -1, -1));
 
-        jButton5.setText("Agregar");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
+        txtHastaT.setEnabled(false);
+        getContentPane().add(txtHastaT, new org.netbeans.lib.awtextra.AbsoluteConstraints(203, 321, 80, -1));
 
-        jButton6.setText("Cancelar");
+        jLabel12.setText("Tipo de Vehiculo:");
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(332, 278, -1, -1));
 
-        jLabel11.setText("Desde:");
+        buttonGroup3.add(jRadioButton10);
+        jRadioButton10.setText("Omnibus");
+        jRadioButton10.setEnabled(false);
+        getContentPane().add(jRadioButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(439, 274, -1, -1));
 
-        jLabel13.setText("Hasta:");
+        buttonGroup3.add(jRadioButton11);
+        jRadioButton11.setText("Avion");
+        jRadioButton11.setEnabled(false);
+        getContentPane().add(jRadioButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(534, 274, -1, -1));
 
-        jLabel14.setText("Precio Especial:");
+        jLabel13.setText("Comodidad:");
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(332, 324, 81, -1));
 
-        jLabel15.setText("Lugar:");
+        buttonGroup4.add(jRadioButton12);
+        jRadioButton12.setText("Basico");
+        jRadioButton12.setEnabled(false);
+        getContentPane().add(jRadioButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(439, 320, -1, -1));
 
-        jLabel7.setText("Seguro:");
+        buttonGroup4.add(jRadioButton13);
+        jRadioButton13.setText("Ejecutivo");
+        jRadioButton13.setEnabled(false);
+        getContentPane().add(jRadioButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(534, 320, -1, -1));
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel14)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel11)
-                            .addComponent(jLabel13))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField9, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
-                            .addComponent(jTextField10))
-                        .addGap(25, 25, 25)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel15))
-                        .addGap(7, 7, 7)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE)
-                            .addComponent(jTextField12))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel11)
-                            .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel15)
-                            .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel13)
-                            .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel7)
-                                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel14)
-                            .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 10, Short.MAX_VALUE))
-        );
+        jLabel14.setText("Seguro:");
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(669, 278, -1, -1));
 
-        jRadioButton16.setText("Alojamiento");
-        jRadioButton16.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton16ActionPerformed(evt);
-            }
-        });
+        jLabel15.setText("Precio Especial:");
+        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(669, 324, -1, -1));
 
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        txtPET.setEnabled(false);
+        getContentPane().add(txtPET, new org.netbeans.lib.awtextra.AbsoluteConstraints(769, 321, 120, -1));
 
-        jButton7.setText("Agregar");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
-            }
-        });
+        txtSeguroT.setEnabled(false);
+        getContentPane().add(txtSeguroT, new org.netbeans.lib.awtextra.AbsoluteConstraints(769, 275, 120, -1));
+        getContentPane().add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 560, 1060, 10));
+        getContentPane().add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 254, 1060, 10));
 
-        jButton8.setText("Cancelar");
+        txtDesdeE.setEnabled(false);
+        getContentPane().add(txtDesdeE, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 400, 80, -1));
 
         jLabel16.setText("Desde:");
+        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 400, -1, 20));
 
         jLabel17.setText("Hasta:");
+        getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 450, -1, 20));
 
-        jLabel18.setText("Precio Especial:");
+        txtHastaE.setEnabled(false);
+        getContentPane().add(txtHastaE, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 450, 80, -1));
 
-        jLabel19.setText("Categoria:");
+        jLabel18.setText("Lugar:");
+        getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 400, -1, 20));
 
-        jLabel20.setText("Ciudad:");
+        txtLugarE.setEnabled(false);
+        getContentPane().add(txtLugarE, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 400, 180, -1));
 
-        jRadioButton12.setText("*");
+        jLabel19.setText("Precio Especial:");
+        getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 450, -1, -1));
 
-        jRadioButton13.setText("**");
+        jLabel20.setText("Seguro:");
+        getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 400, -1, 20));
 
-        jRadioButton14.setText("*****");
+        txtSeguroE.setEnabled(false);
+        getContentPane().add(txtSeguroE, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 400, 120, -1));
 
-        jRadioButton15.setText("***");
+        txtPEE.setEnabled(false);
+        getContentPane().add(txtPEE, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 450, 120, -1));
 
-        jRadioButton17.setText("****");
+        jButton1.setText("ACEPTAR");
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 520, -1, -1));
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel18)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel16)
-                            .addComponent(jLabel17))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField13, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
-                            .addComponent(jTextField14))
-                        .addGap(25, 25, 25)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel20)
-                            .addComponent(jLabel19))
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(jRadioButton12)
-                                .addGap(4, 4, 4)
-                                .addComponent(jRadioButton13)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jRadioButton15)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jRadioButton17)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jRadioButton14))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                                .addGap(7, 7, 7)
-                                .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel16)
-                            .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel19)
-                            .addComponent(jRadioButton12)
-                            .addComponent(jRadioButton13)
-                            .addComponent(jRadioButton15)
-                            .addComponent(jRadioButton17)
-                            .addComponent(jRadioButton14))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel17)
-                            .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel20)
-                            .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel18)
-                            .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 10, Short.MAX_VALUE))
-        );
+        jButton2.setText("CANCELAR");
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 520, -1, -1));
+        getContentPane().add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 500, 1060, 10));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton6)
-                    .addComponent(jRadioButton11)
-                    .addComponent(jRadioButton16)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jRadioButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton11)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton16)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
+        jButton3.setText("Agregar");
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 50, -1, 40));
+
+        jButton4.setText("Agregar");
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 180, -1, 40));
+
+        jButton5.setText("Agregar");
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 300, -1, 40));
+
+        jButton6.setText("Agregar");
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 420, -1, 40));
+        getContentPane().add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 129, 1060, 12));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+        if(jCheckBox1.isSelected())
+        {
+            txtCiudadA.setEnabled(true);
+            txtDesdeA.setEnabled(true);
+            txtHastaA.setEnabled(true);
+            txtPEA.setEnabled(true);
+            jRadioButton1.setEnabled(true);
+            jRadioButton2.setEnabled(true);
+            jRadioButton3.setEnabled(true);
+            jRadioButton4.setEnabled(true);
+            jRadioButton5.setEnabled(true);
+            
+        }
+        else
+        {
+            txtCiudadA.setEnabled(false);
+            txtDesdeA.setEnabled(false);
+            txtHastaA.setEnabled(false);
+            txtPEA.setEnabled(false);
+            jRadioButton1.setEnabled(false);
+            jRadioButton2.setEnabled(false);
+            jRadioButton3.setEnabled(false);
+            jRadioButton4.setEnabled(false);
+            jRadioButton5.setEnabled(false);
+        }
+    }//GEN-LAST:event_jCheckBox1ActionPerformed
 
-    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+    private void txtPECActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPECActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton2ActionPerformed
+    }//GEN-LAST:event_txtPECActionPerformed
 
-    private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton3ActionPerformed
+    private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
+        if(jCheckBox2.isSelected())
+        {
+            
+            txtDesdeC.setEnabled(true);
+            txtHastaC.setEnabled(true);
+            txtPEC.setEnabled(true);
+            jRadioButton6.setEnabled(true);
+            jRadioButton7.setEnabled(true);
+            jRadioButton8.setEnabled(true);
+            jRadioButton9.setEnabled(true);
+            
+            
+        }
+        else
+        {
+            txtDesdeC.setEnabled(false);
+            txtHastaC.setEnabled(false);
+            txtPEC.setEnabled(false);
+            jRadioButton6.setEnabled(false);
+            jRadioButton7.setEnabled(false);
+            jRadioButton8.setEnabled(false);
+            jRadioButton9.setEnabled(false);
+            
+        }
+    }//GEN-LAST:event_jCheckBox2ActionPerformed
 
-    private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton4ActionPerformed
+    private void jRadioButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton6ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton4ActionPerformed
+    }//GEN-LAST:event_jRadioButton6ActionPerformed
 
-    private void jRadioButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton5ActionPerformed
+    private void jCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox3ActionPerformed
+        if(jCheckBox3.isSelected())
+        {
+            
+            txtDesdeT.setEnabled(true);
+            txtHastaT.setEnabled(true);
+            txtPET.setEnabled(true);
+            jRadioButton10.setEnabled(true);
+            jRadioButton11.setEnabled(true);
+            jRadioButton12.setEnabled(true);
+            jRadioButton13.setEnabled(true);
+            txtSeguroT.setEnabled(true);
+            
+        }
+        else
+        {
+            txtDesdeT.setEnabled(false);
+            txtHastaT.setEnabled(false);
+            txtPET.setEnabled(false);
+            jRadioButton10.setEnabled(false);
+            jRadioButton11.setEnabled(false);
+            jRadioButton12.setEnabled(false);
+            jRadioButton13.setEnabled(false);
+            txtSeguroT.setEnabled(false);
+        }
+    }//GEN-LAST:event_jCheckBox3ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jRadioButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton7ActionPerformed
-
-    private void jRadioButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton8ActionPerformed
-
-    private void jRadioButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton9ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton9ActionPerformed
-
-    private void jRadioButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton10ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton10ActionPerformed
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
-
-    private void jRadioButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton11ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton11ActionPerformed
-
-    private void jRadioButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton16ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton16ActionPerformed
-
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
+    private void jCheckBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox4ActionPerformed
+       if(jCheckBox4.isSelected())
+        {
+            
+            txtDesdeE.setEnabled(true);
+            txtHastaE.setEnabled(true);
+            txtPEE.setEnabled(true);
+            txtLugarE.setEnabled(true);
+            txtSeguroE.setEnabled(true);
+            
+        }
+        else
+        {
+            txtDesdeE.setEnabled(false);
+            txtHastaE.setEnabled(false);
+            txtPEE.setEnabled(false);
+            txtLugarE.setEnabled(false);
+            txtSeguroE.setEnabled(false);
+            
+        }
+    }//GEN-LAST:event_jCheckBox4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -669,31 +493,285 @@ public class VServicio extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(VServicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
+
+        /* Create and display the dialog */
+        //java.awt.EventQueue.invokeLater(new Runnable() {
+          //  public void run() {
+          //      VServicio2 dialog = new VServicio2(new javax.swing.JFrame(), true);
+           //     dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+           //         @Override
+          //          public void windowClosing(java.awt.event.WindowEvent e) {
+           //             System.exit(0);
+           //         }
+           //     });
+          //      dialog.setVisible(true);
+        //    }
+      //  });
         //</editor-fold>
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new VServicio().setVisible(true);
-            }
-        });
+        /* Create and display the dialog */
+        //java.awt.EventQueue.invokeLater(new Runnable() {
+          //  public void run() {
+          //      VServicio dialog = new VServicio(new javax.swing.JFrame(), true);
+           //     dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+           //         @Override
+          //          public void windowClosing(java.awt.event.WindowEvent e) {
+           //             System.exit(0);
+           //         }
+           //     });
+          //      dialog.setVisible(true);
+        //    }
+      //  });
+      
+    }
+
+    public JRadioButton getjRadioButton1() {
+        return jRadioButton1;
+    }
+
+    public void setjRadioButton1(JRadioButton jRadioButton1) {
+        this.jRadioButton1 = jRadioButton1;
+    }
+
+    public JRadioButton getjRadioButton10() {
+        return jRadioButton10;
+    }
+
+    public void setjRadioButton10(JRadioButton jRadioButton10) {
+        this.jRadioButton10 = jRadioButton10;
+    }
+
+    public JRadioButton getjRadioButton11() {
+        return jRadioButton11;
+    }
+
+    public void setjRadioButton11(JRadioButton jRadioButton11) {
+        this.jRadioButton11 = jRadioButton11;
+    }
+
+    public JRadioButton getjRadioButton12() {
+        return jRadioButton12;
+    }
+
+    public void setjRadioButton12(JRadioButton jRadioButton12) {
+        this.jRadioButton12 = jRadioButton12;
+    }
+
+    public JRadioButton getjRadioButton13() {
+        return jRadioButton13;
+    }
+
+    public void setjRadioButton13(JRadioButton jRadioButton13) {
+        this.jRadioButton13 = jRadioButton13;
+    }
+
+    public JRadioButton getjRadioButton2() {
+        return jRadioButton2;
+    }
+
+    public void setjRadioButton2(JRadioButton jRadioButton2) {
+        this.jRadioButton2 = jRadioButton2;
+    }
+
+    public JRadioButton getjRadioButton3() {
+        return jRadioButton3;
+    }
+
+    public void setjRadioButton3(JRadioButton jRadioButton3) {
+        this.jRadioButton3 = jRadioButton3;
+    }
+
+    public JRadioButton getjRadioButton4() {
+        return jRadioButton4;
+    }
+
+    public void setjRadioButton4(JRadioButton jRadioButton4) {
+        this.jRadioButton4 = jRadioButton4;
+    }
+
+    public JRadioButton getjRadioButton5() {
+        return jRadioButton5;
+    }
+
+    public void setjRadioButton5(JRadioButton jRadioButton5) {
+        this.jRadioButton5 = jRadioButton5;
+    }
+
+    public JRadioButton getjRadioButton6() {
+        return jRadioButton6;
+    }
+
+    public void setjRadioButton6(JRadioButton jRadioButton6) {
+        this.jRadioButton6 = jRadioButton6;
+    }
+
+    public JRadioButton getjRadioButton7() {
+        return jRadioButton7;
+    }
+
+    public void setjRadioButton7(JRadioButton jRadioButton7) {
+        this.jRadioButton7 = jRadioButton7;
+    }
+
+    public JRadioButton getjRadioButton8() {
+        return jRadioButton8;
+    }
+
+    public void setjRadioButton8(JRadioButton jRadioButton8) {
+        this.jRadioButton8 = jRadioButton8;
+    }
+
+    public JRadioButton getjRadioButton9() {
+        return jRadioButton9;
+    }
+
+    public void setjRadioButton9(JRadioButton jRadioButton9) {
+        this.jRadioButton9 = jRadioButton9;
+    }
+
+    public JTextField getTxtCiudadA() {
+        return txtCiudadA;
+    }
+
+    public void setTxtCiudadA(JTextField txtCiudadA) {
+        this.txtCiudadA = txtCiudadA;
+    }
+
+    public JTextField getTxtDesdeA() {
+        return txtDesdeA;
+    }
+
+    public void setTxtDesdeA(JTextField txtDesdeA) {
+        this.txtDesdeA = txtDesdeA;
+    }
+
+    public JTextField getTxtDesdeC() {
+        return txtDesdeT;
+    }
+
+    public void setTxtDesdeC(JTextField txtDesdeC) {
+        this.txtDesdeT = txtDesdeC;
+    }
+
+    public JTextField getTxtDesdeE() {
+        return txtDesdeE;
+    }
+
+    public void setTxtDesdeE(JTextField txtDesdeE) {
+        this.txtDesdeE = txtDesdeE;
+    }
+
+    public JTextField getTxtDesdeT() {
+        return txtDesdeC;
+    }
+
+    public void setTxtDesdeT(JTextField txtDesdeT) {
+        this.txtDesdeC = txtDesdeT;
+    }
+
+    public JTextField getTxtHastaA() {
+        return txtHastaA;
+    }
+
+    public void setTxtHastaA(JTextField txtHastaA) {
+        this.txtHastaA = txtHastaA;
+    }
+
+    public JTextField getTxtHastaC() {
+        return txtHastaT;
+    }
+
+    public void setTxtHastaC(JTextField txtHastaC) {
+        this.txtHastaT = txtHastaC;
+    }
+
+    public JTextField getTxtHastaE() {
+        return txtHastaE;
+    }
+
+    public void setTxtHastaE(JTextField txtHastaE) {
+        this.txtHastaE = txtHastaE;
+    }
+
+    public JTextField getTxtHastaT() {
+        return txtHastaC;
+    }
+
+    public void setTxtHastaT(JTextField txtHastaT) {
+        this.txtHastaC = txtHastaT;
+    }
+
+    public JTextField getTxtLugarE() {
+        return txtLugarE;
+    }
+
+    public void setTxtLugarE(JTextField txtLugarE) {
+        this.txtLugarE = txtLugarE;
+    }
+
+    public JTextField getTxtPEA() {
+        return txtPEA;
+    }
+
+    public void setTxtPEA(JTextField txtPEA) {
+        this.txtPEA = txtPEA;
+    }
+
+    public JTextField getTxtPEC() {
+        return txtPET;
+    }
+
+    public void setTxtPEC(JTextField txtPEC) {
+        this.txtPET = txtPEC;
+    }
+
+    public JTextField getTxtPEE() {
+        return txtPEE;
+    }
+
+    public void setTxtPEE(JTextField txtPEE) {
+        this.txtPEE = txtPEE;
+    }
+
+    public JTextField getTxtPET() {
+        return txtPEC;
+    }
+
+    public void setTxtPET(JTextField txtPET) {
+        this.txtPEC = txtPET;
+    }
+
+    public JTextField getTxtSeguroC() {
+        return txtSeguroT;
+    }
+
+    public void setTxtSeguroC(JTextField txtSeguroC) {
+        this.txtSeguroT = txtSeguroC;
+    }
+
+    public JTextField getTxtSeguroE() {
+        return txtSeguroE;
+    }
+
+    public void setTxtSeguroE(JTextField txtSeguroE) {
+        this.txtSeguroE = txtSeguroE;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.ButtonGroup buttonGroup3;
+    private javax.swing.ButtonGroup buttonGroup4;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
+    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JCheckBox jCheckBox2;
+    private javax.swing.JCheckBox jCheckBox3;
+    private javax.swing.JCheckBox jCheckBox4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -714,19 +792,11 @@ public class VServicio extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton10;
     private javax.swing.JRadioButton jRadioButton11;
     private javax.swing.JRadioButton jRadioButton12;
     private javax.swing.JRadioButton jRadioButton13;
-    private javax.swing.JRadioButton jRadioButton14;
-    private javax.swing.JRadioButton jRadioButton15;
-    private javax.swing.JRadioButton jRadioButton16;
-    private javax.swing.JRadioButton jRadioButton17;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JRadioButton jRadioButton4;
@@ -735,29 +805,28 @@ public class VServicio extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton7;
     private javax.swing.JRadioButton jRadioButton8;
     private javax.swing.JRadioButton jRadioButton9;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField15;
-    private javax.swing.JTextField jTextField16;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JSeparator jSeparator7;
+    private javax.swing.JTextField txtCiudadA;
+    private javax.swing.JTextField txtDesdeA;
+    private javax.swing.JTextField txtDesdeC;
+    private javax.swing.JTextField txtDesdeE;
+    private javax.swing.JTextField txtDesdeT;
+    private javax.swing.JTextField txtHastaA;
+    private javax.swing.JTextField txtHastaC;
+    private javax.swing.JTextField txtHastaE;
+    private javax.swing.JTextField txtHastaT;
+    private javax.swing.JTextField txtLugarE;
+    private javax.swing.JTextField txtPEA;
+    private javax.swing.JTextField txtPEC;
+    private javax.swing.JTextField txtPEE;
+    private javax.swing.JTextField txtPET;
+    private javax.swing.JTextField txtSeguroE;
+    private javax.swing.JTextField txtSeguroT;
     // End of variables declaration//GEN-END:variables
-
-    public JRadioButton getjRadioButton6() {
-        return jRadioButton6;
-    }
-
-
-
-
 }

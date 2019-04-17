@@ -57,16 +57,7 @@ public class ControladorCrear {
           }
         }
     
-     public static void cargarComboServicio(){
-        ArrayList<String> dato =new ArrayList<String>();
-        dato.add("Alojamiento");
-        dato.add("Comida");
-        dato.add("Excursion");
-        dato.add("Transporte");
-              for (String col : dato) {
-              ventc.getjComboBox1().addItem(col);
-          }
-        }
+     
      public static void cargarGrillaDestino(){
         ArrayList<Object> dest =new ArrayList<Object>();
         dest.add("Codigo Postal");

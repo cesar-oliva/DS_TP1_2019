@@ -12,7 +12,7 @@ import vista.*;
  * @author CESAR
  */
 public class ControladorServicio {
-    static VServicio vents = new VServicio();
+    static VServicio vents = new VServicio(null,true);
   //iniciar
      public static void iniciar(String opc){
          if(opc.equals("Comida")){
