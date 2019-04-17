@@ -153,15 +153,16 @@ public class ControladorCrear {
        //ELIMINAR FILA DESTINO
        public static void eliminarFilaDestino(){
         DefaultTableModel eliminar = (DefaultTableModel)ventc.getjTable1().getModel();   
-        int fila = ventc.getjTable1().getSelectedRow();
         int resp;
+        int fila;
         try{
+           fila = ventc.getjTable1().getSelectedRow();
            if(fila==-1){
                JOptionPane.showMessageDialog(null,"Debe seleccionar una fila a eliminar");
            }else{
                resp= JOptionPane.showConfirmDialog(null, "¿quiere eliminar la fila seleccionada?","Eliminar",JOptionPane.YES_NO_OPTION);
                if(resp==JOptionPane.YES_OPTION){
-                   eliminar.removeRow(resp);
+                   eliminar.removeRow(fila);
                }
            }
         }catch(Exception e){
@@ -171,10 +172,11 @@ public class ControladorCrear {
 
         //ELIMINAR FILA SERVICIO
        public static void eliminarFilaServicio(){
-        DefaultTableModel eliminar = (DefaultTableModel)ventc.getjTable2().getModel();   
-        int fila = ventc.getjTable2().getSelectedRow();
+        DefaultTableModel eliminar = (DefaultTableModel)ventc.getjTable2().getModel();
+        int fila;
         int resp;
         try{
+           fila = ventc.getjTable2().getSelectedRow(); 
            if(fila==-1){
                JOptionPane.showMessageDialog(null,"Debe seleccionar una fila a eliminar");
            }else{
