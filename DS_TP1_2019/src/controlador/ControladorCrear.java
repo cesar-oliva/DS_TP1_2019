@@ -180,7 +180,7 @@ public class ControladorCrear {
            }else{
                resp= JOptionPane.showConfirmDialog(null, "¿quiere eliminar la fila seleccionada?","Eliminar",JOptionPane.YES_NO_OPTION);
                if(resp==JOptionPane.YES_OPTION){
-                   eliminar.removeRow(resp);
+                   eliminar.removeRow(fila);
                }
            }
         }catch(Exception e){
