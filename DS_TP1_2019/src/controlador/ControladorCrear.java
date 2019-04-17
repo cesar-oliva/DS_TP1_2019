@@ -62,8 +62,8 @@ public class ControladorCrear {
         }
      public static void cargarGrillaDestino(){
         ArrayList<Object> dato =new ArrayList<Object>();
-        dato.add("Nombre");
         dato.add("Codigo Postal");
+        dato.add("Nombre");
               for (Object col : dato) {
               model.addColumn(col);
           }
@@ -71,8 +71,31 @@ public class ControladorCrear {
               }
      
      public static void agregarDestino(){
-           Object[] obj = new Object[1];
-           obj[0] = (String) ventc.getjComboBox4().getSelectedItem();
+           String res = (String) ventc.getjComboBox4().getSelectedItem();
+           Object[] obj = new Object[2];
+           if(res.equals("Tucuman")){
+               obj[0] = "4000"; 
+           }
+           if(res.equals("Salta")){
+               obj[0] = "4400"; 
+           }
+           if(res.equals("Santa Fe")){
+               obj[0] = "3000"; 
+           }
+           if(res.equals("Buenos Aires")){
+               obj[0] = "1001"; 
+           }
+            if(res.equals("Cordoba")){
+               obj[0] = "5000"; 
+           }
+           if(res.equals("Mendoza")){
+               obj[0] = "5500"; 
+           }
+           if(res.equals("Santa Cruz")){
+               obj[0] = "9400"; 
+           }
+           obj[1] = (String) ventc.getjComboBox4().getSelectedItem();
+           
            model.addRow(obj);
      }              
                    
