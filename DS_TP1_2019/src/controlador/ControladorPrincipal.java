@@ -46,19 +46,12 @@ public class ControladorPrincipal {
       //agregar paquete
       public static void agregarPaquete(){
            Object[] obj = new Object[6];
-           int filas = ventp.getTblPaquetes().getRowCount();
-           obj[0] = filas+1;
+           obj[0]= ventc.getjTextField1().getText();
            obj[1]= ventc.getjTextField2().getText();
            obj[2]= ventc.getjTextField3().getText();
            obj[3]= "";
            obj[4]= "";
            obj[5]= Estado.Inactivo;
-           model.addRow(obj);  
+           model.addRow(obj);    
      } 
-      
-       public static void estadoActivo(){
-       }  
-      
-     
-      
 }

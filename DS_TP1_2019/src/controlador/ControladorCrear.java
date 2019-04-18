@@ -23,6 +23,7 @@ public class ControladorCrear {
     static DefaultTableModel modelserv= new DefaultTableModel();
     
     public static void iniciar(){
+       ventc.getjTextField1().setText(Integer.toString(asignarNumero()));
        ventc.setVisible(true);
        cargarGrillaDestino();
        cargarGrillaServicio();
@@ -57,8 +58,6 @@ public class ControladorCrear {
               ventc.getjComboBox2().addItem(col);
           }
         }
-    
-     
      public static void cargarGrillaDestino(){
         ArrayList<Object> dest =new ArrayList<>();
         dest.add("Codigo Postal");
@@ -185,5 +184,19 @@ public class ControladorCrear {
          public static void agregarServicio(){
    
      }  
-     
+         //ASIGNACION DE NUMERO ID_PAQUETES
+        public static int asignarNumero(){
+        int filas = ventp.getTblPaquetes().getRowCount();
+       // return(filas+1); 
+        int id=0;
+        for (int i = 0; i < filas; i++) {
+            if (id < filas) {
+            id=filas;    
+            }
+        }
+        return(filas+1);
+       }  
+      
+         
+         
 }
