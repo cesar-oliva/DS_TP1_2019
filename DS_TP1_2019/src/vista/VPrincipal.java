@@ -23,6 +23,7 @@ public class VPrincipal extends javax.swing.JFrame{
      */
     public VPrincipal() {
         initComponents();
+        setLocationRelativeTo(null);
         
     }
     
@@ -122,7 +123,6 @@ public class VPrincipal extends javax.swing.JFrame{
     controlador.ControladorPrincipal.cerrar();
     controlador.ControladorCrear.cargarComboCiudad();
     controlador.ControladorCrear.cargarComboBase();
-    
     controlador.ControladorCrear.iniciar();
            
     }//GEN-LAST:event_jButton3ActionPerformed

@@ -5,6 +5,7 @@
  */
 package controlador;
 
+import static controlador.ControladorCrear.ventc;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 import vista.*;
@@ -40,5 +41,15 @@ public class ControladorPrincipal {
           }
         ventp.getTblPaquetes().setModel(model);
         }
-        
+      //agregar paquete
+      public static void agregarPaquete(){
+           Object[] obj = new Object[2];
+           int filas = ventp.getTblPaquetes().getRowCount();
+           obj[0] = filas+1;
+           obj[1]= ventc.getjTextField2().getText();
+           model.addRow(obj);
+     }              
+      
+      
+      
 }

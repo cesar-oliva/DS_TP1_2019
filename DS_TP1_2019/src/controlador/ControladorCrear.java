@@ -5,13 +5,13 @@
  */
 package controlador;
 
+import static controlador.ControladorPrincipal.ventp;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import vista.*;
-import modelo.*;
 
 /**
  *
@@ -28,10 +28,11 @@ public class ControladorCrear {
        cargarGrillaServicio();
     }
     public static void cerrar(){
-       ventc.setVisible(false);
+       ventc.dispose();
+       ventp.setVisible(true);
       }
     public static void cargarComboCiudad(){
-        ArrayList<String> dato =new ArrayList<String>();
+        ArrayList<String> dato =new ArrayList<>();
         dato.add("Buenos Aires");
         dato.add("Cordoba");
         dato.add("Mendoza");
@@ -45,7 +46,7 @@ public class ControladorCrear {
         }
     
     public static void cargarComboBase(){
-        ArrayList<String> dato =new ArrayList<String>();
+        ArrayList<String> dato =new ArrayList<>();
         dato.add("Simple");
         dato.add("Doble");
         dato.add("Triple");
@@ -59,7 +60,7 @@ public class ControladorCrear {
     
      
      public static void cargarGrillaDestino(){
-        ArrayList<Object> dest =new ArrayList<Object>();
+        ArrayList<Object> dest =new ArrayList<>();
         dest.add("Codigo Postal");
         dest.add("Nombre");
               for (Object col : dest) {
@@ -69,7 +70,7 @@ public class ControladorCrear {
         
          //MODIFICAR TAMAÑO DE COLUMNAS
         ventc.getjTable1().getColumnModel().getColumn(0).setPreferredWidth(100);
-        ventc.getjTable1().getColumnModel().getColumn(1).setPreferredWidth(305);
+        ventc.getjTable1().getColumnModel().getColumn(1).setPreferredWidth(405);
         //HABILITAR BARRA HORIZONTAL
         ventc.getjTable1().setAutoResizeMode(ventc.getjTable1().AUTO_RESIZE_OFF);
         ventc.getjTable1().doLayout();
@@ -112,7 +113,7 @@ public class ControladorCrear {
      }              
                    
      public static void cargarGrillaServicio(){
-        ArrayList<Object> serv =new ArrayList<Object>();
+        ArrayList<Object> serv =new ArrayList<>();
         serv.add("CodServ");
         serv.add("Nombre");
         serv.add("Desde");
