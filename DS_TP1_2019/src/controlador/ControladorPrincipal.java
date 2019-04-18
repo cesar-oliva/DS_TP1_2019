@@ -8,6 +8,7 @@ package controlador;
 import static controlador.ControladorCrear.ventc;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
+import modelo.*;
 import vista.*;
 
 /**
@@ -17,6 +18,7 @@ import vista.*;
 public class ControladorPrincipal {
     static VPrincipal ventp = new VPrincipal();
     static DefaultTableModel model= new DefaultTableModel();
+    static ArrayList<Paquete> lista = new ArrayList<Paquete>();
     //iniciar
      public static void iniciar(){
        ventp.setVisible(true);
@@ -43,13 +45,20 @@ public class ControladorPrincipal {
         }
       //agregar paquete
       public static void agregarPaquete(){
-           Object[] obj = new Object[2];
+           Object[] obj = new Object[6];
            int filas = ventp.getTblPaquetes().getRowCount();
            obj[0] = filas+1;
            obj[1]= ventc.getjTextField2().getText();
-           model.addRow(obj);
-     }              
+           obj[2]= ventc.getjTextField3().getText();
+           obj[3]= "";
+           obj[4]= "";
+           obj[5]= Estado.Inactivo;
+           model.addRow(obj);  
+     } 
       
+       public static void estadoActivo(){
+       }  
       
+     
       
 }

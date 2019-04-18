@@ -496,5 +496,9 @@ public class VCrear extends javax.swing.JFrame {
         return jTextField2;
     }
 
+    public JTextField getjTextField3() {
+        return jTextField3;
+    }
+
 
 }

@@ -41,6 +41,16 @@ public class Paquete {
         this.tarifas = tarifas;
         this.estado = estado;
     }
+
+    public Paquete(int numero,String nombre, int dias, Estado estado) {
+        this.nombre = nombre;
+        this.dias = dias;
+        this.estado = estado;
+    }
+    
+    
+    
+    
     
     //metodos
 
