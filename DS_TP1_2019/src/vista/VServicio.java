@@ -23,7 +23,7 @@ public class VServicio extends javax.swing.JDialog {
         
         initComponents();
         setLocationRelativeTo(null);
-        setVisible(true);
+        
     }
 
     /**
@@ -97,8 +97,7 @@ public class VServicio extends javax.swing.JDialog {
         jLabel20 = new javax.swing.JLabel();
         txtSeguroE = new javax.swing.JTextField();
         txtPEE = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        botonACEPTAR = new javax.swing.JButton();
         jSeparator7 = new javax.swing.JSeparator();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
@@ -332,23 +331,34 @@ public class VServicio extends javax.swing.JDialog {
         txtPEE.setEnabled(false);
         getContentPane().add(txtPEE, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 450, 120, -1));
 
-        jButton1.setText("ACEPTAR");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 520, -1, -1));
-
-        jButton2.setText("CANCELAR");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 520, -1, -1));
+        botonACEPTAR.setText("ACEPTAR");
+        botonACEPTAR.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonACEPTARActionPerformed(evt);
+            }
+        });
+        getContentPane().add(botonACEPTAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 520, -1, -1));
         getContentPane().add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 500, 1060, 10));
 
         jButton3.setText("Agregar");
+        jButton3.setEnabled(false);
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 50, -1, 40));
 
         jButton4.setText("Agregar");
+        jButton4.setEnabled(false);
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 180, -1, 40));
 
         jButton5.setText("Agregar");
+        jButton5.setEnabled(false);
         getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 300, -1, 40));
 
         jButton6.setText("Agregar");
+        jButton6.setEnabled(false);
         getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 420, -1, 40));
         getContentPane().add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 129, 1060, 12));
 
@@ -367,7 +377,7 @@ public class VServicio extends javax.swing.JDialog {
             jRadioButton3.setEnabled(true);
             jRadioButton4.setEnabled(true);
             jRadioButton5.setEnabled(true);
-            
+            jButton3.setEnabled(true);
         }
         else
         {
@@ -380,6 +390,7 @@ public class VServicio extends javax.swing.JDialog {
             jRadioButton3.setEnabled(false);
             jRadioButton4.setEnabled(false);
             jRadioButton5.setEnabled(false);
+            jButton3.setEnabled(false);
         }
     }//GEN-LAST:event_jCheckBox1ActionPerformed
 
@@ -466,6 +477,31 @@ public class VServicio extends javax.swing.JDialog {
             
         }
     }//GEN-LAST:event_jCheckBox4ActionPerformed
+
+    private void botonACEPTARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonACEPTARActionPerformed
+        controlador.ControladorServicio.cerrar();
+    }//GEN-LAST:event_botonACEPTARActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        controlador.ControladorServicio.agregarAlojamiento();
+        txtCiudadA.setEnabled(false);
+        txtCiudadA.setText("");
+            txtDesdeA.setEnabled(false);
+            txtDesdeA.setText("");
+            txtHastaA.setEnabled(false);
+            txtHastaA.setText("");
+            txtPEA.setEnabled(false);
+            txtPEA.setText("");
+            jRadioButton1.setEnabled(false);
+            jRadioButton2.setEnabled(false);
+            jRadioButton3.setEnabled(false);
+            jRadioButton4.setEnabled(false);
+            jRadioButton5.setEnabled(false);
+            jButton3.setEnabled(false);
+            jCheckBox1.setSelected(false);
+            
+        
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -758,12 +794,11 @@ public class VServicio extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botonACEPTAR;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.ButtonGroup buttonGroup4;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;

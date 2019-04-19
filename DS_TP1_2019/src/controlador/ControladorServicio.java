@@ -5,7 +5,9 @@
  */
 package controlador;
 
+import javax.swing.JOptionPane;
 import vista.*;
+import static controlador.ControladorCrear.*;
 
 /**
  *
@@ -13,16 +15,30 @@ import vista.*;
  */
 public class ControladorServicio {
     static VServicio vents = new VServicio(null,true);
+    static int ca=0;
   //iniciar
-     public static void iniciar(String opc){
-         if(opc.equals("Comida")){
+     public static void iniciar(){
+         
              vents.setVisible(true);
             
-             controlador.ControladorCrear.cerrar();
+         
          }
-         if(opc.equals("Transporte")){
-             //ventransp.setVisible(true);
-             controlador.ControladorCrear.cerrar();
-         }  
-      }  
+     public static void cerrar(){
+         vents.dispose();
+         }
+     public static void agregarAlojamiento(){
+         ca = ca + 1;
+         int res = JOptionPane.showConfirmDialog(vents,"¿Está seguro de agregar el servicio?","ALERTA",JOptionPane.YES_NO_CANCEL_OPTION);
+        if(res == 0)
+        {
+            Object [] fila = new Object[6];
+            fila[0] = "001 - " + ca;
+            fila[1] = "Alojamiento";
+            fila[2] = vents.getTxtDesdeA().getText();
+            fila[3] = vents.getTxtHastaA().getText();
+            fila[4] = vents.getTxtPEA().getText();
+            modelserv.addRow(fila);
+        
+        }
+     }
 }

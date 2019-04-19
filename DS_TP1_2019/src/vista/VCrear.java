@@ -385,7 +385,7 @@ public class VCrear extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField3ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        VServicio vt = new VServicio(this,true);
+        controlador.ControladorServicio.iniciar();
 
     }//GEN-LAST:event_jButton3ActionPerformed
 

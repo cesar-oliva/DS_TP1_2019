@@ -54,4 +54,6 @@ public class ControladorPrincipal {
            obj[5]= Estado.Inactivo;
            model.addRow(obj);    
      } 
+      
+      public static void estadoActivo(){}
 }
