@@ -30,5 +30,13 @@ public class Ciudad {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
+    public int getCod() {
+        return cod;
+    }
+
+    public void setCod(int cod) {
+        this.cod = cod;
+    }
     
 }
