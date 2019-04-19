@@ -30,6 +30,7 @@ public class ControladorCrear {
     public static void iniciar(){
        ventc.getjTextField1().setText(Integer.toString(asignarNumero()));
        ventc.setVisible(true);
+      
        cargarGrillaDestino();
        cargarGrillaServicio();
     }

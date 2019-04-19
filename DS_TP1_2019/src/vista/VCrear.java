@@ -21,6 +21,7 @@ public class VCrear extends javax.swing.JFrame {
     public VCrear() {
         initComponents();
         setLocationRelativeTo(null);
+        setVisible(true);
     }
 
     /**

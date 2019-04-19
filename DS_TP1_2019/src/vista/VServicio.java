@@ -23,7 +23,8 @@ public class VServicio extends javax.swing.JDialog {
         
         
         initComponents();
-        setLocationRelativeTo(null);
+        
+        //setVisible(true);
         
     }
 
@@ -99,10 +100,10 @@ public class VServicio extends javax.swing.JDialog {
         txtPEE = new javax.swing.JTextField();
         botonACEPTAR = new javax.swing.JButton();
         jSeparator7 = new javax.swing.JSeparator();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        botonAgregarA = new javax.swing.JButton();
+        botonAgregarC = new javax.swing.JButton();
+        botonAgregarT = new javax.swing.JButton();
+        botonAgregarE = new javax.swing.JButton();
         jSeparator3 = new javax.swing.JSeparator();
         jComboBox1 = new javax.swing.JComboBox<>();
 
@@ -338,28 +339,44 @@ public class VServicio extends javax.swing.JDialog {
         getContentPane().add(botonACEPTAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 520, -1, -1));
         getContentPane().add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 500, 1060, 10));
 
-        jButton3.setText("Agregar");
-        jButton3.setEnabled(false);
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        botonAgregarA.setText("Agregar");
+        botonAgregarA.setEnabled(false);
+        botonAgregarA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                botonAgregarAActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 50, -1, 40));
+        getContentPane().add(botonAgregarA, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 50, -1, 40));
 
-        jButton4.setText("Agregar");
-        jButton4.setEnabled(false);
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 180, -1, 40));
+        botonAgregarC.setText("Agregar");
+        botonAgregarC.setEnabled(false);
+        botonAgregarC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonAgregarCActionPerformed(evt);
+            }
+        });
+        getContentPane().add(botonAgregarC, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 180, -1, 40));
 
-        jButton5.setText("Agregar");
-        jButton5.setEnabled(false);
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 300, -1, 40));
+        botonAgregarT.setText("Agregar");
+        botonAgregarT.setEnabled(false);
+        botonAgregarT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonAgregarTActionPerformed(evt);
+            }
+        });
+        getContentPane().add(botonAgregarT, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 300, -1, 40));
 
-        jButton6.setText("Agregar");
-        jButton6.setEnabled(false);
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 420, -1, 40));
+        botonAgregarE.setText("Agregar");
+        botonAgregarE.setEnabled(false);
+        botonAgregarE.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonAgregarEActionPerformed(evt);
+            }
+        });
+        getContentPane().add(botonAgregarE, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 420, -1, 40));
         getContentPane().add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 129, 1060, 12));
 
+        jComboBox1.setEnabled(false);
         getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 90, 220, -1));
 
         pack();
@@ -377,7 +394,7 @@ public class VServicio extends javax.swing.JDialog {
             jRadioButton3.setEnabled(true);
             jRadioButton4.setEnabled(true);
             jRadioButton5.setEnabled(true);
-            jButton3.setEnabled(true);
+            botonAgregarA.setEnabled(true);
         }
         else
         {
@@ -390,7 +407,7 @@ public class VServicio extends javax.swing.JDialog {
             jRadioButton3.setEnabled(false);
             jRadioButton4.setEnabled(false);
             jRadioButton5.setEnabled(false);
-            jButton3.setEnabled(false);
+            botonAgregarA.setEnabled(false);
         }
     }//GEN-LAST:event_jCheckBox1ActionPerformed
 
@@ -409,6 +426,7 @@ public class VServicio extends javax.swing.JDialog {
             jRadioButton7.setEnabled(true);
             jRadioButton8.setEnabled(true);
             jRadioButton9.setEnabled(true);
+            botonAgregarC.setEnabled(true);
             
             
         }
@@ -421,6 +439,7 @@ public class VServicio extends javax.swing.JDialog {
             jRadioButton7.setEnabled(false);
             jRadioButton8.setEnabled(false);
             jRadioButton9.setEnabled(false);
+            botonAgregarC.setEnabled(false);
             
         }
     }//GEN-LAST:event_jCheckBox2ActionPerformed
@@ -441,6 +460,7 @@ public class VServicio extends javax.swing.JDialog {
             jRadioButton12.setEnabled(true);
             jRadioButton13.setEnabled(true);
             txtSeguroT.setEnabled(true);
+            botonAgregarT.setEnabled(true);
             
         }
         else
@@ -453,6 +473,7 @@ public class VServicio extends javax.swing.JDialog {
             jRadioButton12.setEnabled(false);
             jRadioButton13.setEnabled(false);
             txtSeguroT.setEnabled(false);
+            botonAgregarT.setEnabled(false);
         }
     }//GEN-LAST:event_jCheckBox3ActionPerformed
 
@@ -465,6 +486,7 @@ public class VServicio extends javax.swing.JDialog {
             txtPEE.setEnabled(true);
             txtLugarE.setEnabled(true);
             txtSeguroE.setEnabled(true);
+            botonAgregarE.setEnabled(true);
             
         }
         else
@@ -474,6 +496,7 @@ public class VServicio extends javax.swing.JDialog {
             txtPEE.setEnabled(false);
             txtLugarE.setEnabled(false);
             txtSeguroE.setEnabled(false);
+            botonAgregarE.setEnabled(false);
             
         }
     }//GEN-LAST:event_jCheckBox4ActionPerformed
@@ -482,8 +505,9 @@ public class VServicio extends javax.swing.JDialog {
         controlador.ControladorServicio.cerrar();
     }//GEN-LAST:event_botonACEPTARActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void botonAgregarAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarAActionPerformed
         controlador.ControladorServicio.agregarAlojamiento();
+        botonAgregarA.setEnabled(false);
         jComboBox1.setEnabled(false);
             txtDesdeA.setEnabled(false);
             txtDesdeA.setText("");
@@ -496,11 +520,68 @@ public class VServicio extends javax.swing.JDialog {
             jRadioButton3.setEnabled(false);
             jRadioButton4.setEnabled(false);
             jRadioButton5.setEnabled(false);
-            jButton3.setEnabled(false);
+            
             jCheckBox1.setSelected(false);
             
         
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_botonAgregarAActionPerformed
+
+    private void botonAgregarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarCActionPerformed
+        controlador.ControladorServicio.agregarComida();
+        botonAgregarC.setEnabled(false);
+        txtDesdeC.setEnabled(false);
+        
+            txtHastaC.setEnabled(false);
+            
+            txtPEC.setEnabled(false);
+            
+            jRadioButton6.setEnabled(false);
+            jRadioButton7.setEnabled(false);
+            jRadioButton8.setEnabled(false);
+            jRadioButton9.setEnabled(false);
+            jCheckBox2.setSelected(false);
+        //txtDesdeC.setText("");
+        //txtHastaC.setText("");
+        //txtPEC.setText("");
+    }//GEN-LAST:event_botonAgregarCActionPerformed
+
+    private void botonAgregarTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarTActionPerformed
+        controlador.ControladorServicio.agregarTransporte();
+        botonAgregarT.setEnabled(false);
+        txtDesdeT.setEnabled(false);
+        
+            txtHastaT.setEnabled(false);
+           
+            txtPET.setEnabled(false);
+            
+            jRadioButton10.setEnabled(false);
+            jRadioButton11.setEnabled(false);
+            jRadioButton12.setEnabled(false);
+            jRadioButton13.setEnabled(false);
+            txtSeguroT.setEnabled(false);
+            jCheckBox3.setSelected(false);
+            txtDesdeT.setText("");
+             txtHastaT.setText("");
+             txtHastaT.setText("");
+        
+    }//GEN-LAST:event_botonAgregarTActionPerformed
+
+    private void botonAgregarEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarEActionPerformed
+        controlador.ControladorServicio.agregarExcursion();
+        botonAgregarE.setEnabled(false);
+        txtDesdeE.setEnabled(false);
+        txtDesdeE.setText("");
+            txtHastaE.setEnabled(false);
+            txtHastaE.setText("");
+            txtPEE.setEnabled(false);
+            txtPEE.setText("");
+            txtLugarE.setEnabled(false);
+            txtLugarE.setText("");
+            txtSeguroE.setEnabled(false);
+            txtSeguroE.setText("");
+            jCheckBox4.setSelected(false);
+        
+    }//GEN-LAST:event_botonAgregarEActionPerformed
 
     /**
      * @param args the command line arguments
@@ -794,14 +875,14 @@ public class VServicio extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonACEPTAR;
+    private javax.swing.JButton botonAgregarA;
+    private javax.swing.JButton botonAgregarC;
+    private javax.swing.JButton botonAgregarE;
+    private javax.swing.JButton botonAgregarT;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.ButtonGroup buttonGroup4;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JCheckBox jCheckBox3;
