@@ -18,17 +18,14 @@ public class ControladorServicio {
     static int ca=0;
   //iniciar
      public static void iniciar(){
-         
              vents.setVisible(true);
-            
-         
          }
      public static void cerrar(){
          vents.dispose();
          }
      public static void agregarAlojamiento(){
          ca = ca + 1;
-         int res = JOptionPane.showConfirmDialog(vents,"¿Está seguro de agregar el servicio?","ALERTA",JOptionPane.YES_NO_CANCEL_OPTION);
+         int res = JOptionPane.showConfirmDialog(vents,"¿Está seguro de agregar el servicio?","ALERTA",JOptionPane.YES_NO_OPTION);
         if(res == 0)
         {
             Object [] fila = new Object[6];

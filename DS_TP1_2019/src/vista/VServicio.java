@@ -5,6 +5,7 @@
  */
 package vista;
 
+import javax.swing.JComboBox;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
@@ -58,7 +59,6 @@ public class VServicio extends javax.swing.JDialog {
         jRadioButton5 = new javax.swing.JRadioButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        txtCiudadA = new javax.swing.JTextField();
         txtPEC = new javax.swing.JTextField();
         txtDesdeC = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
@@ -104,6 +104,7 @@ public class VServicio extends javax.swing.JDialog {
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jSeparator3 = new javax.swing.JSeparator();
+        jComboBox1 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Servicios - TurismoARG");
@@ -191,9 +192,6 @@ public class VServicio extends javax.swing.JDialog {
 
         jLabel5.setText("Precio Especial:");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(667, 94, -1, -1));
-
-        txtCiudadA.setEnabled(false);
-        getContentPane().add(txtCiudadA, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 90, 230, -1));
 
         txtPEC.setEnabled(false);
         txtPEC.addActionListener(new java.awt.event.ActionListener() {
@@ -362,13 +360,15 @@ public class VServicio extends javax.swing.JDialog {
         getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 420, -1, 40));
         getContentPane().add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 129, 1060, 12));
 
+        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 90, 220, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
         if(jCheckBox1.isSelected())
         {
-            txtCiudadA.setEnabled(true);
+            jComboBox1.setEnabled(true);
             txtDesdeA.setEnabled(true);
             txtHastaA.setEnabled(true);
             txtPEA.setEnabled(true);
@@ -381,7 +381,7 @@ public class VServicio extends javax.swing.JDialog {
         }
         else
         {
-            txtCiudadA.setEnabled(false);
+            jComboBox1.setEnabled(false);
             txtDesdeA.setEnabled(false);
             txtHastaA.setEnabled(false);
             txtPEA.setEnabled(false);
@@ -484,8 +484,7 @@ public class VServicio extends javax.swing.JDialog {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         controlador.ControladorServicio.agregarAlojamiento();
-        txtCiudadA.setEnabled(false);
-        txtCiudadA.setText("");
+        jComboBox1.setEnabled(false);
             txtDesdeA.setEnabled(false);
             txtDesdeA.setText("");
             txtHastaA.setEnabled(false);
@@ -665,15 +664,7 @@ public class VServicio extends javax.swing.JDialog {
         this.jRadioButton9 = jRadioButton9;
     }
 
-    public JTextField getTxtCiudadA() {
-        return txtCiudadA;
-    }
-
-    public void setTxtCiudadA(JTextField txtCiudadA) {
-        this.txtCiudadA = txtCiudadA;
-    }
-
-    public JTextField getTxtDesdeA() {
+     public JTextField getTxtDesdeA() {
         return txtDesdeA;
     }
 
@@ -793,6 +784,14 @@ public class VServicio extends javax.swing.JDialog {
         this.txtSeguroE = txtSeguroE;
     }
 
+    public JComboBox<String> getjComboBox1() {
+        return jComboBox1;
+    }
+
+    public void setjComboBox1(JComboBox<String> jComboBox1) {
+        this.jComboBox1 = jComboBox1;
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonACEPTAR;
     private javax.swing.ButtonGroup buttonGroup1;
@@ -807,6 +806,7 @@ public class VServicio extends javax.swing.JDialog {
     private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JCheckBox jCheckBox3;
     private javax.swing.JCheckBox jCheckBox4;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -847,7 +847,6 @@ public class VServicio extends javax.swing.JDialog {
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
-    private javax.swing.JTextField txtCiudadA;
     private javax.swing.JTextField txtDesdeA;
     private javax.swing.JTextField txtDesdeC;
     private javax.swing.JTextField txtDesdeE;

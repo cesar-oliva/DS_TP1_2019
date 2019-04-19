@@ -6,6 +6,7 @@
 package controlador;
 
 import static controlador.ControladorPrincipal.ventp;
+import static controlador.ControladorServicio.vents;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
@@ -44,7 +45,8 @@ public class ControladorCrear {
         listaCiudad.add(new Ciudad(9400,"Santa Cruz"));
               for (int i = 0; i < listaCiudad.size(); i++) {
               ventc.getjComboBox3().addItem(listaCiudad.get(i).getNombre());
-              ventc.getjComboBox4().addItem(listaCiudad.get(i).getNombre()); 
+              ventc.getjComboBox4().addItem(listaCiudad.get(i).getNombre());
+              vents.getjComboBox1().addItem(listaCiudad.get(i).getNombre());
             }
         }
     
