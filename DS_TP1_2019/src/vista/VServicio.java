@@ -5,27 +5,25 @@
  */
 package vista;
 
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
+import javax.swing.JLabel;
 import javax.swing.JRadioButton;
+import javax.swing.JSeparator;
 import javax.swing.JTextField;
 
 /**
  *
- * @author Admin
+ * @author Cesar
  */
-public class VServicio extends javax.swing.JDialog {
+public class VServicio extends javax.swing.JFrame {
 
     /**
      * Creates new form VServicio2
      */
-    public VServicio(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);
-        
-        
+    public VServicio() {
         initComponents();
-        
-        //setVisible(true);
-        
     }
 
     /**
@@ -37,10 +35,6 @@ public class VServicio extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
-        buttonGroup2 = new javax.swing.ButtonGroup();
-        buttonGroup3 = new javax.swing.ButtonGroup();
-        buttonGroup4 = new javax.swing.ButtonGroup();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         jCheckBox1 = new javax.swing.JCheckBox();
@@ -107,11 +101,7 @@ public class VServicio extends javax.swing.JDialog {
         jSeparator3 = new javax.swing.JSeparator();
         jComboBox1 = new javax.swing.JComboBox<>();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Servicios - TurismoARG");
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 1060, 12));
-        getContentPane().add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, 1060, 10));
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jCheckBox1.setText("Alojamiento");
         jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -119,7 +109,6 @@ public class VServicio extends javax.swing.JDialog {
                 jCheckBox1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
 
         jCheckBox2.setText("Comida");
         jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
@@ -127,7 +116,6 @@ public class VServicio extends javax.swing.JDialog {
                 jCheckBox2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, -1));
 
         jCheckBox3.setText("Transporte");
         jCheckBox3.addActionListener(new java.awt.event.ActionListener() {
@@ -135,7 +123,6 @@ public class VServicio extends javax.swing.JDialog {
                 jCheckBox3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jCheckBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, -1, -1));
 
         jCheckBox4.setText("Excursion");
         jCheckBox4.addActionListener(new java.awt.event.ActionListener() {
@@ -143,56 +130,37 @@ public class VServicio extends javax.swing.JDialog {
                 jCheckBox4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jCheckBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, -1, -1));
 
         jSeparator5.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        getContentPane().add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(143, 10, 10, 490));
 
         jLabel1.setText("Desde:");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(159, 39, -1, -1));
 
         jLabel2.setText("Hasta:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(159, 94, -1, -1));
 
         txtDesdeA.setEnabled(false);
-        getContentPane().add(txtDesdeA, new org.netbeans.lib.awtextra.AbsoluteConstraints(203, 36, 80, -1));
 
         txtHastaA.setEnabled(false);
-        getContentPane().add(txtHastaA, new org.netbeans.lib.awtextra.AbsoluteConstraints(203, 91, 80, -1));
 
         jLabel3.setText("Categoria:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(336, 39, -1, -1));
 
-        buttonGroup1.add(jRadioButton1);
         jRadioButton1.setText("*");
         jRadioButton1.setEnabled(false);
-        getContentPane().add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(405, 35, -1, -1));
 
-        buttonGroup1.add(jRadioButton2);
         jRadioButton2.setText("**");
         jRadioButton2.setEnabled(false);
-        getContentPane().add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(454, 35, -1, -1));
 
-        buttonGroup1.add(jRadioButton3);
         jRadioButton3.setText("***");
         jRadioButton3.setEnabled(false);
-        getContentPane().add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(509, 35, -1, -1));
 
-        buttonGroup1.add(jRadioButton4);
         jRadioButton4.setText("****");
         jRadioButton4.setEnabled(false);
-        getContentPane().add(jRadioButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 35, -1, -1));
 
-        buttonGroup1.add(jRadioButton5);
         jRadioButton5.setText("*****");
         jRadioButton5.setEnabled(false);
-        getContentPane().add(jRadioButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(637, 35, -1, -1));
 
         jLabel4.setText("Ciudad:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(336, 94, -1, -1));
 
         jLabel5.setText("Precio Especial:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(667, 94, -1, -1));
 
         txtPEC.setEnabled(false);
         txtPEC.addActionListener(new java.awt.event.ActionListener() {
@@ -200,24 +168,17 @@ public class VServicio extends javax.swing.JDialog {
                 txtPECActionPerformed(evt);
             }
         });
-        getContentPane().add(txtPEC, new org.netbeans.lib.awtextra.AbsoluteConstraints(769, 205, 120, -1));
 
         txtDesdeC.setEnabled(false);
-        getContentPane().add(txtDesdeC, new org.netbeans.lib.awtextra.AbsoluteConstraints(203, 152, 80, -1));
 
         jLabel6.setText("Desde:");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(159, 155, -1, -1));
 
         jLabel7.setText("Hasta:");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(159, 208, -1, -1));
 
         txtHastaC.setEnabled(false);
-        getContentPane().add(txtHastaC, new org.netbeans.lib.awtextra.AbsoluteConstraints(203, 205, 80, -1));
 
         jLabel8.setText("Tipo:");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(335, 155, -1, -1));
 
-        buttonGroup2.add(jRadioButton6);
         jRadioButton6.setText("Desayuno");
         jRadioButton6.setEnabled(false);
         jRadioButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -225,110 +186,71 @@ public class VServicio extends javax.swing.JDialog {
                 jRadioButton6ActionPerformed(evt);
             }
         });
-        getContentPane().add(jRadioButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(394, 151, -1, -1));
 
-        buttonGroup2.add(jRadioButton7);
         jRadioButton7.setText("Almuerzo");
         jRadioButton7.setEnabled(false);
-        getContentPane().add(jRadioButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(485, 151, -1, -1));
 
-        buttonGroup2.add(jRadioButton8);
         jRadioButton8.setText("Merienda");
         jRadioButton8.setEnabled(false);
-        getContentPane().add(jRadioButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(572, 151, -1, -1));
 
-        buttonGroup2.add(jRadioButton9);
         jRadioButton9.setText("Cena");
         jRadioButton9.setEnabled(false);
-        getContentPane().add(jRadioButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(659, 151, -1, -1));
 
         jLabel9.setText("Precio Especial:");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(668, 208, -1, -1));
 
         txtPEA.setEnabled(false);
-        getContentPane().add(txtPEA, new org.netbeans.lib.awtextra.AbsoluteConstraints(768, 91, 120, -1));
 
         txtDesdeT.setEnabled(false);
-        getContentPane().add(txtDesdeT, new org.netbeans.lib.awtextra.AbsoluteConstraints(203, 275, 80, -1));
 
         jLabel10.setText("Desde:");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(159, 278, -1, -1));
 
         jLabel11.setText("Hasta:");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(159, 324, -1, -1));
 
         txtHastaT.setEnabled(false);
-        getContentPane().add(txtHastaT, new org.netbeans.lib.awtextra.AbsoluteConstraints(203, 321, 80, -1));
 
         jLabel12.setText("Tipo de Vehiculo:");
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(332, 278, -1, -1));
 
-        buttonGroup3.add(jRadioButton10);
         jRadioButton10.setText("Omnibus");
         jRadioButton10.setEnabled(false);
-        getContentPane().add(jRadioButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(439, 274, -1, -1));
 
-        buttonGroup3.add(jRadioButton11);
         jRadioButton11.setText("Avion");
         jRadioButton11.setEnabled(false);
-        getContentPane().add(jRadioButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(534, 274, -1, -1));
 
         jLabel13.setText("Comodidad:");
-        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(332, 324, 81, -1));
 
-        buttonGroup4.add(jRadioButton12);
         jRadioButton12.setText("Basico");
         jRadioButton12.setEnabled(false);
-        getContentPane().add(jRadioButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(439, 320, -1, -1));
 
-        buttonGroup4.add(jRadioButton13);
         jRadioButton13.setText("Ejecutivo");
         jRadioButton13.setEnabled(false);
-        getContentPane().add(jRadioButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(534, 320, -1, -1));
 
         jLabel14.setText("Seguro:");
-        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(669, 278, -1, -1));
 
         jLabel15.setText("Precio Especial:");
-        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(669, 324, -1, -1));
 
         txtPET.setEnabled(false);
-        getContentPane().add(txtPET, new org.netbeans.lib.awtextra.AbsoluteConstraints(769, 321, 120, -1));
 
         txtSeguroT.setEnabled(false);
-        getContentPane().add(txtSeguroT, new org.netbeans.lib.awtextra.AbsoluteConstraints(769, 275, 120, -1));
-        getContentPane().add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 560, 1060, 10));
-        getContentPane().add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 254, 1060, 10));
 
         txtDesdeE.setEnabled(false);
-        getContentPane().add(txtDesdeE, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 400, 80, -1));
 
         jLabel16.setText("Desde:");
-        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 400, -1, 20));
 
         jLabel17.setText("Hasta:");
-        getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 450, -1, 20));
 
         txtHastaE.setEnabled(false);
-        getContentPane().add(txtHastaE, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 450, 80, -1));
 
         jLabel18.setText("Lugar:");
-        getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 400, -1, 20));
 
         txtLugarE.setEnabled(false);
-        getContentPane().add(txtLugarE, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 400, 180, -1));
 
         jLabel19.setText("Precio Especial:");
-        getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 450, -1, -1));
 
         jLabel20.setText("Seguro:");
-        getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 400, -1, 20));
 
         txtSeguroE.setEnabled(false);
-        getContentPane().add(txtSeguroE, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 400, 120, -1));
 
         txtPEE.setEnabled(false);
-        getContentPane().add(txtPEE, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 450, 120, -1));
 
         botonACEPTAR.setText("ACEPTAR");
         botonACEPTAR.addActionListener(new java.awt.event.ActionListener() {
@@ -336,8 +258,6 @@ public class VServicio extends javax.swing.JDialog {
                 botonACEPTARActionPerformed(evt);
             }
         });
-        getContentPane().add(botonACEPTAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 520, -1, -1));
-        getContentPane().add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 500, 1060, 10));
 
         botonAgregarA.setText("Agregar");
         botonAgregarA.setEnabled(false);
@@ -346,7 +266,6 @@ public class VServicio extends javax.swing.JDialog {
                 botonAgregarAActionPerformed(evt);
             }
         });
-        getContentPane().add(botonAgregarA, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 50, -1, 40));
 
         botonAgregarC.setText("Agregar");
         botonAgregarC.setEnabled(false);
@@ -355,7 +274,6 @@ public class VServicio extends javax.swing.JDialog {
                 botonAgregarCActionPerformed(evt);
             }
         });
-        getContentPane().add(botonAgregarC, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 180, -1, 40));
 
         botonAgregarT.setText("Agregar");
         botonAgregarT.setEnabled(false);
@@ -364,7 +282,6 @@ public class VServicio extends javax.swing.JDialog {
                 botonAgregarTActionPerformed(evt);
             }
         });
-        getContentPane().add(botonAgregarT, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 300, -1, 40));
 
         botonAgregarE.setText("Agregar");
         botonAgregarE.setEnabled(false);
@@ -373,11 +290,390 @@ public class VServicio extends javax.swing.JDialog {
                 botonAgregarEActionPerformed(evt);
             }
         });
-        getContentPane().add(botonAgregarE, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 420, -1, 40));
-        getContentPane().add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 129, 1060, 12));
 
         jComboBox1.setEnabled(false);
-        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 90, 220, -1));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1060, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(20, 20, 20)
+                            .addComponent(jCheckBox1)
+                            .addGap(43, 43, 43)
+                            .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(6, 6, 6)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel1)
+                                .addComponent(jLabel11))
+                            .addGap(10, 10, 10)
+                            .addComponent(txtHastaT, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(49, 49, 49)
+                            .addComponent(jLabel12)
+                            .addGap(119, 119, 119)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(38, 38, 38)
+                                    .addComponent(jRadioButton8))
+                                .addComponent(jRadioButton11))
+                            .addGap(18, 18, 18)
+                            .addComponent(jRadioButton9)
+                            .addGap(59, 59, 59)
+                            .addComponent(txtPEA, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(200, 200, 200)
+                            .addComponent(txtHastaE, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(940, 940, 940)
+                            .addComponent(botonAgregarT))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(670, 670, 670)
+                            .addComponent(jLabel19))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(20, 20, 20)
+                            .addComponent(jCheckBox4))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(203, 203, 203)
+                            .addComponent(txtDesdeT, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(159, 159, 159)
+                            .addComponent(jLabel6))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(390, 390, 390)
+                            .addComponent(txtLugarE, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 1060, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(769, 769, 769)
+                            .addComponent(txtPET, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(667, 667, 667)
+                            .addComponent(jLabel5))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(203, 203, 203)
+                            .addComponent(txtHastaC, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(509, 509, 509)
+                            .addComponent(jRadioButton3))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(570, 570, 570)
+                            .addComponent(jRadioButton4))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(769, 769, 769)
+                            .addComponent(txtSeguroT, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(335, 335, 335)
+                            .addComponent(jLabel8))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(160, 160, 160)
+                            .addComponent(jLabel17))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(390, 390, 390)
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(439, 439, 439)
+                            .addComponent(jRadioButton10))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(485, 485, 485)
+                            .addComponent(jRadioButton7))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(534, 534, 534)
+                            .addComponent(jRadioButton13))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(940, 940, 940)
+                            .addComponent(botonAgregarC))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(454, 454, 454)
+                            .addComponent(jRadioButton2))
+                        .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 1060, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(940, 940, 940)
+                            .addComponent(botonAgregarA))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(203, 203, 203)
+                            .addComponent(txtDesdeA, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(159, 159, 159)
+                            .addComponent(jLabel2))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(200, 200, 200)
+                            .addComponent(txtDesdeE, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(439, 439, 439)
+                            .addComponent(jRadioButton12))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(336, 336, 336)
+                            .addComponent(jLabel3))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(203, 203, 203)
+                            .addComponent(txtHastaA, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(770, 770, 770)
+                            .addComponent(txtSeguroE, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(670, 670, 670)
+                            .addComponent(jLabel20))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(769, 769, 769)
+                            .addComponent(txtPEC, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(669, 669, 669)
+                            .addComponent(jLabel14))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(394, 394, 394)
+                            .addComponent(jRadioButton6))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(336, 336, 336)
+                            .addComponent(jLabel4))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(668, 668, 668)
+                            .addComponent(jLabel9))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(940, 940, 940)
+                            .addComponent(botonAgregarE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(405, 405, 405)
+                            .addComponent(jRadioButton1))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(340, 340, 340)
+                            .addComponent(jLabel18))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(637, 637, 637)
+                            .addComponent(jRadioButton5))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(770, 770, 770)
+                            .addComponent(txtPEE, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(669, 669, 669)
+                            .addComponent(jLabel15))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(160, 160, 160)
+                            .addComponent(jLabel16))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(159, 159, 159)
+                            .addComponent(jLabel10))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(159, 159, 159)
+                            .addComponent(jLabel7))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(20, 20, 20)
+                            .addComponent(jCheckBox3))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(332, 332, 332)
+                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(203, 203, 203)
+                            .addComponent(txtDesdeC, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(20, 20, 20)
+                            .addComponent(jCheckBox2))
+                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 1060, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 1060, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 1060, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(480, 480, 480)
+                            .addComponent(botonACEPTAR))
+                        .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 1060, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 560, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(50, 50, 50)
+                            .addComponent(jCheckBox1))
+                        .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 490, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(29, 29, 29)
+                            .addComponent(jLabel1)
+                            .addGap(270, 270, 270)
+                            .addComponent(jLabel11))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(311, 311, 311)
+                            .addComponent(txtHastaT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(268, 268, 268)
+                            .addComponent(jLabel12))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(141, 141, 141)
+                            .addComponent(jRadioButton8)
+                            .addGap(100, 100, 100)
+                            .addComponent(jRadioButton11))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(141, 141, 141)
+                            .addComponent(jRadioButton9))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(81, 81, 81)
+                            .addComponent(txtPEA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(440, 440, 440)
+                            .addComponent(txtHastaE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(290, 290, 290)
+                            .addComponent(botonAgregarT, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(440, 440, 440)
+                            .addComponent(jLabel19))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(410, 410, 410)
+                            .addComponent(jCheckBox4))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(265, 265, 265)
+                            .addComponent(txtDesdeT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(145, 145, 145)
+                            .addComponent(jLabel6))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(390, 390, 390)
+                            .addComponent(txtLugarE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(244, 244, 244)
+                            .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(311, 311, 311)
+                            .addComponent(txtPET, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(84, 84, 84)
+                            .addComponent(jLabel5))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(195, 195, 195)
+                            .addComponent(txtHastaC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(25, 25, 25)
+                            .addComponent(jRadioButton3))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(25, 25, 25)
+                            .addComponent(jRadioButton4))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(265, 265, 265)
+                            .addComponent(txtSeguroT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(145, 145, 145)
+                            .addComponent(jLabel8))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(440, 440, 440)
+                            .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(80, 80, 80)
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(264, 264, 264)
+                            .addComponent(jRadioButton10))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(141, 141, 141)
+                            .addComponent(jRadioButton7))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(310, 310, 310)
+                            .addComponent(jRadioButton13))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(170, 170, 170)
+                            .addComponent(botonAgregarC, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(25, 25, 25)
+                            .addComponent(jRadioButton2))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(119, 119, 119)
+                            .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(40, 40, 40)
+                            .addComponent(botonAgregarA, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(26, 26, 26)
+                            .addComponent(txtDesdeA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(84, 84, 84)
+                            .addComponent(jLabel2))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(390, 390, 390)
+                            .addComponent(txtDesdeE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(310, 310, 310)
+                            .addComponent(jRadioButton12))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(29, 29, 29)
+                            .addComponent(jLabel3))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(81, 81, 81)
+                            .addComponent(txtHastaA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(390, 390, 390)
+                            .addComponent(txtSeguroE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(390, 390, 390)
+                            .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(195, 195, 195)
+                            .addComponent(txtPEC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(268, 268, 268)
+                            .addComponent(jLabel14))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(141, 141, 141)
+                            .addComponent(jRadioButton6))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(84, 84, 84)
+                            .addComponent(jLabel4))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(198, 198, 198)
+                            .addComponent(jLabel9))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(410, 410, 410)
+                            .addComponent(botonAgregarE, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(25, 25, 25)
+                            .addComponent(jRadioButton1))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(390, 390, 390)
+                            .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(25, 25, 25)
+                            .addComponent(jRadioButton5))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(440, 440, 440)
+                            .addComponent(txtPEE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(314, 314, 314)
+                            .addComponent(jLabel15))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(390, 390, 390)
+                            .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(268, 268, 268)
+                            .addComponent(jLabel10))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(198, 198, 198)
+                            .addComponent(jLabel7))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(300, 300, 300)
+                            .addComponent(jCheckBox3))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(314, 314, 314)
+                            .addComponent(jLabel13))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(142, 142, 142)
+                            .addComponent(txtDesdeC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(180, 180, 180)
+                            .addComponent(jCheckBox2))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(370, 370, 370)
+                            .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(10, 10, 10)
+                    .addComponent(botonACEPTAR)
+                    .addGap(15, 15, 15)
+                    .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -411,14 +707,10 @@ public class VServicio extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_jCheckBox1ActionPerformed
 
-    private void txtPECActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPECActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtPECActionPerformed
-
     private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
         if(jCheckBox2.isSelected())
         {
-            
+
             txtDesdeC.setEnabled(true);
             txtHastaC.setEnabled(true);
             txtPEC.setEnabled(true);
@@ -427,8 +719,7 @@ public class VServicio extends javax.swing.JDialog {
             jRadioButton8.setEnabled(true);
             jRadioButton9.setEnabled(true);
             botonAgregarC.setEnabled(true);
-            
-            
+
         }
         else
         {
@@ -440,18 +731,14 @@ public class VServicio extends javax.swing.JDialog {
             jRadioButton8.setEnabled(false);
             jRadioButton9.setEnabled(false);
             botonAgregarC.setEnabled(false);
-            
+
         }
     }//GEN-LAST:event_jCheckBox2ActionPerformed
-
-    private void jRadioButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton6ActionPerformed
 
     private void jCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox3ActionPerformed
         if(jCheckBox3.isSelected())
         {
-            
+
             txtDesdeT.setEnabled(true);
             txtHastaT.setEnabled(true);
             txtPET.setEnabled(true);
@@ -461,7 +748,7 @@ public class VServicio extends javax.swing.JDialog {
             jRadioButton13.setEnabled(true);
             txtSeguroT.setEnabled(true);
             botonAgregarT.setEnabled(true);
-            
+
         }
         else
         {
@@ -478,16 +765,16 @@ public class VServicio extends javax.swing.JDialog {
     }//GEN-LAST:event_jCheckBox3ActionPerformed
 
     private void jCheckBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox4ActionPerformed
-       if(jCheckBox4.isSelected())
+        if(jCheckBox4.isSelected())
         {
-            
+
             txtDesdeE.setEnabled(true);
             txtHastaE.setEnabled(true);
             txtPEE.setEnabled(true);
             txtLugarE.setEnabled(true);
             txtSeguroE.setEnabled(true);
             botonAgregarE.setEnabled(true);
-            
+
         }
         else
         {
@@ -497,9 +784,17 @@ public class VServicio extends javax.swing.JDialog {
             txtLugarE.setEnabled(false);
             txtSeguroE.setEnabled(false);
             botonAgregarE.setEnabled(false);
-            
+
         }
     }//GEN-LAST:event_jCheckBox4ActionPerformed
+
+    private void txtPECActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPECActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPECActionPerformed
+
+    private void jRadioButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton6ActionPerformed
 
     private void botonACEPTARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonACEPTARActionPerformed
         controlador.ControladorServicio.cerrar();
@@ -509,37 +804,36 @@ public class VServicio extends javax.swing.JDialog {
         controlador.ControladorServicio.agregarAlojamiento();
         botonAgregarA.setEnabled(false);
         jComboBox1.setEnabled(false);
-            txtDesdeA.setEnabled(false);
-            txtDesdeA.setText("");
-            txtHastaA.setEnabled(false);
-            txtHastaA.setText("");
-            txtPEA.setEnabled(false);
-            txtPEA.setText("");
-            jRadioButton1.setEnabled(false);
-            jRadioButton2.setEnabled(false);
-            jRadioButton3.setEnabled(false);
-            jRadioButton4.setEnabled(false);
-            jRadioButton5.setEnabled(false);
-            
-            jCheckBox1.setSelected(false);
-            
-        
+        txtDesdeA.setEnabled(false);
+        txtDesdeA.setText("");
+        txtHastaA.setEnabled(false);
+        txtHastaA.setText("");
+        txtPEA.setEnabled(false);
+        txtPEA.setText("");
+        jRadioButton1.setEnabled(false);
+        jRadioButton2.setEnabled(false);
+        jRadioButton3.setEnabled(false);
+        jRadioButton4.setEnabled(false);
+        jRadioButton5.setEnabled(false);
+
+        jCheckBox1.setSelected(false);
+
     }//GEN-LAST:event_botonAgregarAActionPerformed
 
     private void botonAgregarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarCActionPerformed
         controlador.ControladorServicio.agregarComida();
         botonAgregarC.setEnabled(false);
         txtDesdeC.setEnabled(false);
-        
-            txtHastaC.setEnabled(false);
-            
-            txtPEC.setEnabled(false);
-            
-            jRadioButton6.setEnabled(false);
-            jRadioButton7.setEnabled(false);
-            jRadioButton8.setEnabled(false);
-            jRadioButton9.setEnabled(false);
-            jCheckBox2.setSelected(false);
+
+        txtHastaC.setEnabled(false);
+
+        txtPEC.setEnabled(false);
+
+        jRadioButton6.setEnabled(false);
+        jRadioButton7.setEnabled(false);
+        jRadioButton8.setEnabled(false);
+        jRadioButton9.setEnabled(false);
+        jCheckBox2.setSelected(false);
         //txtDesdeC.setText("");
         //txtHastaC.setText("");
         //txtPEC.setText("");
@@ -549,21 +843,21 @@ public class VServicio extends javax.swing.JDialog {
         controlador.ControladorServicio.agregarTransporte();
         botonAgregarT.setEnabled(false);
         txtDesdeT.setEnabled(false);
-        
-            txtHastaT.setEnabled(false);
-           
-            txtPET.setEnabled(false);
-            
-            jRadioButton10.setEnabled(false);
-            jRadioButton11.setEnabled(false);
-            jRadioButton12.setEnabled(false);
-            jRadioButton13.setEnabled(false);
-            txtSeguroT.setEnabled(false);
-            jCheckBox3.setSelected(false);
-            txtDesdeT.setText("");
-             txtHastaT.setText("");
-             txtHastaT.setText("");
-        
+
+        txtHastaT.setEnabled(false);
+
+        txtPET.setEnabled(false);
+
+        jRadioButton10.setEnabled(false);
+        jRadioButton11.setEnabled(false);
+        jRadioButton12.setEnabled(false);
+        jRadioButton13.setEnabled(false);
+        txtSeguroT.setEnabled(false);
+        jCheckBox3.setSelected(false);
+        txtDesdeT.setText("");
+        txtHastaT.setText("");
+        txtHastaT.setText("");
+
     }//GEN-LAST:event_botonAgregarTActionPerformed
 
     private void botonAgregarEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarEActionPerformed
@@ -571,16 +865,16 @@ public class VServicio extends javax.swing.JDialog {
         botonAgregarE.setEnabled(false);
         txtDesdeE.setEnabled(false);
         txtDesdeE.setText("");
-            txtHastaE.setEnabled(false);
-            txtHastaE.setText("");
-            txtPEE.setEnabled(false);
-            txtPEE.setText("");
-            txtLugarE.setEnabled(false);
-            txtLugarE.setText("");
-            txtSeguroE.setEnabled(false);
-            txtSeguroE.setText("");
-            jCheckBox4.setSelected(false);
-        
+        txtHastaE.setEnabled(false);
+        txtHastaE.setText("");
+        txtPEE.setEnabled(false);
+        txtPEE.setText("");
+        txtLugarE.setEnabled(false);
+        txtLugarE.setText("");
+        txtSeguroE.setEnabled(false);
+        txtSeguroE.setText("");
+        jCheckBox4.setSelected(false);
+
     }//GEN-LAST:event_botonAgregarEActionPerformed
 
     /**
@@ -609,36 +903,322 @@ public class VServicio extends javax.swing.JDialog {
             java.util.logging.Logger.getLogger(VServicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
-        /* Create and display the dialog */
-        //java.awt.EventQueue.invokeLater(new Runnable() {
-          //  public void run() {
-          //      VServicio2 dialog = new VServicio2(new javax.swing.JFrame(), true);
-           //     dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-           //         @Override
-          //          public void windowClosing(java.awt.event.WindowEvent e) {
-           //             System.exit(0);
-           //         }
-           //     });
-          //      dialog.setVisible(true);
-        //    }
-      //  });
         //</editor-fold>
 
-        /* Create and display the dialog */
-        //java.awt.EventQueue.invokeLater(new Runnable() {
-          //  public void run() {
-          //      VServicio dialog = new VServicio(new javax.swing.JFrame(), true);
-           //     dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-           //         @Override
-          //          public void windowClosing(java.awt.event.WindowEvent e) {
-           //             System.exit(0);
-           //         }
-           //     });
-          //      dialog.setVisible(true);
-        //    }
-      //  });
-      
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new VServicio().setVisible(true);
+            }
+        });
+    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botonACEPTAR;
+    private javax.swing.JButton botonAgregarA;
+    private javax.swing.JButton botonAgregarC;
+    private javax.swing.JButton botonAgregarE;
+    private javax.swing.JButton botonAgregarT;
+    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JCheckBox jCheckBox2;
+    private javax.swing.JCheckBox jCheckBox3;
+    private javax.swing.JCheckBox jCheckBox4;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton10;
+    private javax.swing.JRadioButton jRadioButton11;
+    private javax.swing.JRadioButton jRadioButton12;
+    private javax.swing.JRadioButton jRadioButton13;
+    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JRadioButton jRadioButton3;
+    private javax.swing.JRadioButton jRadioButton4;
+    private javax.swing.JRadioButton jRadioButton5;
+    private javax.swing.JRadioButton jRadioButton6;
+    private javax.swing.JRadioButton jRadioButton7;
+    private javax.swing.JRadioButton jRadioButton8;
+    private javax.swing.JRadioButton jRadioButton9;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JSeparator jSeparator7;
+    private javax.swing.JTextField txtDesdeA;
+    private javax.swing.JTextField txtDesdeC;
+    private javax.swing.JTextField txtDesdeE;
+    private javax.swing.JTextField txtDesdeT;
+    private javax.swing.JTextField txtHastaA;
+    private javax.swing.JTextField txtHastaC;
+    private javax.swing.JTextField txtHastaE;
+    private javax.swing.JTextField txtHastaT;
+    private javax.swing.JTextField txtLugarE;
+    private javax.swing.JTextField txtPEA;
+    private javax.swing.JTextField txtPEC;
+    private javax.swing.JTextField txtPEE;
+    private javax.swing.JTextField txtPET;
+    private javax.swing.JTextField txtSeguroE;
+    private javax.swing.JTextField txtSeguroT;
+    // End of variables declaration//GEN-END:variables
+
+    public JButton getBotonACEPTAR() {
+        return botonACEPTAR;
+    }
+
+    public void setBotonACEPTAR(JButton botonACEPTAR) {
+        this.botonACEPTAR = botonACEPTAR;
+    }
+
+    public JButton getBotonAgregarA() {
+        return botonAgregarA;
+    }
+
+    public void setBotonAgregarA(JButton botonAgregarA) {
+        this.botonAgregarA = botonAgregarA;
+    }
+
+    public JButton getBotonAgregarC() {
+        return botonAgregarC;
+    }
+
+    public void setBotonAgregarC(JButton botonAgregarC) {
+        this.botonAgregarC = botonAgregarC;
+    }
+
+    public JButton getBotonAgregarE() {
+        return botonAgregarE;
+    }
+
+    public void setBotonAgregarE(JButton botonAgregarE) {
+        this.botonAgregarE = botonAgregarE;
+    }
+
+    public JButton getBotonAgregarT() {
+        return botonAgregarT;
+    }
+
+    public void setBotonAgregarT(JButton botonAgregarT) {
+        this.botonAgregarT = botonAgregarT;
+    }
+
+    public JCheckBox getjCheckBox1() {
+        return jCheckBox1;
+    }
+
+    public void setjCheckBox1(JCheckBox jCheckBox1) {
+        this.jCheckBox1 = jCheckBox1;
+    }
+
+    public JCheckBox getjCheckBox2() {
+        return jCheckBox2;
+    }
+
+    public void setjCheckBox2(JCheckBox jCheckBox2) {
+        this.jCheckBox2 = jCheckBox2;
+    }
+
+    public JCheckBox getjCheckBox3() {
+        return jCheckBox3;
+    }
+
+    public void setjCheckBox3(JCheckBox jCheckBox3) {
+        this.jCheckBox3 = jCheckBox3;
+    }
+
+    public JCheckBox getjCheckBox4() {
+        return jCheckBox4;
+    }
+
+    public void setjCheckBox4(JCheckBox jCheckBox4) {
+        this.jCheckBox4 = jCheckBox4;
+    }
+
+    public JComboBox<String> getjComboBox1() {
+        return jComboBox1;
+    }
+
+    public void setjComboBox1(JComboBox<String> jComboBox1) {
+        this.jComboBox1 = jComboBox1;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel10() {
+        return jLabel10;
+    }
+
+    public void setjLabel10(JLabel jLabel10) {
+        this.jLabel10 = jLabel10;
+    }
+
+    public JLabel getjLabel11() {
+        return jLabel11;
+    }
+
+    public void setjLabel11(JLabel jLabel11) {
+        this.jLabel11 = jLabel11;
+    }
+
+    public JLabel getjLabel12() {
+        return jLabel12;
+    }
+
+    public void setjLabel12(JLabel jLabel12) {
+        this.jLabel12 = jLabel12;
+    }
+
+    public JLabel getjLabel13() {
+        return jLabel13;
+    }
+
+    public void setjLabel13(JLabel jLabel13) {
+        this.jLabel13 = jLabel13;
+    }
+
+    public JLabel getjLabel14() {
+        return jLabel14;
+    }
+
+    public void setjLabel14(JLabel jLabel14) {
+        this.jLabel14 = jLabel14;
+    }
+
+    public JLabel getjLabel15() {
+        return jLabel15;
+    }
+
+    public void setjLabel15(JLabel jLabel15) {
+        this.jLabel15 = jLabel15;
+    }
+
+    public JLabel getjLabel16() {
+        return jLabel16;
+    }
+
+    public void setjLabel16(JLabel jLabel16) {
+        this.jLabel16 = jLabel16;
+    }
+
+    public JLabel getjLabel17() {
+        return jLabel17;
+    }
+
+    public void setjLabel17(JLabel jLabel17) {
+        this.jLabel17 = jLabel17;
+    }
+
+    public JLabel getjLabel18() {
+        return jLabel18;
+    }
+
+    public void setjLabel18(JLabel jLabel18) {
+        this.jLabel18 = jLabel18;
+    }
+
+    public JLabel getjLabel19() {
+        return jLabel19;
+    }
+
+    public void setjLabel19(JLabel jLabel19) {
+        this.jLabel19 = jLabel19;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public void setjLabel2(JLabel jLabel2) {
+        this.jLabel2 = jLabel2;
+    }
+
+    public JLabel getjLabel20() {
+        return jLabel20;
+    }
+
+    public void setjLabel20(JLabel jLabel20) {
+        this.jLabel20 = jLabel20;
+    }
+
+    public JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    public void setjLabel3(JLabel jLabel3) {
+        this.jLabel3 = jLabel3;
+    }
+
+    public JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public void setjLabel4(JLabel jLabel4) {
+        this.jLabel4 = jLabel4;
+    }
+
+    public JLabel getjLabel5() {
+        return jLabel5;
+    }
+
+    public void setjLabel5(JLabel jLabel5) {
+        this.jLabel5 = jLabel5;
+    }
+
+    public JLabel getjLabel6() {
+        return jLabel6;
+    }
+
+    public void setjLabel6(JLabel jLabel6) {
+        this.jLabel6 = jLabel6;
+    }
+
+    public JLabel getjLabel7() {
+        return jLabel7;
+    }
+
+    public void setjLabel7(JLabel jLabel7) {
+        this.jLabel7 = jLabel7;
+    }
+
+    public JLabel getjLabel8() {
+        return jLabel8;
+    }
+
+    public void setjLabel8(JLabel jLabel8) {
+        this.jLabel8 = jLabel8;
+    }
+
+    public JLabel getjLabel9() {
+        return jLabel9;
+    }
+
+    public void setjLabel9(JLabel jLabel9) {
+        this.jLabel9 = jLabel9;
     }
 
     public JRadioButton getjRadioButton1() {
@@ -745,7 +1325,63 @@ public class VServicio extends javax.swing.JDialog {
         this.jRadioButton9 = jRadioButton9;
     }
 
-     public JTextField getTxtDesdeA() {
+    public JSeparator getjSeparator1() {
+        return jSeparator1;
+    }
+
+    public void setjSeparator1(JSeparator jSeparator1) {
+        this.jSeparator1 = jSeparator1;
+    }
+
+    public JSeparator getjSeparator2() {
+        return jSeparator2;
+    }
+
+    public void setjSeparator2(JSeparator jSeparator2) {
+        this.jSeparator2 = jSeparator2;
+    }
+
+    public JSeparator getjSeparator3() {
+        return jSeparator3;
+    }
+
+    public void setjSeparator3(JSeparator jSeparator3) {
+        this.jSeparator3 = jSeparator3;
+    }
+
+    public JSeparator getjSeparator4() {
+        return jSeparator4;
+    }
+
+    public void setjSeparator4(JSeparator jSeparator4) {
+        this.jSeparator4 = jSeparator4;
+    }
+
+    public JSeparator getjSeparator5() {
+        return jSeparator5;
+    }
+
+    public void setjSeparator5(JSeparator jSeparator5) {
+        this.jSeparator5 = jSeparator5;
+    }
+
+    public JSeparator getjSeparator6() {
+        return jSeparator6;
+    }
+
+    public void setjSeparator6(JSeparator jSeparator6) {
+        this.jSeparator6 = jSeparator6;
+    }
+
+    public JSeparator getjSeparator7() {
+        return jSeparator7;
+    }
+
+    public void setjSeparator7(JSeparator jSeparator7) {
+        this.jSeparator7 = jSeparator7;
+    }
+
+    public JTextField getTxtDesdeA() {
         return txtDesdeA;
     }
 
@@ -754,11 +1390,11 @@ public class VServicio extends javax.swing.JDialog {
     }
 
     public JTextField getTxtDesdeC() {
-        return txtDesdeT;
+        return txtDesdeC;
     }
 
     public void setTxtDesdeC(JTextField txtDesdeC) {
-        this.txtDesdeT = txtDesdeC;
+        this.txtDesdeC = txtDesdeC;
     }
 
     public JTextField getTxtDesdeE() {
@@ -770,11 +1406,11 @@ public class VServicio extends javax.swing.JDialog {
     }
 
     public JTextField getTxtDesdeT() {
-        return txtDesdeC;
+        return txtDesdeT;
     }
 
     public void setTxtDesdeT(JTextField txtDesdeT) {
-        this.txtDesdeC = txtDesdeT;
+        this.txtDesdeT = txtDesdeT;
     }
 
     public JTextField getTxtHastaA() {
@@ -786,11 +1422,11 @@ public class VServicio extends javax.swing.JDialog {
     }
 
     public JTextField getTxtHastaC() {
-        return txtHastaT;
+        return txtHastaC;
     }
 
     public void setTxtHastaC(JTextField txtHastaC) {
-        this.txtHastaT = txtHastaC;
+        this.txtHastaC = txtHastaC;
     }
 
     public JTextField getTxtHastaE() {
@@ -802,11 +1438,11 @@ public class VServicio extends javax.swing.JDialog {
     }
 
     public JTextField getTxtHastaT() {
-        return txtHastaC;
+        return txtHastaT;
     }
 
     public void setTxtHastaT(JTextField txtHastaT) {
-        this.txtHastaC = txtHastaT;
+        this.txtHastaT = txtHastaT;
     }
 
     public JTextField getTxtLugarE() {
@@ -826,11 +1462,11 @@ public class VServicio extends javax.swing.JDialog {
     }
 
     public JTextField getTxtPEC() {
-        return txtPET;
+        return txtPEC;
     }
 
     public void setTxtPEC(JTextField txtPEC) {
-        this.txtPET = txtPEC;
+        this.txtPEC = txtPEC;
     }
 
     public JTextField getTxtPEE() {
@@ -842,19 +1478,11 @@ public class VServicio extends javax.swing.JDialog {
     }
 
     public JTextField getTxtPET() {
-        return txtPEC;
+        return txtPET;
     }
 
     public void setTxtPET(JTextField txtPET) {
-        this.txtPEC = txtPET;
-    }
-
-    public JTextField getTxtSeguroC() {
-        return txtSeguroT;
-    }
-
-    public void setTxtSeguroC(JTextField txtSeguroC) {
-        this.txtSeguroT = txtSeguroC;
+        this.txtPET = txtPET;
     }
 
     public JTextField getTxtSeguroE() {
@@ -865,83 +1493,16 @@ public class VServicio extends javax.swing.JDialog {
         this.txtSeguroE = txtSeguroE;
     }
 
-    public JComboBox<String> getjComboBox1() {
-        return jComboBox1;
+    public JTextField getTxtSeguroT() {
+        return txtSeguroT;
     }
 
-    public void setjComboBox1(JComboBox<String> jComboBox1) {
-        this.jComboBox1 = jComboBox1;
+    public void setTxtSeguroT(JTextField txtSeguroT) {
+        this.txtSeguroT = txtSeguroT;
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botonACEPTAR;
-    private javax.swing.JButton botonAgregarA;
-    private javax.swing.JButton botonAgregarC;
-    private javax.swing.JButton botonAgregarE;
-    private javax.swing.JButton botonAgregarT;
-    private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.ButtonGroup buttonGroup2;
-    private javax.swing.ButtonGroup buttonGroup3;
-    private javax.swing.ButtonGroup buttonGroup4;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton10;
-    private javax.swing.JRadioButton jRadioButton11;
-    private javax.swing.JRadioButton jRadioButton12;
-    private javax.swing.JRadioButton jRadioButton13;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
-    private javax.swing.JRadioButton jRadioButton5;
-    private javax.swing.JRadioButton jRadioButton6;
-    private javax.swing.JRadioButton jRadioButton7;
-    private javax.swing.JRadioButton jRadioButton8;
-    private javax.swing.JRadioButton jRadioButton9;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JSeparator jSeparator4;
-    private javax.swing.JSeparator jSeparator5;
-    private javax.swing.JSeparator jSeparator6;
-    private javax.swing.JSeparator jSeparator7;
-    private javax.swing.JTextField txtDesdeA;
-    private javax.swing.JTextField txtDesdeC;
-    private javax.swing.JTextField txtDesdeE;
-    private javax.swing.JTextField txtDesdeT;
-    private javax.swing.JTextField txtHastaA;
-    private javax.swing.JTextField txtHastaC;
-    private javax.swing.JTextField txtHastaE;
-    private javax.swing.JTextField txtHastaT;
-    private javax.swing.JTextField txtLugarE;
-    private javax.swing.JTextField txtPEA;
-    private javax.swing.JTextField txtPEC;
-    private javax.swing.JTextField txtPEE;
-    private javax.swing.JTextField txtPET;
-    private javax.swing.JTextField txtSeguroE;
-    private javax.swing.JTextField txtSeguroT;
-    // End of variables declaration//GEN-END:variables
+
+
+
+
 }

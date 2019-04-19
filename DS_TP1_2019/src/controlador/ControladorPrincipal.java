@@ -46,22 +46,24 @@ public class ControladorPrincipal {
         }
       //agregar paquete
       public static void agregarPaquete(){
-           Object[] obj = new Object[6];
-           obj[0]= ventc.getjTextField1().getText();
-           obj[1]= ventc.getjTextField2().getText();
-           obj[2]= ventc.getjTextField3().getText();
-           obj[3]= "";
-           obj[4]= "";
-           obj[5]= Estado.Inactivo;
-           model.addRow(obj);   
-//            listaPaquete.add(new Paquete(Integer.parseInt(ventc.getjTextField1().getText()),"nombre","descripcion","itinerario","condicomerc",0,0,"tucuman",listaCiudad,listaServicios,Estado.Inactivo));
-//              for (Object col : listaPaquete) {
-//              model.addColumn(col);
-//          }
-//            ventp.getTblPaquetes().setModel(model); 
-
-
-
+            listaPaquete.add(new Paquete(Integer.parseInt(ventc.getjTextField1().getText()),"nombre","descripcion","itinerario","condicomerc",0,0,"tucuman",listaCiudad,listaServicios,Estado.Inactivo));
+            mostrarPaquete();
+     } 
+      
+        //MOSTRAR PAQUETES  
+          public static void mostrarPaquete(){
+            Object[] obj = new Object[model.getColumnCount()];
+            for (int i = listaPaquete.size()-1; i < listaPaquete.size(); i++) {
+                obj[0]= listaPaquete.get(i).getNumero();
+                System.out.println(listaPaquete.size());
+                obj[1]= listaPaquete.get(i).getNombre();
+                obj[2]= listaPaquete.get(i).getDias();
+                obj[3]= listaPaquete.get(i).getServicios();
+                obj[4]= listaPaquete.get(i).getPrecioTarifas(i);
+                obj[5]= listaPaquete.get(i).getEstado();  
+                model.addRow(obj);  
+          } 
+            ventp.getTblPaquetes().setModel(model); 
      } 
       
       //ELIMINAR FILA SERVICIO

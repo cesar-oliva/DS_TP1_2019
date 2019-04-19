@@ -15,7 +15,7 @@ import javax.swing.table.DefaultTableModel;
  * @author CESAR
  */
 public class ControladorServicio {
-    static VServicio vents = new VServicio(null,true);
+    static VServicio vents = new VServicio();
     static int ca=0, cc=0, ct=0, ce=0;
   //iniciar
      public static void iniciar(){
