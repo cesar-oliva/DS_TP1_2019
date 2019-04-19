@@ -5,8 +5,9 @@
  */
 package controlador;
 
-import static controlador.ControladorCrear.ventc;
+import static controlador.ControladorCrear.*;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import modelo.*;
 import vista.*;
@@ -18,7 +19,7 @@ import vista.*;
 public class ControladorPrincipal {
     static VPrincipal ventp = new VPrincipal();
     static DefaultTableModel model= new DefaultTableModel();
-    static ArrayList<Paquete> lista = new ArrayList<Paquete>();
+    static ArrayList<Paquete> listaPaquete = new ArrayList<Paquete>();
     //iniciar
      public static void iniciar(){
        ventp.setVisible(true);
@@ -52,8 +53,43 @@ public class ControladorPrincipal {
            obj[3]= "";
            obj[4]= "";
            obj[5]= Estado.Inactivo;
-           model.addRow(obj);    
+           model.addRow(obj);   
+//            listaPaquete.add(new Paquete(Integer.parseInt(ventc.getjTextField1().getText()),"nombre","descripcion","itinerario","condicomerc",0,0,"tucuman",listaCiudad,listaServicios,Estado.Inactivo));
+//              for (Object col : listaPaquete) {
+//              model.addColumn(col);
+//          }
+//            ventp.getTblPaquetes().setModel(model); 
+
+
+
      } 
       
-      public static void estadoActivo(){}
+      //ELIMINAR FILA SERVICIO
+       public static void modificarFilaPaquete(){
+        DefaultTableModel eliminar = (DefaultTableModel)ventc.getjTable2().getModel();
+        int fila;
+        int resp;
+        try{
+           fila = ventp.getTblPaquetes().getSelectedRow(); 
+           if(fila==-1){
+               JOptionPane.showMessageDialog(null,"Debe seleccionar una fila a modificar");
+           }else{
+               resp= JOptionPane.showConfirmDialog(null, "¿quiere modificar la fila seleccionada?","Modificar",JOptionPane.YES_NO_OPTION);
+               if(resp==JOptionPane.YES_OPTION){
+                   //eliminar.removeRow(fila);
+               }
+           }
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null,"No se pudo modificar el registro seleccionado","Error",JOptionPane.ERROR_MESSAGE);
+        }
+        }
+      
+      
+      public static void cambiarEstado(){
+      modificarFilaPaquete();
+      
+      }
+      
+ 
+      
 }

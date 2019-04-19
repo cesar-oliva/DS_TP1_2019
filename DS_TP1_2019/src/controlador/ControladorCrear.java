@@ -25,6 +25,7 @@ public class ControladorCrear {
     static DefaultTableModel modelserv= new DefaultTableModel();
     static ArrayList<Base> listaBase = new ArrayList<>();
     static ArrayList<Ciudad> listaCiudad =new ArrayList<>();
+    static ArrayList<Tarifa> listaServicios =new ArrayList<>();
     
     public static void iniciar(){
        ventc.getjTextField1().setText(Integer.toString(asignarNumero()));

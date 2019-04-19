@@ -20,7 +20,7 @@ public class Paquete {
     private String condicionesComerciales;
     private int dias;
     private int noches;
-    private Ciudad origen;
+    private String origen;
     private ArrayList<Ciudad> destinos;
     private ArrayList<Tarifa> tarifas;
     private Estado estado;
@@ -28,7 +28,7 @@ public class Paquete {
 
     //constructores
 
-    public Paquete(int numero, String nombre, String descripcion, String itinerario, String condicionesComerciales, int dias, int noches, Ciudad origen, ArrayList<Ciudad> destinos, ArrayList<Tarifa> tarifas, Estado estado) {
+    public Paquete(int numero, String nombre, String descripcion, String itinerario, String condicionesComerciales, int dias, int noches, String origen, ArrayList<Ciudad> destinos, ArrayList<Tarifa> tarifas, Estado estado) {
         this.numero = numero;
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -110,11 +110,11 @@ public class Paquete {
         this.noches = noches;
     }
 
-    public Ciudad getOrigen() {
+    public String getOrigen() {
         return origen;
     }
 
-    public void setOrigen(Ciudad origen) {
+    public void setOrigen(String origen) {
         this.origen = origen;
     }
 
