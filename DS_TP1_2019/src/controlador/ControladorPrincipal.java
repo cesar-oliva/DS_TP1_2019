@@ -20,6 +20,7 @@ public class ControladorPrincipal {
     static VPrincipal ventp = new VPrincipal();
     static DefaultTableModel model= new DefaultTableModel();
     static ArrayList<Paquete> listaPaquete = new ArrayList<Paquete>();
+
     //iniciar
      public static void iniciar(){
        ventp.setVisible(true);
@@ -46,20 +47,26 @@ public class ControladorPrincipal {
         }
       //agregar paquete
       public static void agregarPaquete(){
-            listaPaquete.add(new Paquete(Integer.parseInt(ventc.getjTextField1().getText()),"nombre","descripcion","itinerario","condicomerc",0,0,"tucuman",listaCiudad,listaServicios,Estado.Inactivo));
+          int fila = ventc.getjTable2().getRowCount();
+          System.out.println(fila);
+          if(fila == 0){
+          JOptionPane.showMessageDialog(null,"Debe seleccionar al menos un servicio antes de crear el paquete");    
+          }else{
+            listaPaquete.add(new Paquete(Integer.parseInt(ventc.getjTextField1().getText()),ventc.getjTextField2().getText(),ventc.getjTextArea2().getText(),ventc.getjTextArea1().getText(),ventc.getjTextArea3().getText(),Integer.parseInt(ventc.getjTextField3().getText()),Integer.parseInt(ventc.getjTextField4().getText()),(String)ventc.getjComboBox3().getSelectedItem(),ventc.getjTable1().getRowCount(),2000f,ventc.getjTable2().getRowCount(),Estado.Inactivo));
             mostrarPaquete();
-     } 
+            controlador.ControladorCrear.cerrar();
+          }  
+        } 
       
         //MOSTRAR PAQUETES  
           public static void mostrarPaquete(){
             Object[] obj = new Object[model.getColumnCount()];
             for (int i = listaPaquete.size()-1; i < listaPaquete.size(); i++) {
                 obj[0]= listaPaquete.get(i).getNumero();
-                System.out.println(listaPaquete.size());
                 obj[1]= listaPaquete.get(i).getNombre();
                 obj[2]= listaPaquete.get(i).getDias();
                 obj[3]= listaPaquete.get(i).getServicios();
-                obj[4]= listaPaquete.get(i).getPrecioTarifas(i);
+                obj[4]= listaPaquete.get(i).getTarifas();
                 obj[5]= listaPaquete.get(i).getEstado();  
                 model.addRow(obj);  
           } 
@@ -68,6 +75,7 @@ public class ControladorPrincipal {
       
       //ELIMINAR FILA SERVICIO
        public static void modificarFilaPaquete(){
+//        Object[] obj = new Object[model.getColumnCount()];   
         DefaultTableModel eliminar = (DefaultTableModel)ventc.getjTable2().getModel();
         int fila;
         int resp;
@@ -78,7 +86,8 @@ public class ControladorPrincipal {
            }else{
                resp= JOptionPane.showConfirmDialog(null, "¿quiere modificar la fila seleccionada?","Modificar",JOptionPane.YES_NO_OPTION);
                if(resp==JOptionPane.YES_OPTION){
-                   //eliminar.removeRow(fila);
+//                   obj[5]= listaPaquete.get(fila-1).getEstado().Activo; 
+//                   model.addRow(obj); 
                }
            }
         }catch(Exception e){
