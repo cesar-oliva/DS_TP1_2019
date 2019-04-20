@@ -15,9 +15,8 @@ public class Alojamiento extends Servicio {
     
     //constructores
 
-    public Alojamiento(int desde, int hasta, Float precioEspecial,Estrella estrella) {
+    public Alojamiento(int desde, int hasta, Float precioEspecial) {
         super(desde, hasta, precioEspecial);
-        this.estrella=estrella;
     }
 
     

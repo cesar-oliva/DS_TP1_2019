@@ -14,24 +14,23 @@ import vista.*;
 
 /**
  *
- * @author Carolina
+ * @author CESAR
  */
 public class ControladorPrincipal {
     static VPrincipal ventp = new VPrincipal();
     static DefaultTableModel model= new DefaultTableModel();
     static ArrayList<Paquete> listaPaquete = new ArrayList<Paquete>();
 
-    //iniciar
+    //INICIAR
      public static void iniciar(){
        ventp.setVisible(true);
        cargarGrilla();
       }
+     //CERRAR
      public static void cerrar(){
        ventp.setVisible(false);
       }
-     
-     
-     // cargar grilla
+     // CARGAR GRILLA
       public static void cargarGrilla(){
         ArrayList<Object> dato =new ArrayList<Object>();
         dato.add("Nro");
@@ -45,19 +44,31 @@ public class ControladorPrincipal {
           }
         ventp.getTblPaquetes().setModel(model);
         }
-      //agregar paquete
+      //AGREGAR PAQUETE
       public static void agregarPaquete(){
+          int resp  = validarCrear();
+          if(resp==0){
           int fila = ventc.getjTable2().getRowCount();
-          System.out.println(fila);
           if(fila == 0){
           JOptionPane.showMessageDialog(null,"Debe seleccionar al menos un servicio antes de crear el paquete");    
           }else{
             listaPaquete.add(new Paquete(Integer.parseInt(ventc.getjTextField1().getText()),ventc.getjTextField2().getText(),ventc.getjTextArea2().getText(),ventc.getjTextArea1().getText(),ventc.getjTextArea3().getText(),Integer.parseInt(ventc.getjTextField3().getText()),Integer.parseInt(ventc.getjTextField4().getText()),(String)ventc.getjComboBox3().getSelectedItem(),ventc.getjTable1().getRowCount(),2000f,ventc.getjTable2().getRowCount(),Estado.Inactivo));
             mostrarPaquete();
             controlador.ControladorCrear.cerrar();
-          }  
+             //LIMPIEZA DE FORMULARIO
+            ventc.getjTextField2().setText("");
+            ventc.getjTextField3().setText("");
+            ventc.getjTextField4().setText("");
+            ventc.getjTextArea1().setText("");
+            ventc.getjTextArea2().setText("");
+            ventc.getjTextArea3().setText("");
+            DefaultTableModel modeloCiudad = (DefaultTableModel) ventc.getjTable1().getModel();
+            DefaultTableModel modeloServicio = (DefaultTableModel) ventc.getjTable2().getModel();
+            while(modeloCiudad.getRowCount()>0)modeloCiudad.removeRow(0);
+            while(modeloServicio.getRowCount()>0)modeloServicio.removeRow(0);
+          }
+          }
         } 
-      
         //MOSTRAR PAQUETES  
           public static void mostrarPaquete(){
             Object[] obj = new Object[model.getColumnCount()];
@@ -72,8 +83,7 @@ public class ControladorPrincipal {
           } 
             ventp.getTblPaquetes().setModel(model); 
      } 
-      
-      //ELIMINAR FILA SERVICIO
+      //MODIFICAR FILA PAQUETE
        public static void modificarFilaPaquete(){
 //        Object[] obj = new Object[model.getColumnCount()];   
         DefaultTableModel eliminar = (DefaultTableModel)ventc.getjTable2().getModel();
@@ -94,13 +104,8 @@ public class ControladorPrincipal {
             JOptionPane.showMessageDialog(null,"No se pudo modificar el registro seleccionado","Error",JOptionPane.ERROR_MESSAGE);
         }
         }
-      
-      
+//MODIFICAR ESTADO
       public static void cambiarEstado(){
       modificarFilaPaquete();
-      
-      }
-      
- 
-      
+      }  
 }

@@ -17,7 +17,7 @@ import vista.*;
 
 /**
  *
- * @author Carolina
+ * @author CESAR
  */
 public class ControladorCrear {
     static VCrear ventc = new VCrear();
@@ -27,18 +27,21 @@ public class ControladorCrear {
     static ArrayList<Ciudad> listaCiudad =new ArrayList<>();
     static ArrayList<Tarifa> listaServicios =new ArrayList<>();
     
+    //INICIAR
     public static void iniciar(){
        ventc.getjTextField1().setText(Integer.toString(asignarNumero()));
        ventc.setVisible(true);
-      
        cargarGrillaDestino();
        cargarGrillaServicio();
     }
+    //CERRAR
     public static void cerrar(){
        ventc.dispose();
        ventp.setVisible(true);
       }
+    //CARGAR COMBO CIUDAD
     public static void cargarComboCiudad(){
+        listaCiudad.add(new Ciudad(0000,"Seleccione"));
         listaCiudad.add(new Ciudad(1001,"Buenos Aires"));
         listaCiudad.add(new Ciudad(5000,"Cordoba"));
         listaCiudad.add(new Ciudad(5500,"Mendoza"));
@@ -51,8 +54,9 @@ public class ControladorCrear {
               vents.getjComboBox1().addItem(listaCiudad.get(i).getNombre());
             }
         }
-    
+    //CARGAR COMBO BASE
     public static void cargarComboBase(){
+        listaBase.add(new Base("Seleccione",0));
         listaBase.add(new Base("Simple",1));
         listaBase.add(new Base("Doble",2));
         listaBase.add(new Base("Triple",3));
@@ -63,6 +67,7 @@ public class ControladorCrear {
            ventc.getjComboBox2().addItem(listaBase.get(i).getDescripcion());  
         }
     }
+    //CARGAR GRILLA DESTINO
      public static void cargarGrillaDestino(){
         ArrayList<Object> dest =new ArrayList<>();
         dest.add("Codigo Postal");
@@ -71,7 +76,6 @@ public class ControladorCrear {
               modeldest.addColumn(col);
           }
         ventc.getjTable1().setModel(modeldest);
-        
          //MODIFICAR TAMAÑO DE COLUMNAS
         ventc.getjTable1().getColumnModel().getColumn(0).setPreferredWidth(100);
         ventc.getjTable1().getColumnModel().getColumn(1).setPreferredWidth(405);
@@ -86,7 +90,7 @@ public class ControladorCrear {
         centrar.setHorizontalAlignment(SwingConstants.CENTER);
         ventc.getjTable1().getColumnModel().getColumn(0).setCellRenderer(centrar);
               }
-     
+     //AGREGAR DESTINO
      public static void agregarDestino(){
            String res = (String) ventc.getjComboBox4().getSelectedItem();
            Object[] obj = new Object[2];
@@ -97,8 +101,8 @@ public class ControladorCrear {
                }
         }
            modeldest.addRow(obj);
-     }              
-                   
+     }      
+     //CARGAR GRILLA SERVICIO
      public static void cargarGrillaServicio(){
         ArrayList<Object> serv =new ArrayList<>();
         serv.add("CodServ");
@@ -110,7 +114,6 @@ public class ControladorCrear {
               modelserv.addColumn(col);
           }
         ventc.getjTable2().setModel(modelserv);
-        
          //MODIFICAR TAMAÑO DE COLUMNAS
         ventc.getjTable2().getColumnModel().getColumn(0).setPreferredWidth(60);
         ventc.getjTable2().getColumnModel().getColumn(1).setPreferredWidth(150);
@@ -128,7 +131,6 @@ public class ControladorCrear {
         centrar.setHorizontalAlignment(SwingConstants.CENTER);
         ventc.getjTable2().getColumnModel().getColumn(0).setCellRenderer(centrar);
               } 
-     
        //ELIMINAR FILA DESTINO
        public static void eliminarFilaDestino(){
         DefaultTableModel eliminar = (DefaultTableModel)ventc.getjTable1().getModel();   
@@ -148,7 +150,6 @@ public class ControladorCrear {
             JOptionPane.showMessageDialog(null,"No se pudo eliminar el registro seleccionado","Error",JOptionPane.ERROR_MESSAGE);
         }
         }
-
         //ELIMINAR FILA SERVICIO
        public static void eliminarFilaServicio(){
         DefaultTableModel eliminar = (DefaultTableModel)ventc.getjTable2().getModel();
@@ -168,10 +169,30 @@ public class ControladorCrear {
             JOptionPane.showMessageDialog(null,"No se pudo eliminar el registro seleccionado","Error",JOptionPane.ERROR_MESSAGE);
         }
         }
-
-         public static void agregarServicio(){
-   
-     }  
+         //VALIDAR DATOS CARGADOS CREAR
+        public static int validarCrear(){
+       if(ventc.getjTextField2().getText().equals("")){
+           JOptionPane.showMessageDialog(null,"No se pude crear paquete sin nombre","Error",JOptionPane.ERROR_MESSAGE);
+           return(1);
+       }
+       if(ventc.getjTextField3().getText().equals("")||ventc.getjTextField4().getText()==""){
+           JOptionPane.showMessageDialog(null,"No se pude crear paquete sin dias","Error",JOptionPane.ERROR_MESSAGE);
+           return(1); 
+       }
+       if(((String)ventc.getjComboBox3().getSelectedItem()).equals("Seleccione")== true){
+           JOptionPane.showMessageDialog(null,"No se pude crear paquete sin ciudad origen","Error",JOptionPane.ERROR_MESSAGE);
+           return(1);
+        }
+       if(((String)ventc.getjComboBox4().getSelectedItem()).equals("Seleccione")== true){
+           JOptionPane.showMessageDialog(null,"No se pude crear paquete sin ciudad destino","Error",JOptionPane.ERROR_MESSAGE);
+           return(1);
+        }
+       if(((String)ventc.getjComboBox2().getSelectedItem()).equals("Seleccione")== true){
+           JOptionPane.showMessageDialog(null,"No se pude crear paquete sin elegir base","Error",JOptionPane.ERROR_MESSAGE);
+           return(1);
+        }
+       return(0);
+        }
          //ASIGNACION DE NUMERO ID_PAQUETES
         public static int asignarNumero(){
         int filas = ventp.getTblPaquetes().getRowCount();
@@ -182,8 +203,5 @@ public class ControladorCrear {
             }
         }
         return(filas+1);
-       }  
-      
-         
-         
+       }         
 }

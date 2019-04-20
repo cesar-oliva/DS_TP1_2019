@@ -13,9 +13,8 @@ public class Comida extends Servicio {
     //atributos
     private TipoComida tipo;
 
-    public Comida(int desde, int hasta, Float precioEspecial, TipoComida tipo) {
+    public Comida(int desde, int hasta, Float precioEspecial) {
         super(desde, hasta, precioEspecial);
-        this.tipo=tipo;
     }
 
     //constructores

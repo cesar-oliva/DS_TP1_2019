@@ -5,10 +5,13 @@
  */
 package vista;
 
+import static com.sun.javafx.tk.Toolkit.getToolkit;
 import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -22,6 +25,7 @@ public class VCrear extends javax.swing.JFrame {
     public VCrear() {
         initComponents();
         setLocationRelativeTo(null);
+        this.setDefaultCloseOperation(VCrear.DO_NOTHING_ON_CLOSE); // bloquear el boton cerrar
         setVisible(true);
     }
 
@@ -83,6 +87,11 @@ public class VCrear extends javax.swing.JFrame {
         jTextField4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField4ActionPerformed(evt);
+            }
+        });
+        jTextField4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField4KeyTyped(evt);
             }
         });
 
@@ -153,6 +162,12 @@ public class VCrear extends javax.swing.JFrame {
             }
         });
 
+        jComboBox3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox3ActionPerformed(evt);
+            }
+        });
+
         jLabel10.setText("Seleccione Servicio a agregar: ");
 
         jTextArea1.setColumns(20);
@@ -164,6 +179,11 @@ public class VCrear extends javax.swing.JFrame {
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField3ActionPerformed(evt);
+            }
+        });
+        jTextField3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField3KeyTyped(evt);
             }
         });
 
@@ -405,7 +425,9 @@ public class VCrear extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        controlador.ControladorPrincipal.agregarPaquete();       
+        controlador.ControladorPrincipal.agregarPaquete(); 
+       
+        
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -420,6 +442,31 @@ public class VCrear extends javax.swing.JFrame {
         // TODO add your handling code here:
         controlador.ControladorServicio.eliminarFilaDestino();
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jTextField3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField3KeyTyped
+        // VALIDAR INGRESO NUMERICO 
+        //event--> key---> keytiped
+        char validar = evt.getKeyChar();
+        if(Character.isLetter(validar)){
+           evt.consume();
+           JOptionPane.showMessageDialog(rootPane,"Solo debe ingresar valores numericos");
+        }
+        
+    }//GEN-LAST:event_jTextField3KeyTyped
+
+    private void jTextField4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField4KeyTyped
+        // VALIDAR INGRESO NUMERICO
+        // event--> key---> keytiped
+        char validar = evt.getKeyChar();
+        if(Character.isLetter(validar)){
+           evt.consume();
+           JOptionPane.showMessageDialog(rootPane,"Solo debe ingresar valores numericos");
+        }
+    }//GEN-LAST:event_jTextField4KeyTyped
+
+    private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox3ActionPerformed
 
     /**
      * @param args the command line arguments

@@ -24,6 +24,9 @@ public class VServicio extends javax.swing.JFrame {
      */
     public VServicio() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setDefaultCloseOperation(VServicio.DO_NOTHING_ON_CLOSE); // bloquear el boton cerrar
+              
     }
 
     /**
@@ -100,6 +103,7 @@ public class VServicio extends javax.swing.JFrame {
         botonAgregarE = new javax.swing.JButton();
         jSeparator3 = new javax.swing.JSeparator();
         jComboBox1 = new javax.swing.JComboBox<>();
+        botonACEPTAR1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -252,7 +256,7 @@ public class VServicio extends javax.swing.JFrame {
 
         txtPEE.setEnabled(false);
 
-        botonACEPTAR.setText("ACEPTAR");
+        botonACEPTAR.setText("CANCELAR");
         botonACEPTAR.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonACEPTARActionPerformed(evt);
@@ -293,11 +297,59 @@ public class VServicio extends javax.swing.JFrame {
 
         jComboBox1.setEnabled(false);
 
+        botonACEPTAR1.setText("ACEPTAR");
+        botonACEPTAR1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonACEPTAR1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1060, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(334, Short.MAX_VALUE)
+                .addComponent(botonACEPTAR1)
+                .addGap(168, 168, 168)
+                .addComponent(botonACEPTAR)
+                .addGap(386, 386, 386))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(166, 166, 166)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtDesdeA, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtHastaA, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtDesdeC, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtHastaC, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addComponent(jLabel17)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtHastaE, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addComponent(jLabel16)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtDesdeE, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addComponent(jLabel10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtDesdeT, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel11)
+                        .addGap(30, 30, 30)
+                        .addComponent(txtHastaT, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -307,13 +359,7 @@ public class VServicio extends javax.swing.JFrame {
                             .addComponent(jCheckBox1)
                             .addGap(43, 43, 43)
                             .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(6, 6, 6)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel1)
-                                .addComponent(jLabel11))
-                            .addGap(10, 10, 10)
-                            .addComponent(txtHastaT, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(49, 49, 49)
+                            .addGap(179, 179, 179)
                             .addComponent(jLabel12)
                             .addGap(119, 119, 119)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -326,9 +372,6 @@ public class VServicio extends javax.swing.JFrame {
                             .addGap(59, 59, 59)
                             .addComponent(txtPEA, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createSequentialGroup()
-                            .addGap(200, 200, 200)
-                            .addComponent(txtHastaE, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
                             .addGap(940, 940, 940)
                             .addComponent(botonAgregarT))
                         .addGroup(layout.createSequentialGroup()
@@ -337,12 +380,6 @@ public class VServicio extends javax.swing.JFrame {
                         .addGroup(layout.createSequentialGroup()
                             .addGap(20, 20, 20)
                             .addComponent(jCheckBox4))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(203, 203, 203)
-                            .addComponent(txtDesdeT, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(159, 159, 159)
-                            .addComponent(jLabel6))
                         .addGroup(layout.createSequentialGroup()
                             .addGap(390, 390, 390)
                             .addComponent(txtLugarE, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -353,9 +390,6 @@ public class VServicio extends javax.swing.JFrame {
                         .addGroup(layout.createSequentialGroup()
                             .addGap(667, 667, 667)
                             .addComponent(jLabel5))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(203, 203, 203)
-                            .addComponent(txtHastaC, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createSequentialGroup()
                             .addGap(509, 509, 509)
                             .addComponent(jRadioButton3))
@@ -368,9 +402,6 @@ public class VServicio extends javax.swing.JFrame {
                         .addGroup(layout.createSequentialGroup()
                             .addGap(335, 335, 335)
                             .addComponent(jLabel8))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(160, 160, 160)
-                            .addComponent(jLabel17))
                         .addGroup(layout.createSequentialGroup()
                             .addGap(390, 390, 390)
                             .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -394,23 +425,11 @@ public class VServicio extends javax.swing.JFrame {
                             .addGap(940, 940, 940)
                             .addComponent(botonAgregarA))
                         .addGroup(layout.createSequentialGroup()
-                            .addGap(203, 203, 203)
-                            .addComponent(txtDesdeA, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(159, 159, 159)
-                            .addComponent(jLabel2))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(200, 200, 200)
-                            .addComponent(txtDesdeE, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
                             .addGap(439, 439, 439)
                             .addComponent(jRadioButton12))
                         .addGroup(layout.createSequentialGroup()
                             .addGap(336, 336, 336)
                             .addComponent(jLabel3))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(203, 203, 203)
-                            .addComponent(txtHastaA, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createSequentialGroup()
                             .addGap(770, 770, 770)
                             .addComponent(txtSeguroE, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -451,38 +470,60 @@ public class VServicio extends javax.swing.JFrame {
                             .addGap(669, 669, 669)
                             .addComponent(jLabel15))
                         .addGroup(layout.createSequentialGroup()
-                            .addGap(160, 160, 160)
-                            .addComponent(jLabel16))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(159, 159, 159)
-                            .addComponent(jLabel10))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(159, 159, 159)
-                            .addComponent(jLabel7))
-                        .addGroup(layout.createSequentialGroup()
                             .addGap(20, 20, 20)
                             .addComponent(jCheckBox3))
                         .addGroup(layout.createSequentialGroup()
                             .addGap(332, 332, 332)
                             .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createSequentialGroup()
-                            .addGap(203, 203, 203)
-                            .addComponent(txtDesdeC, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
                             .addGap(20, 20, 20)
                             .addComponent(jCheckBox2))
                         .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 1060, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 1060, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 1060, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(480, 480, 480)
-                            .addComponent(botonACEPTAR))
                         .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 1060, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 560, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtDesdeA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addGap(33, 33, 33)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtHastaA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addGap(47, 47, 47)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtDesdeC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6))
+                .addGap(34, 34, 34)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtHastaC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7))
+                .addGap(49, 49, 49)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtDesdeT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10))
+                .addGap(32, 32, 32)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtHastaT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel11))
+                .addGap(53, 53, 53)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtDesdeE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtHastaE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botonACEPTAR1)
+                    .addComponent(botonACEPTAR))
+                .addGap(26, 26, 26))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -491,14 +532,6 @@ public class VServicio extends javax.swing.JFrame {
                             .addGap(50, 50, 50)
                             .addComponent(jCheckBox1))
                         .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 490, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(29, 29, 29)
-                            .addComponent(jLabel1)
-                            .addGap(270, 270, 270)
-                            .addComponent(jLabel11))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(311, 311, 311)
-                            .addComponent(txtHastaT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createSequentialGroup()
                             .addGap(268, 268, 268)
                             .addComponent(jLabel12))
@@ -514,9 +547,6 @@ public class VServicio extends javax.swing.JFrame {
                             .addGap(81, 81, 81)
                             .addComponent(txtPEA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createSequentialGroup()
-                            .addGap(440, 440, 440)
-                            .addComponent(txtHastaE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
                             .addGap(290, 290, 290)
                             .addComponent(botonAgregarT, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createSequentialGroup()
@@ -525,12 +555,6 @@ public class VServicio extends javax.swing.JFrame {
                         .addGroup(layout.createSequentialGroup()
                             .addGap(410, 410, 410)
                             .addComponent(jCheckBox4))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(265, 265, 265)
-                            .addComponent(txtDesdeT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(145, 145, 145)
-                            .addComponent(jLabel6))
                         .addGroup(layout.createSequentialGroup()
                             .addGap(390, 390, 390)
                             .addComponent(txtLugarE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -544,9 +568,6 @@ public class VServicio extends javax.swing.JFrame {
                             .addGap(84, 84, 84)
                             .addComponent(jLabel5))
                         .addGroup(layout.createSequentialGroup()
-                            .addGap(195, 195, 195)
-                            .addComponent(txtHastaC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
                             .addGap(25, 25, 25)
                             .addComponent(jRadioButton3))
                         .addGroup(layout.createSequentialGroup()
@@ -558,9 +579,6 @@ public class VServicio extends javax.swing.JFrame {
                         .addGroup(layout.createSequentialGroup()
                             .addGap(145, 145, 145)
                             .addComponent(jLabel8))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(440, 440, 440)
-                            .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createSequentialGroup()
                             .addGap(80, 80, 80)
                             .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -586,23 +604,11 @@ public class VServicio extends javax.swing.JFrame {
                             .addGap(40, 40, 40)
                             .addComponent(botonAgregarA, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createSequentialGroup()
-                            .addGap(26, 26, 26)
-                            .addComponent(txtDesdeA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(84, 84, 84)
-                            .addComponent(jLabel2))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(390, 390, 390)
-                            .addComponent(txtDesdeE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
                             .addGap(310, 310, 310)
                             .addComponent(jRadioButton12))
                         .addGroup(layout.createSequentialGroup()
                             .addGap(29, 29, 29)
                             .addComponent(jLabel3))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(81, 81, 81)
-                            .addComponent(txtHastaA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createSequentialGroup()
                             .addGap(390, 390, 390)
                             .addComponent(txtSeguroE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -643,23 +649,11 @@ public class VServicio extends javax.swing.JFrame {
                             .addGap(314, 314, 314)
                             .addComponent(jLabel15))
                         .addGroup(layout.createSequentialGroup()
-                            .addGap(390, 390, 390)
-                            .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(268, 268, 268)
-                            .addComponent(jLabel10))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(198, 198, 198)
-                            .addComponent(jLabel7))
-                        .addGroup(layout.createSequentialGroup()
                             .addGap(300, 300, 300)
                             .addComponent(jCheckBox3))
                         .addGroup(layout.createSequentialGroup()
                             .addGap(314, 314, 314)
                             .addComponent(jLabel13))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(142, 142, 142)
-                            .addComponent(txtDesdeC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createSequentialGroup()
                             .addGap(180, 180, 180)
                             .addComponent(jCheckBox2))
@@ -668,9 +662,7 @@ public class VServicio extends javax.swing.JFrame {
                             .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(10, 10, 10)
-                    .addComponent(botonACEPTAR)
-                    .addGap(15, 15, 15)
+                    .addGap(50, 50, 50)
                     .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
@@ -710,7 +702,6 @@ public class VServicio extends javax.swing.JFrame {
     private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
         if(jCheckBox2.isSelected())
         {
-
             txtDesdeC.setEnabled(true);
             txtHastaC.setEnabled(true);
             txtPEC.setEnabled(true);
@@ -719,7 +710,6 @@ public class VServicio extends javax.swing.JFrame {
             jRadioButton8.setEnabled(true);
             jRadioButton9.setEnabled(true);
             botonAgregarC.setEnabled(true);
-
         }
         else
         {
@@ -731,14 +721,12 @@ public class VServicio extends javax.swing.JFrame {
             jRadioButton8.setEnabled(false);
             jRadioButton9.setEnabled(false);
             botonAgregarC.setEnabled(false);
-
         }
     }//GEN-LAST:event_jCheckBox2ActionPerformed
 
     private void jCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox3ActionPerformed
         if(jCheckBox3.isSelected())
         {
-
             txtDesdeT.setEnabled(true);
             txtHastaT.setEnabled(true);
             txtPET.setEnabled(true);
@@ -748,7 +736,6 @@ public class VServicio extends javax.swing.JFrame {
             jRadioButton13.setEnabled(true);
             txtSeguroT.setEnabled(true);
             botonAgregarT.setEnabled(true);
-
         }
         else
         {
@@ -767,14 +754,12 @@ public class VServicio extends javax.swing.JFrame {
     private void jCheckBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox4ActionPerformed
         if(jCheckBox4.isSelected())
         {
-
             txtDesdeE.setEnabled(true);
             txtHastaE.setEnabled(true);
             txtPEE.setEnabled(true);
             txtLugarE.setEnabled(true);
             txtSeguroE.setEnabled(true);
             botonAgregarE.setEnabled(true);
-
         }
         else
         {
@@ -784,7 +769,6 @@ public class VServicio extends javax.swing.JFrame {
             txtLugarE.setEnabled(false);
             txtSeguroE.setEnabled(false);
             botonAgregarE.setEnabled(false);
-
         }
     }//GEN-LAST:event_jCheckBox4ActionPerformed
 
@@ -802,52 +786,33 @@ public class VServicio extends javax.swing.JFrame {
 
     private void botonAgregarAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarAActionPerformed
         controlador.ControladorServicio.agregarAlojamiento();
-        botonAgregarA.setEnabled(false);
-        jComboBox1.setEnabled(false);
-        txtDesdeA.setEnabled(false);
-        txtDesdeA.setText("");
-        txtHastaA.setEnabled(false);
-        txtHastaA.setText("");
-        txtPEA.setEnabled(false);
-        txtPEA.setText("");
-        jRadioButton1.setEnabled(false);
-        jRadioButton2.setEnabled(false);
-        jRadioButton3.setEnabled(false);
-        jRadioButton4.setEnabled(false);
-        jRadioButton5.setEnabled(false);
-
-        jCheckBox1.setSelected(false);
-
     }//GEN-LAST:event_botonAgregarAActionPerformed
 
     private void botonAgregarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarCActionPerformed
         controlador.ControladorServicio.agregarComida();
         botonAgregarC.setEnabled(false);
         txtDesdeC.setEnabled(false);
-
+        txtDesdeC.setText("");
         txtHastaC.setEnabled(false);
-
+        txtHastaC.setText("");  
         txtPEC.setEnabled(false);
-
+        txtPEC.setText("");
         jRadioButton6.setEnabled(false);
         jRadioButton7.setEnabled(false);
         jRadioButton8.setEnabled(false);
         jRadioButton9.setEnabled(false);
         jCheckBox2.setSelected(false);
-        //txtDesdeC.setText("");
-        //txtHastaC.setText("");
-        //txtPEC.setText("");
     }//GEN-LAST:event_botonAgregarCActionPerformed
 
     private void botonAgregarTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarTActionPerformed
         controlador.ControladorServicio.agregarTransporte();
         botonAgregarT.setEnabled(false);
         txtDesdeT.setEnabled(false);
-
+        txtDesdeT.setText("");
         txtHastaT.setEnabled(false);
-
+        txtHastaT.setText("");    
         txtPET.setEnabled(false);
-
+        txtPET.setText("");    
         jRadioButton10.setEnabled(false);
         jRadioButton11.setEnabled(false);
         jRadioButton12.setEnabled(false);
@@ -874,8 +839,11 @@ public class VServicio extends javax.swing.JFrame {
         txtSeguroE.setEnabled(false);
         txtSeguroE.setText("");
         jCheckBox4.setSelected(false);
-
     }//GEN-LAST:event_botonAgregarEActionPerformed
+
+    private void botonACEPTAR1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonACEPTAR1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonACEPTAR1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -915,6 +883,7 @@ public class VServicio extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonACEPTAR;
+    private javax.swing.JButton botonACEPTAR1;
     private javax.swing.JButton botonAgregarA;
     private javax.swing.JButton botonAgregarC;
     private javax.swing.JButton botonAgregarE;

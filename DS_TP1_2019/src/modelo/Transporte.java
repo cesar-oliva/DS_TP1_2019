@@ -17,11 +17,9 @@ public class Transporte extends Servicio{
     
     //constructores
 
-    public Transporte(int desde, int hasta, float precioEspecial, TipoTransporte tipo, Comodidad comodidad,float seguro) {
+    public Transporte(int desde, int hasta, float precioEspecial,float seguro) {
         super(desde,hasta,precioEspecial);
         this.seguro = seguro;
-        this.tipo = tipo;
-        this.comodidad = comodidad;
     }
 
 
