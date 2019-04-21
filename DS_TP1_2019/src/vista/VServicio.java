@@ -9,6 +9,7 @@ import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
 import javax.swing.JSeparator;
 import javax.swing.JTextField;
@@ -142,8 +143,18 @@ public class VServicio extends javax.swing.JFrame {
         jLabel2.setText("Hasta:");
 
         txtDesdeA.setEnabled(false);
+        txtDesdeA.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtDesdeAKeyTyped(evt);
+            }
+        });
 
         txtHastaA.setEnabled(false);
+        txtHastaA.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtHastaAKeyTyped(evt);
+            }
+        });
 
         jLabel3.setText("Categoria:");
 
@@ -172,14 +183,29 @@ public class VServicio extends javax.swing.JFrame {
                 txtPECActionPerformed(evt);
             }
         });
+        txtPEC.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPECKeyTyped(evt);
+            }
+        });
 
         txtDesdeC.setEnabled(false);
+        txtDesdeC.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtDesdeCKeyTyped(evt);
+            }
+        });
 
         jLabel6.setText("Desde:");
 
         jLabel7.setText("Hasta:");
 
         txtHastaC.setEnabled(false);
+        txtHastaC.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtHastaCKeyTyped(evt);
+            }
+        });
 
         jLabel8.setText("Tipo:");
 
@@ -203,14 +229,29 @@ public class VServicio extends javax.swing.JFrame {
         jLabel9.setText("Precio Especial:");
 
         txtPEA.setEnabled(false);
+        txtPEA.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPEAKeyTyped(evt);
+            }
+        });
 
         txtDesdeT.setEnabled(false);
+        txtDesdeT.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtDesdeTKeyTyped(evt);
+            }
+        });
 
         jLabel10.setText("Desde:");
 
         jLabel11.setText("Hasta:");
 
         txtHastaT.setEnabled(false);
+        txtHastaT.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtHastaTKeyTyped(evt);
+            }
+        });
 
         jLabel12.setText("Tipo de Vehiculo:");
 
@@ -233,16 +274,36 @@ public class VServicio extends javax.swing.JFrame {
         jLabel15.setText("Precio Especial:");
 
         txtPET.setEnabled(false);
+        txtPET.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPETKeyTyped(evt);
+            }
+        });
 
         txtSeguroT.setEnabled(false);
+        txtSeguroT.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtSeguroTKeyTyped(evt);
+            }
+        });
 
         txtDesdeE.setEnabled(false);
+        txtDesdeE.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtDesdeEKeyTyped(evt);
+            }
+        });
 
         jLabel16.setText("Desde:");
 
         jLabel17.setText("Hasta:");
 
         txtHastaE.setEnabled(false);
+        txtHastaE.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtHastaEKeyTyped(evt);
+            }
+        });
 
         jLabel18.setText("Lugar:");
 
@@ -253,8 +314,18 @@ public class VServicio extends javax.swing.JFrame {
         jLabel20.setText("Seguro:");
 
         txtSeguroE.setEnabled(false);
+        txtSeguroE.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtSeguroEKeyTyped(evt);
+            }
+        });
 
         txtPEE.setEnabled(false);
+        txtPEE.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPEEKeyTyped(evt);
+            }
+        });
 
         botonACEPTAR.setText("CANCELAR");
         botonACEPTAR.addActionListener(new java.awt.event.ActionListener() {
@@ -844,6 +915,146 @@ public class VServicio extends javax.swing.JFrame {
     private void botonACEPTAR1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonACEPTAR1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_botonACEPTAR1ActionPerformed
+
+    private void txtDesdeAKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDesdeAKeyTyped
+        // VALIDAR INGRESO NUMERICO 
+        //event--> key---> keytiped
+        char validar = evt.getKeyChar();
+        if(Character.isLetter(validar)){
+           evt.consume();
+           JOptionPane.showMessageDialog(rootPane,"Solo debe ingresar valores numericos");
+        }
+    }//GEN-LAST:event_txtDesdeAKeyTyped
+
+    private void txtHastaAKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtHastaAKeyTyped
+         // VALIDAR INGRESO NUMERICO 
+        //event--> key---> keytiped
+        char validar = evt.getKeyChar();
+        if(Character.isLetter(validar)){
+           evt.consume();
+           JOptionPane.showMessageDialog(rootPane,"Solo debe ingresar valores numericos");
+        }
+    }//GEN-LAST:event_txtHastaAKeyTyped
+
+    private void txtPEAKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPEAKeyTyped
+         // VALIDAR INGRESO NUMERICO 
+        //event--> key---> keytiped
+        char validar = evt.getKeyChar();
+        if(Character.isLetter(validar)){
+           evt.consume();
+           JOptionPane.showMessageDialog(rootPane,"Solo debe ingresar valores numericos");
+        }
+    }//GEN-LAST:event_txtPEAKeyTyped
+
+    private void txtDesdeCKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDesdeCKeyTyped
+        // VALIDAR INGRESO NUMERICO 
+        //event--> key---> keytiped
+        char validar = evt.getKeyChar();
+        if(Character.isLetter(validar)){
+           evt.consume();
+           JOptionPane.showMessageDialog(rootPane,"Solo debe ingresar valores numericos");
+        }
+    }//GEN-LAST:event_txtDesdeCKeyTyped
+
+    private void txtHastaCKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtHastaCKeyTyped
+         // VALIDAR INGRESO NUMERICO 
+        //event--> key---> keytiped
+        char validar = evt.getKeyChar();
+        if(Character.isLetter(validar)){
+           evt.consume();
+           JOptionPane.showMessageDialog(rootPane,"Solo debe ingresar valores numericos");
+        }
+    }//GEN-LAST:event_txtHastaCKeyTyped
+
+    private void txtDesdeTKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDesdeTKeyTyped
+         // VALIDAR INGRESO NUMERICO 
+        //event--> key---> keytiped
+        char validar = evt.getKeyChar();
+        if(Character.isLetter(validar)){
+           evt.consume();
+           JOptionPane.showMessageDialog(rootPane,"Solo debe ingresar valores numericos");
+        }
+    }//GEN-LAST:event_txtDesdeTKeyTyped
+
+    private void txtHastaTKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtHastaTKeyTyped
+         // VALIDAR INGRESO NUMERICO 
+        //event--> key---> keytiped
+        char validar = evt.getKeyChar();
+        if(Character.isLetter(validar)){
+           evt.consume();
+           JOptionPane.showMessageDialog(rootPane,"Solo debe ingresar valores numericos");
+        }
+    }//GEN-LAST:event_txtHastaTKeyTyped
+
+    private void txtDesdeEKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDesdeEKeyTyped
+         // VALIDAR INGRESO NUMERICO 
+        //event--> key---> keytiped
+        char validar = evt.getKeyChar();
+        if(Character.isLetter(validar)){
+           evt.consume();
+           JOptionPane.showMessageDialog(rootPane,"Solo debe ingresar valores numericos");
+        }
+    }//GEN-LAST:event_txtDesdeEKeyTyped
+
+    private void txtHastaEKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtHastaEKeyTyped
+         // VALIDAR INGRESO NUMERICO 
+        //event--> key---> keytiped
+        char validar = evt.getKeyChar();
+        if(Character.isLetter(validar)){
+           evt.consume();
+           JOptionPane.showMessageDialog(rootPane,"Solo debe ingresar valores numericos");
+        }
+    }//GEN-LAST:event_txtHastaEKeyTyped
+
+    private void txtPECKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPECKeyTyped
+         // VALIDAR INGRESO NUMERICO 
+        //event--> key---> keytiped
+        char validar = evt.getKeyChar();
+        if(Character.isLetter(validar)){
+           evt.consume();
+           JOptionPane.showMessageDialog(rootPane,"Solo debe ingresar valores numericos");
+        }
+    }//GEN-LAST:event_txtPECKeyTyped
+
+    private void txtSeguroTKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSeguroTKeyTyped
+         // VALIDAR INGRESO NUMERICO 
+        //event--> key---> keytiped
+        char validar = evt.getKeyChar();
+        if(Character.isLetter(validar)){
+           evt.consume();
+           JOptionPane.showMessageDialog(rootPane,"Solo debe ingresar valores numericos");
+        }
+    }//GEN-LAST:event_txtSeguroTKeyTyped
+
+    private void txtPETKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPETKeyTyped
+         // VALIDAR INGRESO NUMERICO 
+        //event--> key---> keytiped
+        char validar = evt.getKeyChar();
+        if(Character.isLetter(validar)){
+           evt.consume();
+           JOptionPane.showMessageDialog(rootPane,"Solo debe ingresar valores numericos");
+        }
+    }//GEN-LAST:event_txtPETKeyTyped
+
+    private void txtSeguroEKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSeguroEKeyTyped
+         // VALIDAR INGRESO NUMERICO 
+        //event--> key---> keytiped
+        char validar = evt.getKeyChar();
+        if(Character.isLetter(validar)){
+           evt.consume();
+           JOptionPane.showMessageDialog(rootPane,"Solo debe ingresar valores numericos");
+        }
+    }//GEN-LAST:event_txtSeguroEKeyTyped
+
+    private void txtPEEKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPEEKeyTyped
+         // VALIDAR INGRESO NUMERICO 
+        //event--> key---> keytiped
+        char validar = evt.getKeyChar();
+        if(Character.isLetter(validar)){
+           evt.consume();
+           JOptionPane.showMessageDialog(rootPane,"Solo debe ingresar valores numericos");
+        }
+    }//GEN-LAST:event_txtPEEKeyTyped
 
     /**
      * @param args the command line arguments
