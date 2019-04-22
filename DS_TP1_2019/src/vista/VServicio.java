@@ -24,9 +24,10 @@ public class VServicio extends javax.swing.JFrame {
      * Creates new form VServicio2
      */
     public VServicio() {
-        initComponents();
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(VServicio.DO_NOTHING_ON_CLOSE); // bloquear el boton cerrar
+        initComponents();
+        
               
     }
 
@@ -760,7 +761,7 @@ public class VServicio extends javax.swing.JFrame {
             jComboBox1.setEnabled(false);
             txtDesdeA.setEnabled(false);
             txtHastaA.setEnabled(false);
-            txtPEA.setEnabled(false);
+            //txtPEA.setEnabled(false);
             jRadioButton1.setEnabled(false);
             jRadioButton2.setEnabled(false);
             jRadioButton3.setEnabled(false);
@@ -913,7 +914,7 @@ public class VServicio extends javax.swing.JFrame {
     }//GEN-LAST:event_botonAgregarEActionPerformed
 
     private void botonACEPTAR1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonACEPTAR1ActionPerformed
-        // TODO add your handling code here:
+        controlador.ControladorServicio.cerrar();
     }//GEN-LAST:event_botonACEPTAR1ActionPerformed
 
     private void txtDesdeAKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDesdeAKeyTyped

@@ -18,8 +18,10 @@ import vista.*;
  */
 public class ControladorPrincipal {
     static VPrincipal ventp = new VPrincipal();
+    static VServicio vents = new VServicio();
     static DefaultTableModel model= new DefaultTableModel();
     static ArrayList<Paquete> listaPaquete = new ArrayList<Paquete>();
+    static int valorPrecioBase;
 
     //INICIAR
      public static void iniciar(){
@@ -46,13 +48,41 @@ public class ControladorPrincipal {
         }
       //AGREGAR PAQUETE
       public static void agregarPaquete(){
+       //SUMA DE SERVICIOS + PRECIO BASE
+          float subt= 0;
+          float tt = Float.parseFloat(ventc.getjTable2().getValueAt(0, 4).toString());
+          for(int i=0;i<ventc.getjTable2().getRowCount();i++)
+          {
+              subt = subt + Float.parseFloat(ventc.getjTable2().getValueAt(i, 4).toString());
+          }
+          
+          int sel = ventc.getjComboBox2().getSelectedIndex();
+          switch (sel){      
+              case 1:
+                  valorPrecioBase = 5000;
+                  break;
+              case 2:
+                  valorPrecioBase = 6500;
+                  break;
+              case 3:
+                  valorPrecioBase = 7500;
+                  break;
+              case 4:
+                  valorPrecioBase = 8000;
+                  break;
+              case 5:
+                  valorPrecioBase = 8300;
+                  break;
+          }
+          float total = valorPrecioBase + subt;
+      //-----------------------------------------------------------------------------------------------------
           int resp  = validarCrear();
           if(resp==0){
           int fila = ventc.getjTable2().getRowCount();
           if(fila == 0){
           JOptionPane.showMessageDialog(null,"Debe seleccionar al menos un servicio antes de crear el paquete");    
           }else{
-            listaPaquete.add(new Paquete(Integer.parseInt(ventc.getjTextField1().getText()),ventc.getjTextField2().getText(),ventc.getjTextArea2().getText(),ventc.getjTextArea1().getText(),ventc.getjTextArea3().getText(),Integer.parseInt(ventc.getjTextField3().getText()),Integer.parseInt(ventc.getjTextField4().getText()),(String)ventc.getjComboBox3().getSelectedItem(),ventc.getjTable1().getRowCount(),2000f,ventc.getjTable2().getRowCount(),Estado.Inactivo));
+            listaPaquete.add(new Paquete(Integer.parseInt(ventc.getjTextField1().getText()),ventc.getjTextField2().getText(),ventc.getjTextArea2().getText(),ventc.getjTextArea1().getText(),ventc.getjTextArea3().getText(),Integer.parseInt(ventc.getjTextField3().getText()),Integer.parseInt(ventc.getjTextField4().getText()),(String)ventc.getjComboBox3().getSelectedItem(),ventc.getjTable1().getRowCount(),total,ventc.getjTable2().getRowCount(),Estado.Inactivo));
             mostrarPaquete();
             controlador.ControladorCrear.cerrar();
              //LIMPIEZA DE FORMULARIO

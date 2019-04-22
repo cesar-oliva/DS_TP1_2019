@@ -8,6 +8,7 @@ package controlador;
 import javax.swing.JOptionPane;
 import vista.*;
 import static controlador.ControladorCrear.*;
+import static controlador.ControladorPrincipal.vents;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 import modelo.*;
@@ -26,6 +27,7 @@ public class ControladorServicio {
     static int ca=0, cc=0, ct=0, ce=0;
   //INICIAR
      public static void iniciar(){
+             vents.setLocationRelativeTo(null);
              vents.setVisible(true);
          }
      // CERRAR
@@ -38,7 +40,7 @@ public class ControladorServicio {
           if(resp==0){
             listaAlojamiento.add(new Alojamiento(Integer.parseInt(vents.getTxtDesdeA().getText()),Integer.parseInt(vents.getTxtHastaA().getText()),Float.parseFloat(vents.getTxtPEA().getText())));
             mostrarAlojamiento();
-            cerrar();
+            
             vents.getBotonAgregarA().setEnabled(false);
             vents.getjComboBox1().setEnabled(false);
             vents.getTxtDesdeA().setEnabled(false);
@@ -58,6 +60,7 @@ public class ControladorServicio {
       //MOSTRAR SERVICIO ALOJAMIENTO
           public static void mostrarAlojamiento(){
             ca = ca + 1;
+            
             int res = JOptionPane.showConfirmDialog(vents,"¿Está seguro de agregar el servicio?","ALERTA",JOptionPane.YES_NO_OPTION);
             if(res == 0)
                 {
@@ -77,7 +80,7 @@ public class ControladorServicio {
       public static void agregarComida(){
             listaComida.add(new Comida(Integer.parseInt(vents.getTxtDesdeC().getText()),Integer.parseInt(vents.getTxtHastaC().getText()),Float.parseFloat(vents.getTxtPEC().getText())));
             mostrarComida();
-            cerrar();  
+             
         } 
       //MOSTRAR SERVICIO COMIDA
           public static void mostrarComida(){
@@ -101,7 +104,7 @@ public class ControladorServicio {
       public static void agregarTransporte(){
             listaTransporte.add(new Transporte(Integer.parseInt(vents.getTxtDesdeT().getText()),Integer.parseInt(vents.getTxtHastaT().getText()),Float.parseFloat(vents.getTxtPET().getText()),Float.parseFloat(vents.getTxtSeguroT().getText())));
             mostrarTransporte();
-            cerrar();  
+              
         } 
       //MOSTRAR SERVICIO TRANSPORTE
           public static void mostrarTransporte(){
@@ -125,7 +128,7 @@ public class ControladorServicio {
       public static void agregarExcursion(){
             listaExcursion.add(new Excursion(Integer.parseInt(vents.getTxtDesdeE().getText()),Integer.parseInt(vents.getTxtHastaE().getText()),Float.parseFloat(vents.getTxtPEE().getText())));
             mostrarExcursion();
-            cerrar();  
+             
         } 
       //MOSTRAR SERVICIO EXCURSION
           public static void mostrarExcursion(){
@@ -184,5 +187,10 @@ public class ControladorServicio {
        }
        return(0);
         }
-       
+        
+        
+       public static void subTotalALOJAMIENTO(){
+           int st = 0;
+           
+       }
 }
