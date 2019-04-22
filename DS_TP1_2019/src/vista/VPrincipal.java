@@ -51,6 +51,11 @@ public class VPrincipal extends javax.swing.JFrame{
         jScrollPane1.setViewportView(tblPaquetes);
 
         jButton1.setText("Ver");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Activar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -139,6 +144,11 @@ public class VPrincipal extends javax.swing.JFrame{
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
      controlador.ControladorPrincipal.cancelarPaquete();
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        controlador.ControladorDatalle.iniciarConsulta();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

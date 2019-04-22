@@ -24,10 +24,9 @@ public class VServicio extends javax.swing.JFrame {
      * Creates new form VServicio2
      */
     public VServicio() {
+        initComponents();
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(VServicio.DO_NOTHING_ON_CLOSE); // bloquear el boton cerrar
-        initComponents();
-        
               
     }
 

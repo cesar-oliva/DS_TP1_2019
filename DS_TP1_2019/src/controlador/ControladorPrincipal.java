@@ -51,6 +51,7 @@ public class ControladorPrincipal {
         }
       //AGREGAR PAQUETE
       public static void botonAgregarPaquete(){
+          validarCrear();
           //SUMA DE SERVICIOS + PRECIO BASE
           float subt= 0;
           float tt = Float.parseFloat(ventc.getjTable2().getValueAt(0, 4).toString());
@@ -210,5 +211,5 @@ public class ControladorPrincipal {
                 }catch(Exception e){
             JOptionPane.showMessageDialog(null,"No se pudo modificar el registro seleccionado","Error",JOptionPane.ERROR_MESSAGE);
                 }    
-    } 
+    }    
 }

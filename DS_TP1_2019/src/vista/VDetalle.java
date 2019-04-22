@@ -5,17 +5,21 @@
  */
 package vista;
 
+import javax.swing.JLabel;
+import javax.swing.JTable;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
 /**
  *
- * @author Admin
+ * @author CESAR
  */
-public class VDetalle extends javax.swing.JDialog {
+public class VDetalle extends javax.swing.JFrame {
 
     /**
-     * Creates new form VCrear2
+     * Creates new form VDetalle1
      */
-    public VDetalle(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);
+    public VDetalle() {
         initComponents();
     }
 
@@ -28,18 +32,6 @@ public class VDetalle extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
         jSeparator1 = new javax.swing.JSeparator();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
@@ -50,65 +42,29 @@ public class VDetalle extends javax.swing.JDialog {
         jLabel14 = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
         jTextArea3 = new javax.swing.JTextArea();
+        jLabel2 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
+        jTextField2 = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
         jButton6 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
         jTextField5 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
         jTextField6 = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
+        jTextField4 = new javax.swing.JTextField();
         jTextField7 = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-
-        jLabel2.setText("Nombre: ");
-
-        jTextField2.setEditable(false);
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
-            }
-        });
-
-        jLabel4.setText("Base: ");
-
-        jLabel3.setText("Ciudad Origen: ");
-
-        jLabel5.setText("Días: ");
-
-        jTextField3.setEditable(false);
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
-            }
-        });
-
-        jLabel6.setText("Noches:");
-
-        jTextField4.setEditable(false);
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
-            }
-        });
-
-        jLabel7.setText("Destinos: ");
-
-        jLabel12.setText("Descripcion: ");
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -131,6 +87,8 @@ public class VDetalle extends javax.swing.JDialog {
         jTextArea3.setEnabled(false);
         jScrollPane5.setViewportView(jTextArea3);
 
+        jLabel2.setText("Nombre: ");
+
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -144,7 +102,18 @@ public class VDetalle extends javax.swing.JDialog {
         ));
         jScrollPane2.setViewportView(jTable2);
 
+        jTextField2.setEditable(false);
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setText("Base: ");
+
         jButton5.setText("Aceptar");
+
+        jLabel3.setText("Ciudad Origen: ");
 
         jButton6.setText("Cancelar");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -153,10 +122,19 @@ public class VDetalle extends javax.swing.JDialog {
             }
         });
 
+        jLabel5.setText("Días: ");
+
         jTextField5.setEditable(false);
         jTextField5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField5ActionPerformed(evt);
+            }
+        });
+
+        jTextField3.setEditable(false);
+        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField3ActionPerformed(evt);
             }
         });
 
@@ -167,7 +145,16 @@ public class VDetalle extends javax.swing.JDialog {
             }
         });
 
+        jLabel6.setText("Noches:");
+
         jLabel15.setText("Nro: ");
+
+        jTextField4.setEditable(false);
+        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField4ActionPerformed(evt);
+            }
+        });
 
         jTextField7.setEditable(false);
         jTextField7.addActionListener(new java.awt.event.ActionListener() {
@@ -176,7 +163,24 @@ public class VDetalle extends javax.swing.JDialog {
             }
         });
 
+        jLabel7.setText("Destinos: ");
+
+        jLabel12.setText("Descripcion: ");
+
         jButton1.setText("Ver");
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -242,9 +246,7 @@ public class VDetalle extends javax.swing.JDialog {
                                             .addGroup(layout.createSequentialGroup()
                                                 .addGap(0, 0, Short.MAX_VALUE)
                                                 .addComponent(jLabel5))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jLabel4)))
+                                            .addComponent(jLabel4))
                                         .addGap(18, 18, 18)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -313,7 +315,7 @@ public class VDetalle extends javax.swing.JDialog {
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                         .addGap(62, 62, 62))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 450, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 462, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton6)
                             .addComponent(jButton5))
@@ -327,25 +329,25 @@ public class VDetalle extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField2ActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
-
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
-
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
+        controlador.ControladorDatalle.cerrar();
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField5ActionPerformed
 
+    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField3ActionPerformed
+
     private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField6ActionPerformed
+
+    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField4ActionPerformed
 
     private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
         // TODO add your handling code here:
@@ -377,125 +379,14 @@ public class VDetalle extends javax.swing.JDialog {
             java.util.logging.Logger.getLogger(VDetalle.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
-        /* Create and display the dialog */
-        //java.awt.EventQueue.invokeLater(new Runnable() {
-          //  public void run() {
-            //    VCrear2 dialog = new VCrear2(new javax.swing.JFrame(), true);
-              //  dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-             //       @Override
-              //      public void windowClosing(java.awt.event.WindowEvent e) {
-              //          System.exit(0);
-              //      }
-              //  });
-              //  dialog.setVisible(true);
-           // }
-       // });
         //</editor-fold>
 
-        /* Create and display the dialog */
-        //java.awt.EventQueue.invokeLater(new Runnable() {
-          //  public void run() {
-            //    VCrear dialog = new VCrear(new javax.swing.JFrame(), true);
-              //  dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-             //       @Override
-              //      public void windowClosing(java.awt.event.WindowEvent e) {
-              //          System.exit(0);
-              //      }
-              //  });
-              //  dialog.setVisible(true);
-           // }
-       // });
-        //</editor-fold>
-
-        /* Create and display the dialog */
-        //java.awt.EventQueue.invokeLater(new Runnable() {
-          //  public void run() {
-            //    VCrear2 dialog = new VCrear2(new javax.swing.JFrame(), true);
-              //  dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-             //       @Override
-              //      public void windowClosing(java.awt.event.WindowEvent e) {
-              //          System.exit(0);
-              //      }
-              //  });
-              //  dialog.setVisible(true);
-           // }
-       // });
-        //</editor-fold>
-
-        /* Create and display the dialog */
-        //java.awt.EventQueue.invokeLater(new Runnable() {
-          //  public void run() {
-            //    VCrear dialog = new VCrear(new javax.swing.JFrame(), true);
-              //  dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-             //       @Override
-              //      public void windowClosing(java.awt.event.WindowEvent e) {
-              //          System.exit(0);
-              //      }
-              //  });
-              //  dialog.setVisible(true);
-           // }
-       // });
-        //</editor-fold>
-
-        /* Create and display the dialog */
-        //java.awt.EventQueue.invokeLater(new Runnable() {
-          //  public void run() {
-            //    VCrear2 dialog = new VCrear2(new javax.swing.JFrame(), true);
-              //  dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-             //       @Override
-              //      public void windowClosing(java.awt.event.WindowEvent e) {
-              //          System.exit(0);
-              //      }
-              //  });
-              //  dialog.setVisible(true);
-           // }
-       // });
-        //</editor-fold>
-
-        /* Create and display the dialog */
-        //java.awt.EventQueue.invokeLater(new Runnable() {
-          //  public void run() {
-            //    VCrear dialog = new VCrear(new javax.swing.JFrame(), true);
-              //  dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-             //       @Override
-              //      public void windowClosing(java.awt.event.WindowEvent e) {
-              //          System.exit(0);
-              //      }
-              //  });
-              //  dialog.setVisible(true);
-           // }
-       // });
-        //</editor-fold>
-
-        /* Create and display the dialog */
-        //java.awt.EventQueue.invokeLater(new Runnable() {
-          //  public void run() {
-            //    VCrear2 dialog = new VCrear2(new javax.swing.JFrame(), true);
-              //  dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-             //       @Override
-              //      public void windowClosing(java.awt.event.WindowEvent e) {
-              //          System.exit(0);
-              //      }
-              //  });
-              //  dialog.setVisible(true);
-           // }
-       // });
-        //</editor-fold>
-
-        /* Create and display the dialog */
-        //java.awt.EventQueue.invokeLater(new Runnable() {
-          //  public void run() {
-            //    VCrear dialog = new VCrear(new javax.swing.JFrame(), true);
-              //  dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-             //       @Override
-              //      public void windowClosing(java.awt.event.WindowEvent e) {
-              //          System.exit(0);
-              //      }
-              //  });
-              //  dialog.setVisible(true);
-           // }
-       // });
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new VDetalle().setVisible(true);
+            }
+        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -531,4 +422,182 @@ public class VDetalle extends javax.swing.JDialog {
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     // End of variables declaration//GEN-END:variables
+
+    public JTextField getjTextField5() {
+        return jTextField5;
+    }
+
+    public void setjTextField5(JTextField jTextField5) {
+        this.jTextField5 = jTextField5;
+    }
+
+    public JTextArea getjTextArea1() {
+        return jTextArea1;
+    }
+
+    public void setjTextArea1(JTextArea jTextArea1) {
+        this.jTextArea1 = jTextArea1;
+    }
+
+    public JTextArea getjTextArea2() {
+        return jTextArea2;
+    }
+
+    public void setjTextArea2(JTextArea jTextArea2) {
+        this.jTextArea2 = jTextArea2;
+    }
+
+    public JTextArea getjTextArea3() {
+        return jTextArea3;
+    }
+
+    public void setjTextArea3(JTextArea jTextArea3) {
+        this.jTextArea3 = jTextArea3;
+    }
+
+    public JTextField getjTextField2() {
+        return jTextField2;
+    }
+
+    public void setjTextField2(JTextField jTextField2) {
+        this.jTextField2 = jTextField2;
+    }
+
+    public JTextField getjTextField3() {
+        return jTextField3;
+    }
+
+    public void setjTextField3(JTextField jTextField3) {
+        this.jTextField3 = jTextField3;
+    }
+
+    public JTextField getjTextField4() {
+        return jTextField4;
+    }
+
+    public void setjTextField4(JTextField jTextField4) {
+        this.jTextField4 = jTextField4;
+    }
+
+    public JLabel getjLabel12() {
+        return jLabel12;
+    }
+
+    public void setjLabel12(JLabel jLabel12) {
+        this.jLabel12 = jLabel12;
+    }
+
+    public JLabel getjLabel13() {
+        return jLabel13;
+    }
+
+    public void setjLabel13(JLabel jLabel13) {
+        this.jLabel13 = jLabel13;
+    }
+
+    public JLabel getjLabel14() {
+        return jLabel14;
+    }
+
+    public void setjLabel14(JLabel jLabel14) {
+        this.jLabel14 = jLabel14;
+    }
+
+    public JLabel getjLabel15() {
+        return jLabel15;
+    }
+
+    public void setjLabel15(JLabel jLabel15) {
+        this.jLabel15 = jLabel15;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public void setjLabel2(JLabel jLabel2) {
+        this.jLabel2 = jLabel2;
+    }
+
+    public JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    public void setjLabel3(JLabel jLabel3) {
+        this.jLabel3 = jLabel3;
+    }
+
+    public JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public void setjLabel4(JLabel jLabel4) {
+        this.jLabel4 = jLabel4;
+    }
+
+    public JLabel getjLabel5() {
+        return jLabel5;
+    }
+
+    public void setjLabel5(JLabel jLabel5) {
+        this.jLabel5 = jLabel5;
+    }
+
+    public JLabel getjLabel6() {
+        return jLabel6;
+    }
+
+    public void setjLabel6(JLabel jLabel6) {
+        this.jLabel6 = jLabel6;
+    }
+
+    public JLabel getjLabel7() {
+        return jLabel7;
+    }
+
+    public void setjLabel7(JLabel jLabel7) {
+        this.jLabel7 = jLabel7;
+    }
+
+    public JLabel getjLabel9() {
+        return jLabel9;
+    }
+
+    public void setjLabel9(JLabel jLabel9) {
+        this.jLabel9 = jLabel9;
+    }
+
+    public JTable getjTable1() {
+        return jTable1;
+    }
+
+    public void setjTable1(JTable jTable1) {
+        this.jTable1 = jTable1;
+    }
+
+    public JTable getjTable2() {
+        return jTable2;
+    }
+
+    public void setjTable2(JTable jTable2) {
+        this.jTable2 = jTable2;
+    }
+
+    public JTextField getjTextField6() {
+        return jTextField6;
+    }
+
+    public void setjTextField6(JTextField jTextField6) {
+        this.jTextField6 = jTextField6;
+    }
+
+    public JTextField getjTextField7() {
+        return jTextField7;
+    }
+
+    public void setjTextField7(JTextField jTextField7) {
+        this.jTextField7 = jTextField7;
+    }
+
+
 }
