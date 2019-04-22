@@ -7,6 +7,8 @@ package controlador;
 
 import static controlador.ControladorPrincipal.ventp;
 import static controlador.ControladorServicio.vents;
+import static datos.RepositorioCiudad.getCiudades;
+import static datos.RepositorioPaquete.contadorPaquetes;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
@@ -29,9 +31,9 @@ public class ControladorCrear {
     
     //INICIAR
     public static void iniciar(){
-       ventc.getjTextField1().setText(Integer.toString(asignarNumero()));
+       ventc.getjTextField1().setText(Integer.toString(contadorPaquetes));
        ventc.setVisible(true);
-       cargarGrillaDestino();
+//       cargarGrillaDestino();
        cargarGrillaServicio();
     }
     //CERRAR
@@ -39,34 +41,6 @@ public class ControladorCrear {
        ventc.dispose();
        ventp.setVisible(true);
       }
-    //CARGAR COMBO CIUDAD
-    public static void cargarComboCiudad(){
-        listaCiudad.add(new Ciudad(0000,"Seleccione"));
-        listaCiudad.add(new Ciudad(1001,"Buenos Aires"));
-        listaCiudad.add(new Ciudad(5000,"Cordoba"));
-        listaCiudad.add(new Ciudad(5500,"Mendoza"));
-        listaCiudad.add(new Ciudad(4400,"Salta"));
-        listaCiudad.add(new Ciudad(3000,"Santa Fe"));
-        listaCiudad.add(new Ciudad(9400,"Santa Cruz"));
-              for (int i = 0; i < listaCiudad.size(); i++) {
-              ventc.getjComboBox3().addItem(listaCiudad.get(i).getNombre());
-              ventc.getjComboBox4().addItem(listaCiudad.get(i).getNombre());
-              vents.getjComboBox1().addItem(listaCiudad.get(i).getNombre());
-            }
-        }
-    //CARGAR COMBO BASE
-    public static void cargarComboBase(){
-        listaBase.add(new Base("Seleccione",0));
-        listaBase.add(new Base("Simple",1));
-        listaBase.add(new Base("Doble",2));
-        listaBase.add(new Base("Triple",3));
-        listaBase.add(new Base("Cuadruple",4));
-        listaBase.add(new Base("Quintuple",5));
-        listaBase.add(new Base("Sextuple",6));            
-            for (int i = 0; i < listaBase.size(); i++) {
-           ventc.getjComboBox2().addItem(listaBase.get(i).getDescripcion());  
-        }
-    }
     //CARGAR GRILLA DESTINO
      public static void cargarGrillaDestino(){
         ArrayList<Object> dest =new ArrayList<>();
@@ -94,10 +68,10 @@ public class ControladorCrear {
      public static void agregarDestino(){
            String res = (String) ventc.getjComboBox4().getSelectedItem();
            Object[] obj = new Object[2];
-           for (int i = 0; i < listaCiudad.size(); i++) {
-               if(listaCiudad.get(i).getNombre().equals(res)){
-                   obj[0] = listaCiudad.get(i).getCod();
-                   obj[1] = listaCiudad.get(i).getNombre();
+           for (int i = 0; i < getCiudades().size(); i++) {
+               if(getCiudades().get(i).getNombre().equals(res)){
+                   obj[0] = getCiudades().get(i).getCod();
+                   obj[1] = getCiudades().get(i).getNombre();
                }
         }
            modeldest.addRow(obj);
@@ -192,16 +166,5 @@ public class ControladorCrear {
            return(1);
         }
        return(0);
-        }
-         //ASIGNACION DE NUMERO ID_PAQUETES
-        public static int asignarNumero(){
-        int filas = ventp.getTblPaquetes().getRowCount();
-        int id=0;
-        for (int i = 0; i < filas; i++) {
-            if (id < filas) {
-            id=filas;    
-            }
-        }
-        return(filas+1);
-       }         
+        }         
 }

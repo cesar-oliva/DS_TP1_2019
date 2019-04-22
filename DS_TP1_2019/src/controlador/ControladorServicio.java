@@ -188,9 +188,9 @@ public class ControladorServicio {
        return(0);
         }
         
-        
        public static void subTotalALOJAMIENTO(){
            int st = 0;
            
        }
-}
+        }    
+

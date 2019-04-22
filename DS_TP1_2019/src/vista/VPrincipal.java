@@ -121,24 +121,23 @@ public class VPrincipal extends javax.swing.JFrame{
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
     controlador.ControladorPrincipal.cerrar();
-    controlador.ControladorCrear.cargarComboCiudad();
-    controlador.ControladorCrear.cargarComboBase();
+    controlador.ControladorDatos.cargarComboBase();
+    controlador.ControladorDatos.cargarComboCiudad();
+    controlador.ControladorCrear.cargarGrillaDestino();
     controlador.ControladorCrear.iniciar();
            
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-    controlador.ControladorPrincipal.modificarFilaPaquete();
+    controlador.ControladorPrincipal.activarPaquete();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-     
+     controlador.ControladorPrincipal.desactivarPaquete();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-
+     controlador.ControladorPrincipal.cancelarPaquete();
     }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
