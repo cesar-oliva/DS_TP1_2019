@@ -170,7 +170,7 @@ public class ControladorPrincipal {
                 //Advertir que no se puede cambiar
                 JOptionPane.showMessageDialog(null,"No se puede realizar el cambio de estado una vez cancelado");
                 }else{
-                    if(paquete.getEstado().equals(Estado.Activo)){
+                    if(paquete.getEstado().equals(Estado.Inactivo)){
                 JOptionPane.showMessageDialog(null,"El paquete seleccionado ya se encuentra Activo");
                  }else{
                     //Preguntar confirmacion antes de activar
