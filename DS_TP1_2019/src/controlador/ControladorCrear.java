@@ -25,9 +25,9 @@ public class ControladorCrear {
     static VCrear ventc = new VCrear();
     static DefaultTableModel modeldest= new DefaultTableModel();
     static DefaultTableModel modelserv= new DefaultTableModel();
-    static ArrayList<Base> listaBase = new ArrayList<>();
-    static ArrayList<Ciudad> listaCiudad =new ArrayList<>();
-    static ArrayList<Tarifa> listaServicios =new ArrayList<>();
+//    static ArrayList<Base> listaBase = new ArrayList<>();
+//    static ArrayList<Ciudad> listaCiudad =new ArrayList<>();
+//    static ArrayList<Tarifa> listaServicios =new ArrayList<>();
     
     //INICIAR
     public static void iniciar(){
@@ -143,7 +143,7 @@ public class ControladorCrear {
             JOptionPane.showMessageDialog(null,"No se pudo eliminar el registro seleccionado","Error",JOptionPane.ERROR_MESSAGE);
         }
         }
-         //VALIDAR DATOS CARGADOS CREAR
+//         VALIDAR DATOS CARGADOS CREAR
         public static int validarCrear(){
        if(ventc.getjTextField2().getText().equals("")){
            JOptionPane.showMessageDialog(null,"No se pude crear paquete sin nombre","Error",JOptionPane.ERROR_MESSAGE);
@@ -166,5 +166,41 @@ public class ControladorCrear {
            return(1);
         }
        return(0);
-        }         
+        } 
+
+  public static ArrayList<Ciudad> buscarDatoDestino() {
+          ArrayList<Ciudad>  valor = new ArrayList<> (); 
+          int filas = ventc.getjTable1().getRowCount();
+          for(int i=0; i<filas; i++)
+                {
+                valor.clear();
+                valor.add(new Ciudad(Integer.parseInt(ventc.getjTable1().getValueAt(i,0).toString()),ventc.getjTable1().getValueAt(i,1).toString()));
+          }
+          return(valor);  
+          } 
+
+  public static ArrayList<Tarifa> buscarDatoTarifa(Float tarifaServ) {
+          ArrayList<Tarifa>  valor = new ArrayList<> (); 
+          int filas = ventc.getjTable2().getRowCount();
+          for(int i=0; i<filas; i++)
+                {
+                valor.clear();
+                valor.add(new Tarifa(datos.RepositorioBase.buscarByDes(ventc.getjComboBox2().getSelectedItem().toString()),datos.RepositorioTarifa.buscarBybase(ventc.getjComboBox2().getSelectedItem().toString())*Integer.parseInt(ventc.getjTextField3().getText())+tarifaServ));  
+                }
+          return(valor);  
+          }  
+  
+   public static ArrayList<Servicio> buscarDatoServicio() {
+          ArrayList<Servicio>  valor = new ArrayList<> (); 
+          int filas = ventc.getjTable2().getRowCount();
+          for(int i=0;i<filas; i++)
+                {
+                valor.clear();
+                    for (int j = 0; j <filas; j++) {
+                      valor.add(new Servicio(Integer.parseInt(ventc.getjTable2().getValueAt(i,2).toString()),Integer.parseInt(ventc.getjTable2().getValueAt(i,3).toString()),Float.parseFloat(ventc.getjTable2().getValueAt(i,4).toString())));   
+                    }   
+          }
+           return(valor);  
+          }  
 }
+  

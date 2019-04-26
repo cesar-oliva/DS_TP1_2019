@@ -6,8 +6,8 @@
 package datos;
 
 import java.util.ArrayList;
-import modelo.Base;
-import modelo.Tarifa;
+import modelo.*;
+
 
 /**
  *
@@ -36,5 +36,12 @@ public class RepositorioTarifa {
         }
         return tf;
        }
-        
+      
+    public static Float buscarBybase(String base){
+        Tarifa tf = null;
+        for(Tarifa t : tarifas){
+            if(t.getBase().getDescripcion().equals(base))tf=t;  
+        }
+        return (tf.getPrecio());
+       }
 }

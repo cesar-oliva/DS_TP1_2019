@@ -8,7 +8,7 @@ package controlador;
 import javax.swing.JOptionPane;
 import vista.*;
 import static controlador.ControladorCrear.*;
-import static controlador.ControladorPrincipal.vents;
+//import static controlador.ControladorPrincipal.vents;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 import modelo.*;
@@ -118,7 +118,7 @@ public class ControladorServicio {
                     obj[1]= "Transporte";
                     obj[2]= listaTransporte.get(i).getDesde();
                     obj[3]= listaTransporte.get(i).getHasta();
-                    obj[4]= listaTransporte.get(i).getPrecioEspecial();
+                    obj[4]= listaTransporte.get(i).getPrecioEspecial()+listaTransporte.get(i).getSeguro();
                     modelserv.addRow(obj);
                 }    
             } 
@@ -142,7 +142,7 @@ public class ControladorServicio {
                     obj[1]= "Excursion";
                     obj[2]= listaExcursion.get(i).getDesde();
                     obj[3]= listaExcursion.get(i).getHasta();
-                    obj[4]= listaExcursion.get(i).getPrecioEspecial();
+                    obj[4]= listaExcursion.get(i).getPrecioEspecial()+listaExcursion.get(i).getSeguro();
                     modelserv.addRow(obj);
                 }    
             } 

@@ -23,8 +23,7 @@ public class VPrincipal extends javax.swing.JFrame{
      */
     public VPrincipal() {
         initComponents();
-        setLocationRelativeTo(null);
-        
+        setLocationRelativeTo(null);        
     }
     
     
@@ -126,8 +125,6 @@ public class VPrincipal extends javax.swing.JFrame{
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
     controlador.ControladorPrincipal.cerrar();
-    controlador.ControladorDatos.cargarComboBase();
-    controlador.ControladorDatos.cargarComboCiudad();
     controlador.ControladorCrear.cargarGrillaDestino();
     controlador.ControladorCrear.iniciar();
            
@@ -198,48 +195,7 @@ public class VPrincipal extends javax.swing.JFrame{
 
     public JTable getTblPaquetes() {
         return tblPaquetes;
-    }
-
-//    @Override
-//    public void cargarPaquetes(ArrayList<Paquete> lista) {
-//        model = new DefaultTableModel();
-//        Object []linea = new Object[5];
-//        
-//        //Agregar Columnas
-//        model.addColumn("Nro");
-//        model.addColumn("Nombre");
-//        model.addColumn("Días");
-//        model.addColumn("Servicios");
-//        model.addColumn("Precio Base Doble");
-//        
-//        //Recorrer lista
-//        for(Paquete elemento: lista)
-//        {
-//            linea[0]=elemento.getNumero();
-//            linea[1]=elemento.getNombre();
-//            linea[2]=elemento.getDias();
-//            linea[3]=elemento.getCantidadServicios();
-//            linea[4]=elemento.getPrecioTarifas(2);
-//            
-//            //Agregar al modelo
-//            model.addRow(linea);
-//        }
-//        
-//        //Setear la Tabla
-//        tblPaquetes.setModel(model);
-//    }
-//
-//    @Override
-//    public int getIndexSeleccionada() {
-//        return this.tblPaquetes.getSelectedRow();
-//    }
-//
-//    @Override
-//    public Object getPaqueteSelecionado(int index) {
-//        return this.tblPaquetes.getModel().getValueAt(0, index);
-//    }
-
-    
+    }   
 }
 
 

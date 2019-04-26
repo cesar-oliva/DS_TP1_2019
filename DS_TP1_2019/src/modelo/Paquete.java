@@ -20,15 +20,16 @@ public class Paquete {
     private String condicionesComerciales;
     private int dias;
     private int noches;
-    private String origen;
-    private int destinos;
-    private float tarifas;
-    private int servicios;
+    private Ciudad origen;
+    private ArrayList<Ciudad> destinos;
+    private ArrayList<Servicio> servicios;
+    private ArrayList<Tarifa> tarifas = new ArrayList<Tarifa>();
     private Estado estado;
+   
 
     //constructores
 
-    public Paquete(int numero, String nombre, String descripcion, String itinerario, String condicionesComerciales, int dias, int noches, String origen, int destinos, float tarifas,int servicios,Estado estado) {
+    public Paquete(int numero, String nombre, String descripcion, String itinerario, String condicionesComerciales, int dias, int noches, Ciudad origen, ArrayList<Ciudad> destinos, ArrayList<Servicio> servicios, ArrayList<Tarifa> tarifas, Estado estado) {
         this.numero = numero;
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -38,12 +39,11 @@ public class Paquete {
         this.noches = noches;
         this.origen = origen;
         this.destinos = destinos;
-        this.tarifas = tarifas;
         this.servicios = servicios;
+        this.tarifas = tarifas;
         this.estado = estado;
     }
 
-    
     //metodos
 
     public int getNumero() {
@@ -102,27 +102,27 @@ public class Paquete {
         this.noches = noches;
     }
 
-    public String getOrigen() {
+    public Ciudad getOrigen() {
         return origen;
     }
 
-    public void setOrigen(String origen) {
+    public void setOrigen(Ciudad origen) {
         this.origen = origen;
     }
 
-    public int getDestinos() {
+    public ArrayList<Ciudad> getDestinos() {
         return destinos;
     }
 
-    public void setDestinos(int destinos) {
+    public void setDestinos(ArrayList<Ciudad> destinos) {
         this.destinos = destinos;
     }
 
-    public float getTarifas() {
+    public ArrayList<Tarifa> getTarifas() {
         return tarifas;
     }
 
-    public void setTarifas(float tarifas) {
+    public void setTarifas(ArrayList<Tarifa> tarifas) {
         this.tarifas = tarifas;
     }
 
@@ -134,13 +134,41 @@ public class Paquete {
         this.estado = estado;
     }
 
-    public int getServicios() {
+    
+
+    public int getCantidadServicios()
+    {
+        int result;
+        if(servicios==null)
+        {
+            result= 0;
+        }else{
+            result=servicios.size();
+        }
+        return result;
+    }
+    
+    
+
+    public float getPrecioTarifaByCantidadPersonas(int cantidad) {
+        float result=0F;
+        for(Tarifa t: this.tarifas)
+        {
+            if(t.getBase().getCantidadPersonas()==cantidad){
+                result=t.getPrecio();
+                break;
+            }
+        }
+        return result;
+        
+    }
+
+    public ArrayList<Servicio> getServicios() {
         return servicios;
     }
 
-    public void setServicios(int servicios) {
+    public void setServicios(ArrayList<Servicio> servicios) {
         this.servicios = servicios;
     }
-
-
+    
 }

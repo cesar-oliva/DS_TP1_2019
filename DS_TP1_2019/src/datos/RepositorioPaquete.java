@@ -6,10 +6,8 @@
 package datos;
 
 import java.util.ArrayList;
-import modelo.Ciudad;
-import modelo.Estado;
-import modelo.Paquete;
-import modelo.Tarifa;
+import modelo.*;
+
 
 /**
  *
@@ -25,9 +23,9 @@ public class RepositorioPaquete {
         return paquetes;
     }
     //AGREGAR PAQUETE
-    public static void agregarPaquete(String nombre, String descripcion, String itinerario, String condicionesComerciales, int dias, int noches, String origen, int destinos, float tarifas,int servicios,Estado estado)
+    public static void agregarPaquete(String nombre, String descripcion, String itinerario, String condicionesComerciales, int dias, int noches, Ciudad origen, ArrayList<Ciudad> destinos, ArrayList<Servicio> servicios, ArrayList<Tarifa> tarifas,Estado estado)
     {
-        Paquete nuevo = new Paquete(contadorPaquetes,nombre,descripcion,itinerario,condicionesComerciales,dias,noches,origen,destinos,tarifas,servicios,estado);
+        Paquete nuevo = new Paquete(contadorPaquetes,nombre,descripcion,itinerario,condicionesComerciales,dias,noches,origen,destinos,servicios,tarifas,estado);
         paquetes.add(nuevo);
         contadorPaquetes++;
     }

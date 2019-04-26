@@ -12,6 +12,7 @@ import javax.swing.table.DefaultTableModel;
 import modelo.*;
 import vista.*;
 import datos.*;
+import static datos.RepositorioTarifa.getTarifas;
 
 /**
  *
@@ -21,15 +22,23 @@ public class ControladorPrincipal {
     static VPrincipal ventp = new VPrincipal();
     static VServicio vents = new VServicio();
     static DefaultTableModel model= new DefaultTableModel();
+//    static ArrayList<Ciudad> listaDestinos = new ArrayList<Ciudad>();
+//    static ArrayList<Servicio> listaServicios = new ArrayList<Servicio>();
+//    static ArrayList<Tarifa> listaTarifas = new ArrayList<Tarifa>();
     static int valorPrecioBase;
 
     
     //INICIAR VENTANA
      public static void iniciar(){ 
-       cargarGrilla();
-       controlador.ControladorDatos.cargarPaquetes();
-       actualizarPaquetes();
-       ventp.setVisible(true);
+        controlador.ControladorDatos.cargarComboBase();
+        controlador.ControladorDatos.cargarComboCiudad();
+        controlador.ControladorDatos.cargarTarifa();
+        cargarGrilla();
+        ventc.dispose();
+        actualizarPaquetes();
+        
+        ventp.setVisible(true);
+        
       }
      //CERRAR VENTANA
      public static void cerrar(){
@@ -51,33 +60,12 @@ public class ControladorPrincipal {
         }
       //AGREGAR PAQUETE
       public static void botonAgregarPaquete(){
-          validarCrear();
-          //SUMA DE SERVICIOS + PRECIO BASE
-          float subt= 0;
-          float tt = Float.parseFloat(ventc.getjTable2().getValueAt(0, 4).toString());
+          //SUMA DE SERVICIOS + PRECIO SEGURO  
+          float total = 0;
           for(int i=0;i<ventc.getjTable2().getRowCount();i++)
           {
-              subt = subt + Float.parseFloat(ventc.getjTable2().getValueAt(i, 4).toString());
+              total = total + Float.parseFloat(ventc.getjTable2().getValueAt(i, 4).toString());
           }
-          int sel = ventc.getjComboBox2().getSelectedIndex();
-          switch (sel){      
-              case 1:
-                  valorPrecioBase = 5000;
-                  break;
-              case 2:
-                  valorPrecioBase = 6500;
-                  break;
-              case 3:
-                  valorPrecioBase = 7500;
-                  break;
-              case 4:
-                  valorPrecioBase = 8000;
-                  break;
-              case 5:
-                  valorPrecioBase = 8300;
-                  break;
-          }
-          float total = valorPrecioBase + subt;
       //-----------------------------------------------------------------------------------------------------
           int resp  = validarCrear();
           if(resp==0){
@@ -85,7 +73,15 @@ public class ControladorPrincipal {
           if(fila == 0){
           JOptionPane.showMessageDialog(null,"Debe seleccionar al menos un servicio antes de crear el paquete");    
           }else{
-            datos.RepositorioPaquete.agregarPaquete(ventc.getjTextField2().getText(),ventc.getjTextArea2().getText(),ventc.getjTextArea1().getText(),ventc.getjTextArea3().getText(),Integer.parseInt(ventc.getjTextField3().getText()),Integer.parseInt(ventc.getjTextField4().getText()),(String)ventc.getjComboBox3().getSelectedItem(),ventc.getjTable1().getRowCount(),total,ventc.getjTable2().getRowCount(),Estado.Inactivo); 
+            String nombre = ventc.getjTextField2().getText();
+            String descripcion = ventc.getjTextArea2().getText();
+            String itinerario = ventc.getjTextArea1().getText();
+            String condicionesComerciales =ventc.getjTextArea3().getText();
+            int dias = Integer.parseInt(ventc.getjTextField3().getText());
+            int noches =Integer.parseInt(ventc.getjTextField4().getText());
+            Ciudad origen = RepositorioCiudad.buscarByNom((String)ventc.getjComboBox3().getSelectedItem());       
+            Estado estado = Estado.Inactivo; 
+            RepositorioPaquete.agregarPaquete(nombre,descripcion,itinerario,condicionesComerciales,dias,noches,origen,controlador.ControladorCrear.buscarDatoDestino(),controlador.ControladorCrear.buscarDatoServicio(),controlador.ControladorCrear.buscarDatoTarifa(total),estado);                                                                                                                                                                      
             actualizarPaquetes();
              //LIMPIEZA DE FORMULARIO
             ventc.getjTextField2().setText("");
@@ -102,23 +98,25 @@ public class ControladorPrincipal {
             DefaultTableModel modeloServicio = (DefaultTableModel) ventc.getjTable2().getModel();
             while(modeloCiudad.getRowCount()>0)modeloCiudad.removeRow(0);
             while(modeloServicio.getRowCount()>0)modeloServicio.removeRow(0);
+            controlador.ControladorCrear.cerrar();
           }
+          }else{
+              
           }
-          controlador.ControladorCrear.cerrar();
         } 
       //MOSTRAR PAQUETES
         public static void mostrarPaquetes(ArrayList<Paquete> lista) {
         Object []linea = new Object[6];
          DefaultTableModel modeloPaquete = (DefaultTableModel) ventp.getTblPaquetes().getModel();
             while(modeloPaquete.getRowCount()>0)modeloPaquete.removeRow(0);
-        //Recorrer lista
+         //Recorrer lista       
         for(Paquete elemento: lista)
         {
             linea[0]=elemento.getNumero();
             linea[1]=elemento.getNombre();
             linea[2]=elemento.getDias();
-            linea[3]=elemento.getServicios();
-            linea[4]=elemento.getTarifas();
+            linea[3]=elemento.getServicios().size();
+            linea[4]=elemento.getTarifas().get(0).getPrecio();
             linea[5]=elemento.getEstado();
             //Agregar al modelo
             model.addRow(linea);
@@ -211,5 +209,5 @@ public class ControladorPrincipal {
                 }catch(Exception e){
             JOptionPane.showMessageDialog(null,"No se pudo modificar el registro seleccionado","Error",JOptionPane.ERROR_MESSAGE);
                 }    
-    }    
+    } 
 }

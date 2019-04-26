@@ -6,16 +6,19 @@
 package controlador;
 
 import static controlador.ControladorCrear.*;
+//import static controlador.ControladorPrincipal.listaTarifas;
+//import static controlador.ControladorPrincipal.listaDestinos;
+//import static controlador.ControladorPrincipal.listaServicios;
 import static controlador.ControladorServicio.*;
 import datos.RepositorioBase;
 import static datos.RepositorioBase.agregarBase;
 import static datos.RepositorioBase.getBases;
 import static datos.RepositorioCiudad.agregarCiudad;
 import static datos.RepositorioCiudad.getCiudades;
-import datos.RepositorioPaquete;
+//import datos.RepositorioPaquete;
 import static datos.RepositorioTarifa.agregarTarifa;
-import modelo.Ciudad;
-import modelo.Estado;
+//import static datos.RepositorioTarifa.getTarifas;
+//import modelo.*;
 
 /**
  *
@@ -47,21 +50,15 @@ public class ControladorDatos {
          agregarBase("Quintuple",5);
          agregarBase("Sextuple",6);           
             for (int i = 0; i < getBases().size(); i++) {
-           ventc.getjComboBox2().addItem(getBases().get(i).getDescripcion());  
+           ventc.getjComboBox2().addItem(getBases().get(i).getDescripcion()); 
         }
+
     }
     //CARGAR COMBO TARIFA
     public static void cargarTarifa(){
         for (int i = 0; i < getBases().size(); i++) {
-        agregarTarifa(RepositorioBase.buscarByCantidadPersonas(i),i*1550.00F);
-             
+        agregarTarifa(RepositorioBase.buscarByCantidadPersonas(i),i*1550.00F); 
         }
-    }
-    
-        public static void cargarPaquetes(){
-        RepositorioPaquete.agregarPaquete("Cordoba","Descripcion","Intinerario","CondComerciales",7,3,"Villa Gral Belgrano",2,2510,3,Estado.Inactivo);
-        RepositorioPaquete.agregarPaquete("Mendoza","Descripcion","Intinerario","CondComerciales",5,3,"San Rafael",3,1500,2,Estado.Cancelado); 
-    }
-  
-       
+
+    }       
 }
