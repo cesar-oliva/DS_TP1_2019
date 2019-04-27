@@ -25,10 +25,7 @@ public class ControladorCrear {
     static VCrear ventc = new VCrear();
     static DefaultTableModel modeldest= new DefaultTableModel();
     static DefaultTableModel modelserv= new DefaultTableModel();
-//    static ArrayList<Base> listaBase = new ArrayList<>();
-//    static ArrayList<Ciudad> listaCiudad =new ArrayList<>();
-//    static ArrayList<Tarifa> listaServicios =new ArrayList<>();
-    
+   
     //INICIAR
     public static void iniciar(){
        ventc.getjTextField1().setText(Integer.toString(contadorPaquetes));
@@ -197,7 +194,8 @@ public class ControladorCrear {
                 {
                 valor.clear();
                     for (int j = 0; j <filas; j++) {
-                     // valor.add(new Servicio(Integer.parseInt(ventc.getjTable2().getValueAt(i,2).toString()),Integer.parseInt(ventc.getjTable2().getValueAt(i,3).toString()),Float.parseFloat(ventc.getjTable2().getValueAt(i,4).toString())));
+                        
+                     valor.add(new Servicio(ventc.getjTable2().getValueAt(i,1).toString(),Integer.parseInt(ventc.getjTable2().getValueAt(i,2).toString()),Integer.parseInt(ventc.getjTable2().getValueAt(i,3).toString()),Float.parseFloat(ventc.getjTable2().getValueAt(i,4).toString())));
                     }   
           }
            return(valor);  

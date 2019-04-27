@@ -110,7 +110,7 @@ public class ControladorServicio {
            //AGREGAR COMIDA
       public static void agregarComida(){          
             String idPaquete =ventc.getjTextField1().getText();
-            TipoComida tipoCom = seleccionTipoComida();
+            ArrayList<TipoComida> tipoCom = seleccionTipoComida();
             int desde = Integer.parseInt(vents.getTxtDesdeC().getText());
             int hasta = Integer.parseInt(vents.getTxtHastaC().getText());
             float precioEspecial = Float.parseFloat(vents.getTxtPEC().getText());
@@ -141,13 +141,14 @@ public class ControladorServicio {
         mostrarComida(lista);
         }
         //SELECCION DE TIPO DE COMIDA
-        public static TipoComida seleccionTipoComida(){
-             TipoComida tcom = null;
-            if(vents.getjRadioButton1().isSelected())tcom=TipoComida.Almuerzo;
-            if(vents.getjRadioButton2().isSelected())tcom=TipoComida.Cena;
-            if(vents.getjRadioButton3().isSelected())tcom=TipoComida.Desayuno;
-            if(vents.getjRadioButton4().isSelected())tcom=TipoComida.Merienda;
-            return(tcom);
+        public static ArrayList<TipoComida> seleccionTipoComida(){
+            ArrayList<TipoComida>  valor = new ArrayList<> (); 
+            valor.clear();
+            if(vents.getjRadioButton1().isSelected())valor.add(TipoComida.Almuerzo);
+            if(vents.getjRadioButton2().isSelected())valor.add(TipoComida.Cena);
+            if(vents.getjRadioButton3().isSelected())valor.add(TipoComida.Desayuno);
+            if(vents.getjRadioButton4().isSelected())valor.add(TipoComida.Merienda);
+            return(valor);
         }
              //AGREGAR COMIDA
       public static void agregarTransporte(){          

@@ -5,31 +5,31 @@
  */
 package modelo;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Cesar
  */
 public class Comida extends Servicio {
     //atributos
-    private TipoComida tipoCom;
+    private  ArrayList<TipoComida> tipoCom;
     
     
     //constructores
-    public Comida(String idPaquete,TipoComida tipoCom, int desde, int hasta, Float precioEspecial) {
+    public Comida(String idPaquete,ArrayList<TipoComida> tipoCom, int desde, int hasta, Float precioEspecial) {
         super(idPaquete, desde, hasta, precioEspecial);
-        this.tipoCom = tipoCom;
+        this.tipoCom =tipoCom;
     }
    
     //metodos
 
-    public TipoComida getTipoCom() {
+    public ArrayList<TipoComida> getTipoCom() {
         return tipoCom;
     }
 
-    public void setTipoCom(TipoComida tipoCom) {
+    public void setTipoCom(ArrayList<TipoComida> tipoCom) {
         this.tipoCom = tipoCom;
-    }
-  
-    
+    }   
     
 }

@@ -34,12 +34,7 @@ public class VServicio extends javax.swing.JFrame {
         buttonGroup1.add(jRadioButton3);
         buttonGroup1.add(jRadioButton4);
         buttonGroup1.add(jRadioButton5);
-         //GRUPO DE BOTONES DE COMIDA     
-        buttonGroup2.add(jRadioButton6);
-        buttonGroup2.add(jRadioButton7);
-        buttonGroup2.add(jRadioButton8);
-        buttonGroup2.add(jRadioButton9);
-       //GRUPO DE BOTONES DE TRASNPORTE   
+        //GRUPO DE BOTONES DE TRASNPORTE   
         buttonGroup3.add(jRadioButton10);
         buttonGroup3.add(jRadioButton11);
         //GRUPO DE BOTONES DE TRASNPORTE 

@@ -60,7 +60,7 @@ public class RepositorioServicios {
         return serviciosComida;
     }
     //AGREGAR PAQUETE COMIDA
-    public static void agregarServicioComida(String idPaquete,TipoComida tipoCom, int desde, int hasta, Float precioEspecial)
+    public static void agregarServicioComida(String idPaquete,ArrayList<TipoComida> tipoCom, int desde, int hasta, Float precioEspecial)
     {
         Comida nuevo = new Comida(idPaquete,tipoCom,desde,hasta,precioEspecial);
         serviciosComida.add(nuevo);
