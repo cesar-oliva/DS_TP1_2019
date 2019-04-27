@@ -79,8 +79,8 @@ public class ControladorCrear {
      //CARGAR GRILLA SERVICIO
      public static void cargarGrillaServicio(){
         ArrayList<Object> serv =new ArrayList<>();
-        serv.add("CodServ");
-        serv.add("Nombre");
+        serv.add("CodPaq");
+        serv.add("Tipo Servicio");
         serv.add("Desde");
         serv.add("Hasta");
         serv.add("Precio Especial"); 
@@ -197,7 +197,7 @@ public class ControladorCrear {
                 {
                 valor.clear();
                     for (int j = 0; j <filas; j++) {
-                      valor.add(new Servicio(Integer.parseInt(ventc.getjTable2().getValueAt(i,2).toString()),Integer.parseInt(ventc.getjTable2().getValueAt(i,3).toString()),Float.parseFloat(ventc.getjTable2().getValueAt(i,4).toString())));   
+                     // valor.add(new Servicio(Integer.parseInt(ventc.getjTable2().getValueAt(i,2).toString()),Integer.parseInt(ventc.getjTable2().getValueAt(i,3).toString()),Float.parseFloat(ventc.getjTable2().getValueAt(i,4).toString())));
                     }   
           }
            return(valor);  

@@ -11,32 +11,25 @@ package modelo;
  */
 public class Transporte extends Servicio{
     //atributo
-    private TipoTransporte tipo;
+    private TipoTransporte tipoTransp;
     private Comodidad comodidad;
     private float seguro;
     
     //constructores
 
-    public Transporte(int desde, int hasta, float precioEspecial,float seguro) {
-        super(desde,hasta,precioEspecial);
+    public Transporte(String tipo,TipoTransporte tipoTransp ,int desde, int hasta,Comodidad comodidad,Float seguro ,Float precioEspecial) {
+        super(tipo, desde, hasta, precioEspecial);
+        this.comodidad = comodidad;
         this.seguro = seguro;
+        this.tipoTransp = tipoTransp;
     }
 
-
-    public float getSeguro() {
-        return seguro;
+    public TipoTransporte getTipoTransp() {
+        return tipoTransp;
     }
 
-    public void setSeguro(float seguro) {
-        this.seguro = seguro;
-    }
-
-    public TipoTransporte getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(TipoTransporte tipo) {
-        this.tipo = tipo;
+    public void setTipoTransp(TipoTransporte tipoTransp) {
+        this.tipoTransp = tipoTransp;
     }
 
     public Comodidad getComodidad() {
@@ -46,8 +39,15 @@ public class Transporte extends Servicio{
     public void setComodidad(Comodidad comodidad) {
         this.comodidad = comodidad;
     }
-    
-    
-    
+
+    public float getSeguro() {
+        return seguro;
+    }
+
+    public void setSeguro(float seguro) {
+        this.seguro = seguro;
+    }
+
+   
     
 }

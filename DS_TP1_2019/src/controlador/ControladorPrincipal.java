@@ -12,7 +12,7 @@ import javax.swing.table.DefaultTableModel;
 import modelo.*;
 import vista.*;
 import datos.*;
-import static datos.RepositorioTarifa.getTarifas;
+
 
 /**
  *
@@ -22,11 +22,6 @@ public class ControladorPrincipal {
     static VPrincipal ventp = new VPrincipal();
     static VServicio vents = new VServicio();
     static DefaultTableModel model= new DefaultTableModel();
-//    static ArrayList<Ciudad> listaDestinos = new ArrayList<Ciudad>();
-//    static ArrayList<Servicio> listaServicios = new ArrayList<Servicio>();
-//    static ArrayList<Tarifa> listaTarifas = new ArrayList<Tarifa>();
-    static int valorPrecioBase;
-
     
     //INICIAR VENTANA
      public static void iniciar(){ 
@@ -36,9 +31,7 @@ public class ControladorPrincipal {
         cargarGrilla();
         ventc.dispose();
         actualizarPaquetes();
-        
         ventp.setVisible(true);
-        
       }
      //CERRAR VENTANA
      public static void cerrar(){
@@ -60,13 +53,7 @@ public class ControladorPrincipal {
         }
       //AGREGAR PAQUETE
       public static void botonAgregarPaquete(){
-          //SUMA DE SERVICIOS + PRECIO SEGURO  
-          float total = 0;
-          for(int i=0;i<ventc.getjTable2().getRowCount();i++)
-          {
-              total = total + Float.parseFloat(ventc.getjTable2().getValueAt(i, 4).toString());
-          }
-      //-----------------------------------------------------------------------------------------------------
+          float total = importeTotal();
           int resp  = validarCrear();
           if(resp==0){
           int fila = ventc.getjTable2().getRowCount();
@@ -210,4 +197,13 @@ public class ControladorPrincipal {
             JOptionPane.showMessageDialog(null,"No se pudo modificar el registro seleccionado","Error",JOptionPane.ERROR_MESSAGE);
                 }    
     } 
+        //SUMA DE SERVICIOS + PRECIO SEGURO  
+        public static Float importeTotal(){
+          float total = 0;
+          for(int i=0;i<ventc.getjTable2().getRowCount();i++)
+          {
+              total = total + Float.parseFloat(ventc.getjTable2().getValueAt(i, 4).toString());
+          }
+          return(total);
+        }
 }

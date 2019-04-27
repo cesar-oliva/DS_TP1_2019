@@ -13,14 +13,14 @@ public class Excursion extends Servicio {
     //atributos
     private String lugar;
     private float seguro;
-    
     //constructores
-    public Excursion(int desde, int hasta, Float precioEspecial) {
-        super(desde, hasta, precioEspecial);
+    public Excursion(String idPaquete,String lugar,int desde, int hasta, float seguro,Float precioEspecial) {
+        super(idPaquete,desde, hasta, precioEspecial);
+        this.lugar = lugar;
+        this.seguro = seguro;
     }
-    
-
     //metodos
+
     public String getLugar() {
         return lugar;
     }
@@ -35,6 +35,5 @@ public class Excursion extends Servicio {
 
     public void setSeguro(float seguro) {
         this.seguro = seguro;
-    }
-    
+    } 
 }

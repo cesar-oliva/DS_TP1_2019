@@ -11,21 +11,25 @@ package modelo;
  */
 public class Comida extends Servicio {
     //atributos
-    private TipoComida tipo;
-
-    public Comida(int desde, int hasta, Float precioEspecial) {
-        super(desde, hasta, precioEspecial);
-    }
-
-    //constructores
+    private TipoComida tipoCom;
     
+    
+    //constructores
+    public Comida(String idPaquete,TipoComida tipoCom, int desde, int hasta, Float precioEspecial) {
+        super(idPaquete, desde, hasta, precioEspecial);
+        this.tipoCom = tipoCom;
+    }
+   
     //metodos
-    public TipoComida getTipo() {
-        return tipo;
+
+    public TipoComida getTipoCom() {
+        return tipoCom;
     }
 
-    public void setTipo(TipoComida tipo) {
-        this.tipo = tipo;
+    public void setTipoCom(TipoComida tipoCom) {
+        this.tipoCom = tipoCom;
     }
+  
+    
     
 }

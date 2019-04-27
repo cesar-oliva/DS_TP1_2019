@@ -8,7 +8,6 @@ package controlador;
 import javax.swing.JOptionPane;
 import vista.*;
 import static controlador.ControladorCrear.*;
-//import static controlador.ControladorPrincipal.vents;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 import modelo.*;
@@ -19,12 +18,7 @@ import modelo.*;
  */
 public class ControladorServicio {
     static VServicio vents = new VServicio();
-    static ArrayList<Alojamiento> listaAlojamiento = new ArrayList<Alojamiento>();
-    static ArrayList<Comida> listaComida = new ArrayList<Comida>();
-    static ArrayList<Transporte> listaTransporte = new ArrayList<Transporte>();
-    static ArrayList<Excursion> listaExcursion = new ArrayList<Excursion>();
-    
-    static int ca=0, cc=0, ct=0, ce=0;
+
   //INICIAR
      public static void iniciar(){
              vents.setLocationRelativeTo(null);
@@ -35,119 +29,175 @@ public class ControladorServicio {
          vents.dispose();
          }
       //AGREGAR ALOJAMIENTO
-      public static void agregarAlojamiento(){
-          int resp= validarCrearServicio();
-          if(resp==0){
-            listaAlojamiento.add(new Alojamiento(Integer.parseInt(vents.getTxtDesdeA().getText()),Integer.parseInt(vents.getTxtHastaA().getText()),Float.parseFloat(vents.getTxtPEA().getText())));
-            mostrarAlojamiento();
-            
-            vents.getBotonAgregarA().setEnabled(false);
-            vents.getjComboBox1().setEnabled(false);
-            vents.getTxtDesdeA().setEnabled(false);
-            vents.getTxtDesdeA().setText("");
-            vents.getTxtHastaA().setEnabled(false);
-            vents.getTxtHastaA().setText("");
-            vents.getTxtPEA().setEnabled(false);
-            vents.getTxtPEA().setText("");
-            vents.getjRadioButton1().setEnabled(false);
-            vents.getjRadioButton2().setEnabled(false);
-            vents.getjRadioButton3().setEnabled(false);
-            vents.getjRadioButton4().setEnabled(false);
-            vents.getjRadioButton5().setEnabled(false);
-            vents.getjCheckBox1().setSelected(false);
-          }
+      public static void agregarAlojamiento(){          
+            String tipo ="Alojamiento";
+            String idPaquete =ventc.getjTextField1().getText();
+            Ciudad ciudad = datos.RepositorioCiudad.buscarByNom(vents.getjComboBox1().getSelectedItem().toString());
+            Estrella estrella = seleccionTipoEstrella();
+            int desde = Integer.parseInt(vents.getTxtDesdeA().getText());
+            int hasta = Integer.parseInt(vents.getTxtHastaA().getText());
+            float precioEspecial = Float.parseFloat(vents.getTxtPEA().getText());
+            datos.RepositorioServicios.agregarServicioAlojamiento(idPaquete,ciudad,estrella,desde,hasta,precioEspecial);
+            actualizarServiciosAlojamiento();
+            limpiarForm();
         } 
       //MOSTRAR SERVICIO ALOJAMIENTO
-          public static void mostrarAlojamiento(){
-            ca = ca + 1;
-            
+          public static void mostrarAlojamiento(ArrayList<Alojamiento> lista){
             int res = JOptionPane.showConfirmDialog(vents,"¿Está seguro de agregar el servicio?","ALERTA",JOptionPane.YES_NO_OPTION);
             if(res == 0)
                 {
-                Object[] obj = new Object[modelserv.getColumnCount()];
-                for (int i = listaAlojamiento.size()-1; i < listaAlojamiento.size(); i++) {
-                    obj[0]= Integer.parseInt(ventc.getjTextField1().getText())+"-001-" + ca;
-                    obj[1]= "Alojamiento";
-                    obj[2]= listaAlojamiento.get(i).getDesde();
-                    obj[3]= listaAlojamiento.get(i).getHasta();
-                    obj[4]= listaAlojamiento.get(i).getPrecioEspecial();
-                    modelserv.addRow(obj);
+                Object[] linea = new Object[modelserv.getColumnCount()];
+                    for (Alojamiento elemento : lista) {    
+                    linea[0]=elemento.getIdPaquete();
+                    linea[1]="Alojamiento";
+                    linea[2]=elemento.getDesde();
+                    linea[3]=elemento.getHasta();
+                    linea[4]=elemento.getPrecioEspecial();
+                    modelserv.addRow(linea);   
                 }    
             } 
             ventc.getjTable2().setModel(modelserv); 
-     }            
-     //AGREGAR COMIDA
-      public static void agregarComida(){
-            listaComida.add(new Comida(Integer.parseInt(vents.getTxtDesdeC().getText()),Integer.parseInt(vents.getTxtHastaC().getText()),Float.parseFloat(vents.getTxtPEC().getText())));
-            mostrarComida();
-             
-        } 
-      //MOSTRAR SERVICIO COMIDA
-          public static void mostrarComida(){
-            cc = cc + 1;
-            int res = JOptionPane.showConfirmDialog(vents,"¿Está seguro de agregar el servicio?","ALERTA",JOptionPane.YES_NO_OPTION);
-            if(res == 0)
-                {
-                Object[] obj = new Object[modelserv.getColumnCount()];
-                for (int i = listaComida.size()-1; i < listaComida.size(); i++) {
-                    obj[0]= Integer.parseInt(ventc.getjTextField1().getText())+"-002-" +cc;
-                    obj[1]= "Comida";
-                    obj[2]= listaComida.get(i).getDesde();
-                    obj[3]= listaComida.get(i).getHasta();
-                    obj[4]= listaComida.get(i).getPrecioEspecial();
-                    modelserv.addRow(obj);
-                }    
-            } 
-            ventc.getjTable2().setModel(modelserv); 
-     }   
-     //AGREGAR TRANSPORTE
-      public static void agregarTransporte(){
-            listaTransporte.add(new Transporte(Integer.parseInt(vents.getTxtDesdeT().getText()),Integer.parseInt(vents.getTxtHastaT().getText()),Float.parseFloat(vents.getTxtPET().getText()),Float.parseFloat(vents.getTxtSeguroT().getText())));
-            mostrarTransporte();
-              
-        } 
-      //MOSTRAR SERVICIO TRANSPORTE
-          public static void mostrarTransporte(){
-            ct = ct + 1;
-            int res = JOptionPane.showConfirmDialog(vents,"¿Está seguro de agregar el servicio?","ALERTA",JOptionPane.YES_NO_OPTION);
-            if(res == 0)
-                {
-                Object[] obj = new Object[modelserv.getColumnCount()];
-                for (int i = listaTransporte.size()-1; i < listaTransporte.size(); i++) {
-                    obj[0]= Integer.parseInt(ventc.getjTextField1().getText())+"-003-" + ct;
-                    obj[1]= "Transporte";
-                    obj[2]= listaTransporte.get(i).getDesde();
-                    obj[3]= listaTransporte.get(i).getHasta();
-                    obj[4]= listaTransporte.get(i).getPrecioEspecial()+listaTransporte.get(i).getSeguro();
-                    modelserv.addRow(obj);
-                }    
-            } 
-            ventc.getjTable2().setModel(modelserv); 
-     }             
+     } 
+        //ACIUALIZAR SERVICIO ALOJAMIENTO
+        public static void actualizarServiciosAlojamiento() {
+        ArrayList<Alojamiento> lista=datos.RepositorioServicios.getServicioAlojamiento();
+        mostrarAlojamiento(lista);
+        }   
+         //SELECCION DE TIPO DE ESTRELLA
+        public static Estrella seleccionTipoEstrella(){
+             Estrella test = null;
+            if(vents.getjRadioButton9().isSelected())test=Estrella.Uno;
+            if(vents.getjRadioButton10().isSelected())test=Estrella.Dos;
+            if(vents.getjRadioButton11().isSelected())test=Estrella.Tres;
+            if(vents.getjRadioButton12().isSelected())test=Estrella.Cuatro;
+            if(vents.getjRadioButton13().isSelected())test=Estrella.Cinco;
+            return(test);
+        }   
       //AGREGAR EXCURSION
-      public static void agregarExcursion(){
-            listaExcursion.add(new Excursion(Integer.parseInt(vents.getTxtDesdeE().getText()),Integer.parseInt(vents.getTxtHastaE().getText()),Float.parseFloat(vents.getTxtPEE().getText())));
-            mostrarExcursion();
-             
+      public static void agregarExcursion(){          
+            String tipo ="Excursion";
+            String idPaquete = ventc.getjTextField1().getText();
+            int desde = Integer.parseInt(vents.getTxtDesdeE().getText());
+            int hasta = Integer.parseInt(vents.getTxtHastaE().getText());
+            float seguro = Float.parseFloat(vents.getTxtSeguroE().getText());
+            float precioEspecial = Float.parseFloat(vents.getTxtPEE().getText());
+            datos.RepositorioServicios.agregarServicioExcursion(idPaquete,tipo,desde,hasta,seguro,precioEspecial);
+            actualizarServiciosExcursion();
+            limpiarForm();
         } 
       //MOSTRAR SERVICIO EXCURSION
-          public static void mostrarExcursion(){
-            ct = ct + 1;
+          public static void mostrarExcursion(ArrayList<Excursion> lista){
             int res = JOptionPane.showConfirmDialog(vents,"¿Está seguro de agregar el servicio?","ALERTA",JOptionPane.YES_NO_OPTION);
             if(res == 0)
                 {
-                Object[] obj = new Object[modelserv.getColumnCount()];
-                for (int i = listaExcursion.size()-1; i < listaExcursion.size(); i++) {
-                    obj[0]= Integer.parseInt(ventc.getjTextField1().getText())+"-004-" + ct;
-                    obj[1]= "Excursion";
-                    obj[2]= listaExcursion.get(i).getDesde();
-                    obj[3]= listaExcursion.get(i).getHasta();
-                    obj[4]= listaExcursion.get(i).getPrecioEspecial()+listaExcursion.get(i).getSeguro();
-                    modelserv.addRow(obj);
+                Object[] linea = new Object[modelserv.getColumnCount()];
+                    for (Excursion elemento : lista) {    
+                    linea[0]=elemento.getIdPaquete();
+                    linea[1]="Excursion";
+                    linea[2]=elemento.getDesde();
+                    linea[3]=elemento.getHasta();
+                    linea[4]=elemento.getPrecioEspecial()+elemento.getSeguro();
+                    modelserv.addRow(linea);   
                 }    
             } 
             ventc.getjTable2().setModel(modelserv); 
-     }             
+     } 
+        //ACIUALIZAR SERVICIO EXCURSION  
+        public static void actualizarServiciosExcursion() {
+        ArrayList<Excursion> lista=datos.RepositorioServicios.getServicioExcursion();
+        mostrarExcursion(lista);
+        }   
+           //AGREGAR COMIDA
+      public static void agregarComida(){          
+            String idPaquete =ventc.getjTextField1().getText();
+            TipoComida tipoCom = seleccionTipoComida();
+            int desde = Integer.parseInt(vents.getTxtDesdeC().getText());
+            int hasta = Integer.parseInt(vents.getTxtHastaC().getText());
+            float precioEspecial = Float.parseFloat(vents.getTxtPEC().getText());
+            datos.RepositorioServicios.agregarServicioComida(idPaquete,tipoCom,desde,hasta,precioEspecial);
+            actualizarServiciosComida();
+            limpiarForm();
+        } 
+      //MOSTRAR SERVICIO COMIDA
+          public static void mostrarComida(ArrayList<Comida> lista){
+            int res = JOptionPane.showConfirmDialog(vents,"¿Está seguro de agregar el servicio?","ALERTA",JOptionPane.YES_NO_OPTION);
+            if(res == 0)
+                {
+                Object[] linea = new Object[modelserv.getColumnCount()];
+                    for (Comida elemento : lista) {    
+                    linea[0]=elemento.getIdPaquete();
+                    linea[1]="Comida";
+                    linea[2]=elemento.getDesde();
+                    linea[3]=elemento.getHasta();
+                    linea[4]=elemento.getPrecioEspecial();
+                    modelserv.addRow(linea);   
+                }    
+            } 
+            ventc.getjTable2().setModel(modelserv); 
+     } 
+        //ACIUALIZAR SERVICIO COMIDA 
+        public static void actualizarServiciosComida() {
+        ArrayList<Comida> lista=datos.RepositorioServicios.getServicioComida();
+        mostrarComida(lista);
+        }
+        //SELECCION DE TIPO DE COMIDA
+        public static TipoComida seleccionTipoComida(){
+             TipoComida tcom = null;
+            if(vents.getjRadioButton1().isSelected())tcom=TipoComida.Almuerzo;
+            if(vents.getjRadioButton2().isSelected())tcom=TipoComida.Cena;
+            if(vents.getjRadioButton3().isSelected())tcom=TipoComida.Desayuno;
+            if(vents.getjRadioButton4().isSelected())tcom=TipoComida.Merienda;
+            return(tcom);
+        }
+             //AGREGAR COMIDA
+      public static void agregarTransporte(){          
+            String idPaquete =ventc.getjTextField1().getText();
+            TipoTransporte tipoTransp = seleccionTipoTransporte();
+            Comodidad comodidad = seleccionTipoComodidad();
+            int desde = Integer.parseInt(vents.getTxtDesdeT().getText());
+            int hasta = Integer.parseInt(vents.getTxtHastaT().getText());
+            float precioEspecial = Float.parseFloat(vents.getTxtPET().getText());
+            float seguro = Float.parseFloat(vents.getTxtSeguroT().getText());
+            datos.RepositorioServicios.agregarServicioTransporte(idPaquete,tipoTransp,desde,hasta,comodidad,seguro,precioEspecial);
+            actualizarServiciosTransporte();
+            limpiarForm();
+        } 
+      //MOSTRAR SERVICIO COMIDA
+          public static void mostrarTransporte(ArrayList<Transporte> lista){
+            int res = JOptionPane.showConfirmDialog(vents,"¿Está seguro de agregar el servicio?","ALERTA",JOptionPane.YES_NO_OPTION);
+            if(res == 0)
+                {
+                Object[] linea = new Object[modelserv.getColumnCount()];
+                    for (Transporte elemento : lista) {    
+                    linea[0]=elemento.getIdPaquete();
+                    linea[1]="Transporte";
+                    linea[2]=elemento.getDesde();
+                    linea[3]=elemento.getHasta();
+                    linea[4]=elemento.getPrecioEspecial()+elemento.getSeguro();
+                    modelserv.addRow(linea);   
+                }    
+            } 
+            ventc.getjTable2().setModel(modelserv); 
+     } 
+        //ACIUALIZAR SERVICIO TRANSPORTE
+        public static void actualizarServiciosTransporte() {
+        ArrayList<Transporte> lista=datos.RepositorioServicios.getServicioTransporte();
+        mostrarTransporte(lista);
+        }
+        //SELECCION DE TIPO DE TRANSPORTE
+        public static TipoTransporte seleccionTipoTransporte(){
+            TipoTransporte ttransp = null;
+            if(vents.getjRadioButton5().isSelected())ttransp=TipoTransporte.Aviom;
+            if(vents.getjRadioButton6().isSelected())ttransp=TipoTransporte.Omnibus;
+            return(ttransp);
+        }
+         //SELECCION DE TIPO DE COMODIDAD
+        public static Comodidad seleccionTipoComodidad(){
+            Comodidad tcomod = null;
+            if(vents.getjRadioButton7().isSelected())tcomod=Comodidad.Basica;
+            if(vents.getjRadioButton8().isSelected())tcomod=Comodidad.Ejecutiva;
+            return(tcomod);
+        }
        //ELIMINAR FILA SERVICIO
        public static void eliminarFilaDestino(){
         DefaultTableModel eliminar = (DefaultTableModel)ventc.getjTable2().getModel();   
@@ -167,6 +217,58 @@ public class ControladorServicio {
             JOptionPane.showMessageDialog(null,"No se pudo eliminar el registro seleccionado","Error",JOptionPane.ERROR_MESSAGE);
         }
         }
+       //LIMPIAR FORMULARIO SERVICIOS
+       public static void limpiarForm(){
+           vents.getBotonAgregarA().setEnabled(false);
+           vents.getjComboBox1().setSelectedItem("Seleccione");
+           vents.getjComboBox1().setEnabled(false);
+           vents.getTxtDesdeA().setEnabled(false);
+           vents.getTxtDesdeA().setText("");
+           vents.getTxtHastaA().setEnabled(false);
+           vents.getTxtHastaA().setText("");
+           vents.getTxtDesdeE().setEnabled(false);
+           vents.getTxtDesdeE().setText("");
+           vents.getTxtHastaE().setEnabled(false);
+           vents.getTxtHastaE().setText("");
+           vents.getTxtDesdeC().setEnabled(false);
+           vents.getTxtDesdeC().setText("");
+           vents.getTxtHastaC().setEnabled(false);
+           vents.getTxtHastaC().setText("");
+           vents.getTxtDesdeT().setEnabled(false);
+           vents.getTxtDesdeT().setText("");
+           vents.getTxtHastaT().setEnabled(false);
+           vents.getTxtHastaT().setText("");
+           vents.getTxtPEA().setEnabled(false);
+           vents.getTxtPEA().setText("");
+           vents.getTxtPEE().setEnabled(false);
+           vents.getTxtPEE().setText("");
+           vents.getTxtPEC().setEnabled(false);
+           vents.getTxtPEC().setText("");
+           vents.getTxtPET().setEnabled(false);
+           vents.getTxtPET().setText("");
+           vents.getTxtSeguroT().setText("");
+           vents.getTxtSeguroT().setEnabled(false);
+           vents.getTxtSeguroE().setText("");
+           vents.getTxtSeguroE().setEnabled(false);
+           vents.getTxtLugarE().setText("");
+           vents.getTxtLugarE().setEnabled(false);
+           vents.getjRadioButton1().setEnabled(false);
+           vents.getjRadioButton2().setEnabled(false);
+           vents.getjRadioButton3().setEnabled(false);
+           vents.getjRadioButton4().setEnabled(false);
+           vents.getjRadioButton5().setEnabled(false);
+           vents.getjRadioButton6().setEnabled(false);
+           vents.getjRadioButton7().setEnabled(false);
+           vents.getjRadioButton8().setEnabled(false);
+           vents.getjRadioButton9().setEnabled(false);
+           vents.getjRadioButton10().setEnabled(false);
+           vents.getjRadioButton11().setEnabled(false);
+           vents.getjRadioButton12().setEnabled(false);
+           vents.getjRadioButton13().setEnabled(false);
+           vents.getjCheckBox1().setSelected(false);
+       
+       }
+
        //VALIDAR DATOS CARGADOS CREAR
         public static int validarCrearServicio(){
        if(vents.getjCheckBox1().isSelected()&&vents.getTxtDesdeA().getText().equals("")){
@@ -187,10 +289,5 @@ public class ControladorServicio {
        }
        return(0);
         }
-        
-       public static void subTotalALOJAMIENTO(){
-           int st = 0;
-           
-       }
         }    
 

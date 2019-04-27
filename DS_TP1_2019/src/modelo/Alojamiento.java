@@ -12,14 +12,16 @@ package modelo;
 public class Alojamiento extends Servicio {
     //atributos
     private Estrella estrella;
+    Ciudad ciudad;
     
     //constructores
 
-    public Alojamiento(int desde, int hasta, Float precioEspecial) {
-        super(desde, hasta, precioEspecial);
+    public Alojamiento(String idPaquete,Ciudad ciudad, Estrella estrella, int desde, int hasta, Float precioEspecial) {
+        super(idPaquete, desde, hasta, precioEspecial);
+        this.estrella = estrella;
+        this.ciudad = ciudad;
     }
 
-    
     //metodos
 
     public Estrella getEstrella() {
@@ -28,6 +30,14 @@ public class Alojamiento extends Servicio {
 
     public void setEstrella(Estrella estrella) {
         this.estrella = estrella;
+    }
+
+    public Ciudad getCiudad() {
+        return ciudad;
+    }
+
+    public void setCiudad(Ciudad ciudad) {
+        this.ciudad = ciudad;
     }
     
 }

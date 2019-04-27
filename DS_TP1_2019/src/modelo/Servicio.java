@@ -5,18 +5,22 @@
  */
 package modelo;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Cesar
  */
-public class Servicio {
+public class Servicio{
     //atributos
+    private String idPaquete;
     private int desde;
     private int hasta;
     private Float precioEspecial;
 
     //constructores
-    public Servicio(int desde, int hasta, Float precioEspecial) {
+    public Servicio(String idPaquete,int desde, int hasta, Float precioEspecial) {
+        this.idPaquete = idPaquete;
         this.desde = desde;
         this.hasta = hasta;
         this.precioEspecial = precioEspecial;
@@ -46,6 +50,13 @@ public class Servicio {
     public void setPrecioEspecial(Float precioEspecial) {
         this.precioEspecial = precioEspecial;
     }
-    
-    
+
+    public String getIdPaquete() {
+        return idPaquete;
+    }
+
+    public void setIdPaquete(String idPaquete) {
+        this.idPaquete = idPaquete;
+    }
+  
 }

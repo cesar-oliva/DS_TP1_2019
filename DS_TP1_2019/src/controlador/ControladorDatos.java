@@ -31,6 +31,7 @@ public class ControladorDatos {
         agregarCiudad(1001,"Buenos Aires");
         agregarCiudad(5000,"Cordoba");
         agregarCiudad(5500,"Mendoza");
+        agregarCiudad(4000,"Tucuman");
         agregarCiudad(4400,"Salta");
         agregarCiudad(3000,"Santa Fe");
         agregarCiudad(9400,"Santa Cruz");
