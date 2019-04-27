@@ -153,7 +153,7 @@ public class ControladorServicio {
              //AGREGAR COMIDA
       public static void agregarTransporte(){          
             String idPaquete =ventc.getjTextField1().getText();
-            TipoTransporte tipoTransp = seleccionTipoTransporte();
+            ArrayList<Object> tipoTransp = arraySelectTransporte();
             Comodidad comodidad = seleccionTipoComodidad();
             int desde = Integer.parseInt(vents.getTxtDesdeT().getText());
             int hasta = Integer.parseInt(vents.getTxtHastaT().getText());
@@ -198,6 +198,13 @@ public class ControladorServicio {
             if(vents.getjRadioButton7().isSelected())tcomod=Comodidad.Basica;
             if(vents.getjRadioButton8().isSelected())tcomod=Comodidad.Ejecutiva;
             return(tcomod);
+        }
+          //SELECCION ARRAY TRANSPORTE
+        public static ArrayList<Object> arraySelectTransporte(){
+            ArrayList<Object>  valor = new ArrayList<> ();
+            valor.add(seleccionTipoTransporte());
+            valor.add(seleccionTipoComodidad());
+            return(valor);
         }
        //ELIMINAR FILA SERVICIO
        public static void eliminarFilaDestino(){

@@ -5,33 +5,36 @@
  */
 package modelo;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Cesar
  */
 public class Transporte extends Servicio{
     //atributo
-    private TipoTransporte tipoTransp;
+    private ArrayList<Object> tipoTransp;
     private Comodidad comodidad;
     private float seguro;
     
     //constructores
 
-    public Transporte(String tipo,TipoTransporte tipoTransp ,int desde, int hasta,Comodidad comodidad,Float seguro ,Float precioEspecial) {
+    public Transporte(String tipo,ArrayList<Object>tipoTransp ,int desde, int hasta,Comodidad comodidad,Float seguro ,Float precioEspecial) {
         super(tipo, desde, hasta, precioEspecial);
         this.comodidad = comodidad;
         this.seguro = seguro;
         this.tipoTransp = tipoTransp;
     }
 
-    public TipoTransporte getTipoTransp() {
+    public ArrayList<Object> getTipoTransp() {
         return tipoTransp;
     }
 
-    public void setTipoTransp(TipoTransporte tipoTransp) {
+    public void setTipoTransp(ArrayList<Object> tipoTransp) {
         this.tipoTransp = tipoTransp;
     }
 
+   
     public Comodidad getComodidad() {
         return comodidad;
     }

@@ -42,7 +42,7 @@ public class RepositorioServicios {
         return serviciosTransporte;
     }
     //AGREGAR PAQUETE TRANSPORTE
-    public static void agregarServicioTransporte(String idPaquete,TipoTransporte tipoTransp ,int desde, int hasta,Comodidad comodidad,Float seguro ,Float precioEspecial)
+    public static void agregarServicioTransporte(String idPaquete,ArrayList<Object>tipoTransp ,int desde, int hasta,Comodidad comodidad,Float seguro ,Float precioEspecial)
     {
         Transporte nuevo = new Transporte(idPaquete,tipoTransp,desde,hasta,comodidad,seguro,precioEspecial);
         serviciosTransporte.add(nuevo);
