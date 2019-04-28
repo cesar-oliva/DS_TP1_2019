@@ -277,7 +277,9 @@ public class ControladorServicio {
            vents.getjRadioButton12().setEnabled(false);
            vents.getjRadioButton13().setEnabled(false);
            vents.getjCheckBox1().setSelected(false);
-       
+           vents.getjCheckBox2().setSelected(false);
+           vents.getjCheckBox3().setSelected(false);
+           vents.getjCheckBox4().setSelected(false);
        }
 
        //VALIDAR DATOS CARGADOS CREAR

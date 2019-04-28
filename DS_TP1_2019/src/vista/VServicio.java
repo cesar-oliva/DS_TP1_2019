@@ -862,55 +862,18 @@ public class VServicio extends javax.swing.JFrame {
 
     private void botonAgregarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarCActionPerformed
         controlador.ControladorServicio.agregarComida();
-        botonAgregarC.setEnabled(false);
-        txtDesdeC.setEnabled(false);
-        txtDesdeC.setText("");
-        txtHastaC.setEnabled(false);
-        txtHastaC.setText("");  
-        txtPEC.setEnabled(false);
-        txtPEC.setText("");
-        jRadioButton6.setEnabled(false);
-        jRadioButton7.setEnabled(false);
-        jRadioButton8.setEnabled(false);
-        jRadioButton9.setEnabled(false);
-        jCheckBox2.setSelected(false);
+        
     }//GEN-LAST:event_botonAgregarCActionPerformed
 
     private void botonAgregarTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarTActionPerformed
         controlador.ControladorServicio.agregarTransporte();
-        botonAgregarT.setEnabled(false);
-        txtDesdeT.setEnabled(false);
-        txtDesdeT.setText("");
-        txtHastaT.setEnabled(false);
-        txtHastaT.setText("");    
-        txtPET.setEnabled(false);
-        txtPET.setText("");    
-        jRadioButton10.setEnabled(false);
-        jRadioButton11.setEnabled(false);
-        jRadioButton12.setEnabled(false);
-        jRadioButton13.setEnabled(false);
-        txtSeguroT.setEnabled(false);
-        jCheckBox3.setSelected(false);
-        txtDesdeT.setText("");
-        txtHastaT.setText("");
-        txtHastaT.setText("");
+        
 
     }//GEN-LAST:event_botonAgregarTActionPerformed
 
     private void botonAgregarEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarEActionPerformed
         controlador.ControladorServicio.agregarExcursion();
-        botonAgregarE.setEnabled(false);
-        txtDesdeE.setEnabled(false);
-        txtDesdeE.setText("");
-        txtHastaE.setEnabled(false);
-        txtHastaE.setText("");
-        txtPEE.setEnabled(false);
-        txtPEE.setText("");
-        txtLugarE.setEnabled(false);
-        txtLugarE.setText("");
-        txtSeguroE.setEnabled(false);
-        txtSeguroE.setText("");
-        jCheckBox4.setSelected(false);
+        
     }//GEN-LAST:event_botonAgregarEActionPerformed
 
     private void botonACEPTAR1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonACEPTAR1ActionPerformed
