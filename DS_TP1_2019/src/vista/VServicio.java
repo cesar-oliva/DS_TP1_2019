@@ -25,10 +25,11 @@ public class VServicio extends javax.swing.JFrame {
      * Creates new form VServicio2
      */
     public VServicio() {
-        initComponents();
+        
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(VServicio.DO_NOTHING_ON_CLOSE); // bloquear el boton cerrar
         //GRUPO DE BOTONES DE ALOJAMIENTO      
+        initComponents();
         buttonGroup1.add(jRadioButton1);
         buttonGroup1.add(jRadioButton2);
         buttonGroup1.add(jRadioButton3);
@@ -297,6 +298,9 @@ public class VServicio extends javax.swing.JFrame {
 
         txtSeguroT.setEnabled(false);
         txtSeguroT.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtSeguroTKeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtSeguroTKeyTyped(evt);
             }
@@ -983,11 +987,7 @@ public class VServicio extends javax.swing.JFrame {
     private void txtSeguroTKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSeguroTKeyTyped
          // VALIDAR INGRESO NUMERICO 
         //event--> key---> keytiped
-        char validar = evt.getKeyChar();
-        if(Character.isLetter(validar)){
-           evt.consume();
-           JOptionPane.showMessageDialog(rootPane,"Solo debe ingresar valores numericos");
-        }
+        
     }//GEN-LAST:event_txtSeguroTKeyTyped
 
     private void txtPETKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPETKeyTyped
@@ -1019,6 +1019,14 @@ public class VServicio extends javax.swing.JFrame {
            JOptionPane.showMessageDialog(rootPane,"Solo debe ingresar valores numericos");
         }
     }//GEN-LAST:event_txtPEEKeyTyped
+
+    private void txtSeguroTKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSeguroTKeyReleased
+        char validar = evt.getKeyChar();
+        if(validar==('0')){
+           evt.consume();
+           JOptionPane.showMessageDialog(rootPane,"Seguro no puede ser Cero");
+        }
+    }//GEN-LAST:event_txtSeguroTKeyReleased
 
     /**
      * @param args the command line arguments

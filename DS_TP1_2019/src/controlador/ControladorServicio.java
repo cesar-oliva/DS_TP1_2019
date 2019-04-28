@@ -29,17 +29,26 @@ public class ControladorServicio {
          vents.dispose();
          }
       //AGREGAR ALOJAMIENTO
-      public static void agregarAlojamiento(){          
-            String tipo ="Alojamiento";
-            String idPaquete =ventc.getjTextField1().getText();
-            Ciudad ciudad = datos.RepositorioCiudad.buscarByNom(vents.getjComboBox1().getSelectedItem().toString());
-            Estrella estrella = seleccionTipoEstrella();
-            int desde = Integer.parseInt(vents.getTxtDesdeA().getText());
-            int hasta = Integer.parseInt(vents.getTxtHastaA().getText());
-            float precioEspecial = Float.parseFloat(vents.getTxtPEA().getText());
-            datos.RepositorioServicios.agregarServicioAlojamiento(idPaquete,tipo,ciudad,estrella,desde,hasta,precioEspecial);
-            actualizarServiciosAlojamiento();
-            limpiarForm();
+      public static void agregarAlojamiento(){
+            int dias = Integer.parseInt(ventc.getjTextField3().getText());
+            int val = Integer.parseInt(vents.getTxtHastaA().getText());
+            if(dias<val)
+            {
+                JOptionPane.showMessageDialog(null,"HASTA no puede ser mayor a "+ dias +" dias");
+            }
+            else
+            {
+                String tipo ="Alojamiento";
+                String idPaquete =ventc.getjTextField1().getText();
+                Ciudad ciudad = datos.RepositorioCiudad.buscarByNom(vents.getjComboBox1().getSelectedItem().toString());
+                Estrella estrella = seleccionTipoEstrella();
+                int desde = Integer.parseInt(vents.getTxtDesdeA().getText());
+                int hasta = Integer.parseInt(vents.getTxtHastaA().getText());
+                float precioEspecial = Float.parseFloat(vents.getTxtPEA().getText());
+                datos.RepositorioServicios.agregarServicioAlojamiento(idPaquete,tipo,ciudad,estrella,desde,hasta,precioEspecial);
+                actualizarServiciosAlojamiento();
+                limpiarForm();
+            }
         } 
       //MOSTRAR SERVICIO ALOJAMIENTO
           public static void mostrarAlojamiento(ArrayList<Alojamiento> lista){
@@ -74,17 +83,26 @@ public class ControladorServicio {
             return(test);
         }   
       //AGREGAR EXCURSION
-      public static void agregarExcursion(){          
-            String tipo ="Excursion";
-            String idPaquete = ventc.getjTextField1().getText();
-            String lugar = vents.getTxtLugarE().getText();
-            int desde = Integer.parseInt(vents.getTxtDesdeE().getText());
-            int hasta = Integer.parseInt(vents.getTxtHastaE().getText());
-            float seguro = Float.parseFloat(vents.getTxtSeguroE().getText());
-            float precioEspecial = Float.parseFloat(vents.getTxtPEE().getText());
-            datos.RepositorioServicios.agregarServicioExcursion(idPaquete,tipo,lugar,desde,hasta,seguro,precioEspecial);
-            actualizarServiciosExcursion();
-            limpiarForm();
+      public static void agregarExcursion(){
+            int dias = Integer.parseInt(ventc.getjTextField3().getText());
+            int val = Integer.parseInt(vents.getTxtHastaE().getText());
+            if(dias<val)
+            {
+                JOptionPane.showMessageDialog(null,"HASTA no puede ser mayor a "+ dias +" dias");
+            }
+            else
+            {
+                String tipo ="Excursion";
+                String idPaquete = ventc.getjTextField1().getText();
+                String lugar = vents.getTxtLugarE().getText();
+                int desde = Integer.parseInt(vents.getTxtDesdeE().getText());
+                int hasta = Integer.parseInt(vents.getTxtHastaE().getText());
+                float seguro = Float.parseFloat(vents.getTxtSeguroE().getText());
+                float precioEspecial = Float.parseFloat(vents.getTxtPEE().getText());
+                datos.RepositorioServicios.agregarServicioExcursion(idPaquete,tipo,lugar,desde,hasta,seguro,precioEspecial);
+                actualizarServiciosExcursion();
+                limpiarForm();
+            }
         } 
       //MOSTRAR SERVICIO EXCURSION
           public static void mostrarExcursion(ArrayList<Excursion> lista){
@@ -109,16 +127,25 @@ public class ControladorServicio {
         mostrarExcursion(lista);
         }   
            //AGREGAR COMIDA
-      public static void agregarComida(){          
-            String idPaquete =ventc.getjTextField1().getText();
-            ArrayList<TipoComida> tipoCom = seleccionTipoComida();
-            String tipo="Comida";
-            int desde = Integer.parseInt(vents.getTxtDesdeC().getText());
-            int hasta = Integer.parseInt(vents.getTxtHastaC().getText());
-            float precioEspecial = Float.parseFloat(vents.getTxtPEC().getText());
-            datos.RepositorioServicios.agregarServicioComida(idPaquete,tipo,tipoCom,desde,hasta,precioEspecial);
-            actualizarServiciosComida();
-            limpiarForm();
+      public static void agregarComida(){
+            int dias = Integer.parseInt(ventc.getjTextField3().getText());
+            int val = Integer.parseInt(vents.getTxtHastaC().getText());
+            if(dias<val)
+            {
+                JOptionPane.showMessageDialog(null,"HASTA no puede ser mayor a "+ dias +" dias");
+            }
+            else
+            {
+                String idPaquete =ventc.getjTextField1().getText();
+                ArrayList<TipoComida> tipoCom = seleccionTipoComida();
+                String tipo="Comida";
+                int desde = Integer.parseInt(vents.getTxtDesdeC().getText());
+                int hasta = Integer.parseInt(vents.getTxtHastaC().getText());
+                float precioEspecial = Float.parseFloat(vents.getTxtPEC().getText());
+                datos.RepositorioServicios.agregarServicioComida(idPaquete,tipo,tipoCom,desde,hasta,precioEspecial);
+                actualizarServiciosComida();
+                limpiarForm();
+            }   
         } 
       //MOSTRAR SERVICIO COMIDA
           public static void mostrarComida(ArrayList<Comida> lista){
@@ -153,18 +180,27 @@ public class ControladorServicio {
             return(valor);
         }
              //AGREGAR COMIDA
-      public static void agregarTransporte(){          
-            String idPaquete =ventc.getjTextField1().getText();
-            ArrayList<Object> tipoTransp = arraySelectTransporte();
-            Comodidad comodidad = seleccionTipoComodidad();
-            String tipo ="Transporte";
-            int desde = Integer.parseInt(vents.getTxtDesdeT().getText());
-            int hasta = Integer.parseInt(vents.getTxtHastaT().getText());
-            float precioEspecial = Float.parseFloat(vents.getTxtPET().getText());
-            float seguro = Float.parseFloat(vents.getTxtSeguroT().getText());
-            datos.RepositorioServicios.agregarServicioTransporte(idPaquete,tipo,tipoTransp,desde,hasta,comodidad,seguro,precioEspecial);
-            actualizarServiciosTransporte();
-            limpiarForm();
+      public static void agregarTransporte(){  
+            int dias = Integer.parseInt(ventc.getjTextField3().getText());
+            int val = Integer.parseInt(vents.getTxtHastaT().getText());
+            if(dias<val)
+            {
+                JOptionPane.showMessageDialog(null,"HASTA no puede ser mayor a "+ dias +" dias");
+            }
+            else
+            {
+                String idPaquete =ventc.getjTextField1().getText();
+                ArrayList<Object> tipoTransp = arraySelectTransporte();
+                Comodidad comodidad = seleccionTipoComodidad();
+                String tipo ="Transporte";
+                int desde = Integer.parseInt(vents.getTxtDesdeT().getText());
+                int hasta = Integer.parseInt(vents.getTxtHastaT().getText());
+                float precioEspecial = Float.parseFloat(vents.getTxtPET().getText());
+                float seguro = Float.parseFloat(vents.getTxtSeguroT().getText());
+                datos.RepositorioServicios.agregarServicioTransporte(idPaquete,tipo,tipoTransp,desde,hasta,comodidad,seguro,precioEspecial);
+                actualizarServiciosTransporte();
+                limpiarForm();
+            }
         } 
       //MOSTRAR SERVICIO COMIDA
           public static void mostrarTransporte(ArrayList<Transporte> lista){
