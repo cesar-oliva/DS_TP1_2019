@@ -26,7 +26,7 @@ public class VCrear extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         this.setDefaultCloseOperation(VCrear.DO_NOTHING_ON_CLOSE); // bloquear el boton cerrar
-        setVisible(true);
+        //setVisible(true);
     }
 
     /**

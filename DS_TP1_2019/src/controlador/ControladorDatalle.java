@@ -19,23 +19,38 @@ import vista.*;
  * @author CESAR
  */
 public class ControladorDatalle {
+    
     static VDetalle ventd = new VDetalle();
     static DefaultTableModel modeldetdes= new DefaultTableModel();
     static DefaultTableModel modeldetser= new DefaultTableModel();
-    static int nroPaquete=ventp.getTblPaquetes().getSelectedRow()+1;
+    static int c = 0;
+    
+    //static int nroPaquete=ventp.getTblPaquetes().getSelectedRow();
      //CERRAR VENTANA
+    
      public static void cerrar(){
        ventd.dispose();
        ventp.setVisible(true);
       }
 //    //INICIAR VENTANA
      public static void Consulta(){ 
+         c= c+1;
+         
+         if(c == 1)
+         {
+             cargarGrillaServicio();
+             cargarGrillaDestino();
+         }
+         
+         int nroPaquete = ventp.getTblPaquetes().getSelectedRow()+1;
+         if(nroPaquete <= 0)
+         {
+             JOptionPane.showMessageDialog(null,"Debe seleccionar una fila a consultar"); 
+         }
+         else{
+           try{      
          ventp.setVisible(false);
          ventd.setVisible(true);
-           try{      
-        if(nroPaquete==-1){
-           JOptionPane.showMessageDialog(null,"Debe seleccionar una fila a consultar"); 
-        }else{
         Paquete consulta = datos.RepositorioPaquete.buscarById(nroPaquete);    
         actualizarDestinos(nroPaquete);
         actualizarServicios(nroPaquete);
@@ -48,11 +63,12 @@ public class ControladorDatalle {
         ventd.getjTextArea1().setText(consulta.getItinerario());
         ventd.getjTextArea2().setText(consulta.getDescripcion());
         ventd.getjTextArea3().setText(consulta.getCondicionesComerciales());
-        }
+        
          }catch(Exception e){
             JOptionPane.showMessageDialog(null,"No se pudo modificar el registro seleccionado","Error",JOptionPane.ERROR_MESSAGE);
                 }
       }
+     }
 
      //CARGAR SERVICIOS
          public static void mostrarDestinos(Paquete elemento) {
@@ -72,7 +88,7 @@ public class ControladorDatalle {
         //ACTUALIZAR DESTINO  
         public static void actualizarDestinos(int nroPaquete) {
         Paquete lista=datos.RepositorioPaquete.buscarById(nroPaquete);
-        cargarGrillaDestino();
+        //cargarGrillaDestino();
         mostrarDestinos(lista);
         }
         //CARGAR GRILLA DESTINO
@@ -132,7 +148,7 @@ public class ControladorDatalle {
         //ACTUALIZAR DESTINO  
         public static void actualizarServicios(int nroPaquete) {
         Paquete lista=datos.RepositorioPaquete.buscarById(nroPaquete);
-        cargarGrillaServicio();
+        //cargarGrillaServicio();
         mostrarServicios(lista);
         }
 }
