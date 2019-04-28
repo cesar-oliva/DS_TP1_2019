@@ -19,8 +19,8 @@ public class Transporte extends Servicio{
     
     //constructores
 
-    public Transporte(String tipo,ArrayList<Object>tipoTransp ,int desde, int hasta,Comodidad comodidad,Float seguro ,Float precioEspecial) {
-        super(tipo, desde, hasta, precioEspecial);
+    public Transporte(String idPaquete,String tipo,ArrayList<Object>tipoTransp ,int desde, int hasta,Comodidad comodidad,Float seguro ,Float precioEspecial) {
+        super(idPaquete,tipo, desde, hasta, precioEspecial);
         this.comodidad = comodidad;
         this.seguro = seguro;
         this.tipoTransp = tipoTransp;

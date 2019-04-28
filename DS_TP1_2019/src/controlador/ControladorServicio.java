@@ -37,7 +37,7 @@ public class ControladorServicio {
             int desde = Integer.parseInt(vents.getTxtDesdeA().getText());
             int hasta = Integer.parseInt(vents.getTxtHastaA().getText());
             float precioEspecial = Float.parseFloat(vents.getTxtPEA().getText());
-            datos.RepositorioServicios.agregarServicioAlojamiento(idPaquete,ciudad,estrella,desde,hasta,precioEspecial);
+            datos.RepositorioServicios.agregarServicioAlojamiento(idPaquete,tipo,ciudad,estrella,desde,hasta,precioEspecial);
             actualizarServiciosAlojamiento();
             limpiarForm();
         } 
@@ -49,7 +49,7 @@ public class ControladorServicio {
                 Object[] linea = new Object[modelserv.getColumnCount()];
                     for (Alojamiento elemento : lista) {    
                     linea[0]=elemento.getIdPaquete();
-                    linea[1]="Alojamiento";
+                    linea[1]=elemento.getTipo();
                     linea[2]=elemento.getDesde();
                     linea[3]=elemento.getHasta();
                     linea[4]=elemento.getPrecioEspecial();
@@ -77,11 +77,12 @@ public class ControladorServicio {
       public static void agregarExcursion(){          
             String tipo ="Excursion";
             String idPaquete = ventc.getjTextField1().getText();
+            String lugar = vents.getTxtLugarE().getText();
             int desde = Integer.parseInt(vents.getTxtDesdeE().getText());
             int hasta = Integer.parseInt(vents.getTxtHastaE().getText());
             float seguro = Float.parseFloat(vents.getTxtSeguroE().getText());
             float precioEspecial = Float.parseFloat(vents.getTxtPEE().getText());
-            datos.RepositorioServicios.agregarServicioExcursion(idPaquete,tipo,desde,hasta,seguro,precioEspecial);
+            datos.RepositorioServicios.agregarServicioExcursion(idPaquete,tipo,lugar,desde,hasta,seguro,precioEspecial);
             actualizarServiciosExcursion();
             limpiarForm();
         } 
@@ -93,7 +94,7 @@ public class ControladorServicio {
                 Object[] linea = new Object[modelserv.getColumnCount()];
                     for (Excursion elemento : lista) {    
                     linea[0]=elemento.getIdPaquete();
-                    linea[1]="Excursion";
+                    linea[1]=elemento.getTipo();
                     linea[2]=elemento.getDesde();
                     linea[3]=elemento.getHasta();
                     linea[4]=elemento.getPrecioEspecial()+elemento.getSeguro();
@@ -111,10 +112,11 @@ public class ControladorServicio {
       public static void agregarComida(){          
             String idPaquete =ventc.getjTextField1().getText();
             ArrayList<TipoComida> tipoCom = seleccionTipoComida();
+            String tipo="Comida";
             int desde = Integer.parseInt(vents.getTxtDesdeC().getText());
             int hasta = Integer.parseInt(vents.getTxtHastaC().getText());
             float precioEspecial = Float.parseFloat(vents.getTxtPEC().getText());
-            datos.RepositorioServicios.agregarServicioComida(idPaquete,tipoCom,desde,hasta,precioEspecial);
+            datos.RepositorioServicios.agregarServicioComida(idPaquete,tipo,tipoCom,desde,hasta,precioEspecial);
             actualizarServiciosComida();
             limpiarForm();
         } 
@@ -126,7 +128,7 @@ public class ControladorServicio {
                 Object[] linea = new Object[modelserv.getColumnCount()];
                     for (Comida elemento : lista) {    
                     linea[0]=elemento.getIdPaquete();
-                    linea[1]="Comida";
+                    linea[1]=elemento.getTipo();
                     linea[2]=elemento.getDesde();
                     linea[3]=elemento.getHasta();
                     linea[4]=elemento.getPrecioEspecial();
@@ -155,11 +157,12 @@ public class ControladorServicio {
             String idPaquete =ventc.getjTextField1().getText();
             ArrayList<Object> tipoTransp = arraySelectTransporte();
             Comodidad comodidad = seleccionTipoComodidad();
+            String tipo ="Transporte";
             int desde = Integer.parseInt(vents.getTxtDesdeT().getText());
             int hasta = Integer.parseInt(vents.getTxtHastaT().getText());
             float precioEspecial = Float.parseFloat(vents.getTxtPET().getText());
             float seguro = Float.parseFloat(vents.getTxtSeguroT().getText());
-            datos.RepositorioServicios.agregarServicioTransporte(idPaquete,tipoTransp,desde,hasta,comodidad,seguro,precioEspecial);
+            datos.RepositorioServicios.agregarServicioTransporte(idPaquete,tipo,tipoTransp,desde,hasta,comodidad,seguro,precioEspecial);
             actualizarServiciosTransporte();
             limpiarForm();
         } 
@@ -171,7 +174,7 @@ public class ControladorServicio {
                 Object[] linea = new Object[modelserv.getColumnCount()];
                     for (Transporte elemento : lista) {    
                     linea[0]=elemento.getIdPaquete();
-                    linea[1]="Transporte";
+                    linea[1]=elemento.getTipo();
                     linea[2]=elemento.getDesde();
                     linea[3]=elemento.getHasta();
                     linea[4]=elemento.getPrecioEspecial()+elemento.getSeguro();

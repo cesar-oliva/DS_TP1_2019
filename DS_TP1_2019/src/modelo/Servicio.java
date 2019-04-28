@@ -14,13 +14,15 @@ import java.util.ArrayList;
 public class Servicio{
     //atributos
     private String idPaquete;
+    private String tipo;
     private int desde;
     private int hasta;
     private Float precioEspecial;
 
     //constructores
-    public Servicio(String idPaquete,int desde, int hasta, Float precioEspecial) {
+    public Servicio(String idPaquete,String tipo,int desde, int hasta, Float precioEspecial) {
         this.idPaquete = idPaquete;
+        this.tipo = tipo;
         this.desde = desde;
         this.hasta = hasta;
         this.precioEspecial = precioEspecial;
@@ -57,6 +59,14 @@ public class Servicio{
 
     public void setIdPaquete(String idPaquete) {
         this.idPaquete = idPaquete;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
   
 }

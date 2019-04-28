@@ -168,9 +168,9 @@ public class ControladorCrear {
   public static ArrayList<Ciudad> buscarDatoDestino() {
           ArrayList<Ciudad>  valor = new ArrayList<> (); 
           int filas = ventc.getjTable1().getRowCount();
+          valor.clear();
           for(int i=0; i<filas; i++)
                 {
-                valor.clear();
                 valor.add(new Ciudad(Integer.parseInt(ventc.getjTable1().getValueAt(i,0).toString()),ventc.getjTable1().getValueAt(i,1).toString()));
           }
           return(valor);  
@@ -179,9 +179,9 @@ public class ControladorCrear {
   public static ArrayList<Tarifa> buscarDatoTarifa(Float tarifaServ) {
           ArrayList<Tarifa>  valor = new ArrayList<> (); 
           int filas = ventc.getjTable2().getRowCount();
+          valor.clear();
           for(int i=0; i<filas; i++)
                 {
-                valor.clear();
                 valor.add(new Tarifa(datos.RepositorioBase.buscarByDes(ventc.getjComboBox2().getSelectedItem().toString()),datos.RepositorioTarifa.buscarBybase(ventc.getjComboBox2().getSelectedItem().toString())*Integer.parseInt(ventc.getjTextField3().getText())+tarifaServ));  
                 }
           return(valor);  
@@ -190,13 +190,10 @@ public class ControladorCrear {
    public static ArrayList<Servicio> buscarDatoServicio() {
           ArrayList<Servicio>  valor = new ArrayList<> (); 
           int filas = ventc.getjTable2().getRowCount();
+          valor.clear();
           for(int i=0;i<filas; i++)
-                {
-                valor.clear();
-                    for (int j = 0; j <filas; j++) {
-                        
-                     valor.add(new Servicio(ventc.getjTable2().getValueAt(i,1).toString(),Integer.parseInt(ventc.getjTable2().getValueAt(i,2).toString()),Integer.parseInt(ventc.getjTable2().getValueAt(i,3).toString()),Float.parseFloat(ventc.getjTable2().getValueAt(i,4).toString())));
-                    }   
+                {     
+                     valor.add(new Servicio(ventc.getjTable2().getValueAt(i,0).toString(),ventc.getjTable2().getValueAt(i,1).toString(),Integer.parseInt(ventc.getjTable2().getValueAt(i,2).toString()),Integer.parseInt(ventc.getjTable2().getValueAt(i,3).toString()),Float.parseFloat(ventc.getjTable2().getValueAt(i,4).toString())));   
           }
            return(valor);  
           }  

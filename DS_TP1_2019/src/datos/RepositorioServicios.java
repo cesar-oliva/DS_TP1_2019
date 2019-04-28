@@ -23,9 +23,9 @@ public class RepositorioServicios {
         return serviciosExcursion;
     }
     //AGREGAR PAQUETE EXCURSION
-    public static void agregarServicioExcursion(String idPaquete,String lugar,int desde, int hasta, float seguro,Float precioEspecial)
+    public static void agregarServicioExcursion(String idPaquete,String tipo,String lugar,int desde, int hasta, float seguro,Float precioEspecial)
     {
-        Excursion nuevo = new Excursion(idPaquete,lugar,desde,hasta,seguro,precioEspecial);
+        Excursion nuevo = new Excursion(idPaquete,tipo,lugar,desde,hasta,seguro,precioEspecial);
         serviciosExcursion.add(nuevo);
     }
     //BUSCAR PAQUETE EXCURSION
@@ -42,9 +42,9 @@ public class RepositorioServicios {
         return serviciosTransporte;
     }
     //AGREGAR PAQUETE TRANSPORTE
-    public static void agregarServicioTransporte(String idPaquete,ArrayList<Object>tipoTransp ,int desde, int hasta,Comodidad comodidad,Float seguro ,Float precioEspecial)
+    public static void agregarServicioTransporte(String idPaquete,String tipo,ArrayList<Object>tipoTransp ,int desde, int hasta,Comodidad comodidad,Float seguro ,Float precioEspecial)
     {
-        Transporte nuevo = new Transporte(idPaquete,tipoTransp,desde,hasta,comodidad,seguro,precioEspecial);
+        Transporte nuevo = new Transporte(idPaquete,tipo,tipoTransp,desde,hasta,comodidad,seguro,precioEspecial);
         serviciosTransporte.add(nuevo);
     }
     //BUSCAR PAQUETE TRASNPORTE
@@ -60,9 +60,9 @@ public class RepositorioServicios {
         return serviciosComida;
     }
     //AGREGAR PAQUETE COMIDA
-    public static void agregarServicioComida(String idPaquete,ArrayList<TipoComida> tipoCom, int desde, int hasta, Float precioEspecial)
+    public static void agregarServicioComida(String idPaquete,String tipo,ArrayList<TipoComida> tipoCom, int desde, int hasta, Float precioEspecial)
     {
-        Comida nuevo = new Comida(idPaquete,tipoCom,desde,hasta,precioEspecial);
+        Comida nuevo = new Comida(idPaquete,tipo,tipoCom,desde,hasta,precioEspecial);
         serviciosComida.add(nuevo);
     }
     //BUSCAR PAQUETE COMIDA
@@ -79,9 +79,9 @@ public class RepositorioServicios {
         return serviciosAlojamiento;
     }
     //AGREGAR PAQUETE ALOJAMIENTO
-    public static void agregarServicioAlojamiento(String idPaquete,Ciudad ciudad, Estrella estrella, int desde, int hasta, Float precioEspecial)
+    public static void agregarServicioAlojamiento(String idPaquete,String tipo,Ciudad ciudad, Estrella estrella, int desde, int hasta, Float precioEspecial)
     {
-        Alojamiento nuevo = new Alojamiento(idPaquete,ciudad,estrella,desde,hasta,precioEspecial);
+        Alojamiento nuevo = new Alojamiento(idPaquete,tipo,ciudad,estrella,desde,hasta,precioEspecial);
         serviciosAlojamiento.add(nuevo);
     }
     //BUSCAR PAQUETE ALOJAMIENTO

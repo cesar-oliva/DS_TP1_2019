@@ -16,6 +16,7 @@ public class Paquete {
     private int numero;
     private String nombre;
     private String descripcion;
+    private Base base;
     private String itinerario;
     private String condicionesComerciales;
     private int dias;
@@ -29,7 +30,7 @@ public class Paquete {
 
     //constructores
 
-    public Paquete(int numero, String nombre, String descripcion, String itinerario, String condicionesComerciales, int dias, int noches, Ciudad origen, ArrayList<Ciudad> destinos, ArrayList<Servicio> servicios, ArrayList<Tarifa> tarifas, Estado estado) {
+    public Paquete(int numero, String nombre, String descripcion, Base base,String itinerario, String condicionesComerciales, int dias, int noches, Ciudad origen, ArrayList<Ciudad> destinos, ArrayList<Servicio> servicios, ArrayList<Tarifa> tarifas, Estado estado) {
         this.numero = numero;
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -42,6 +43,7 @@ public class Paquete {
         this.servicios = servicios;
         this.tarifas = tarifas;
         this.estado = estado;
+        this.base= base;
     }
 
     //metodos
@@ -134,8 +136,13 @@ public class Paquete {
         this.estado = estado;
     }
 
-    
+    public Base getBase() {
+        return base;
+    }
 
+    public void setBase(Base base) {
+        this.base = base;
+    }
     public int getCantidadServicios()
     {
         int result;

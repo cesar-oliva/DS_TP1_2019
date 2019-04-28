@@ -8,6 +8,8 @@ package controlador;
 import static controlador.ControladorPrincipal.ventp;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.SwingConstants;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import modelo.*;
 import vista.*;
@@ -18,63 +20,119 @@ import vista.*;
  */
 public class ControladorDatalle {
     static VDetalle ventd = new VDetalle();
-    static DefaultTableModel modeldet= new DefaultTableModel();
-    
-  //INICIAR VENTANA
-     public static void iniciar(){ 
-       ventd.setVisible(true);
-      }
+    static DefaultTableModel modeldetdes= new DefaultTableModel();
+    static DefaultTableModel modeldetser= new DefaultTableModel();
+    static int nroPaquete=ventp.getTblPaquetes().getSelectedRow()+1;
      //CERRAR VENTANA
      public static void cerrar(){
-       ventd.setVisible(false);
+       ventd.dispose();
        ventp.setVisible(true);
       }
-    
-    
-//    
 //    //INICIAR VENTANA
-     public static void iniciarConsulta(){ 
-         Object []linea = new Object[12];
+     public static void Consulta(){ 
          ventp.setVisible(false);
-         iniciar();
-           try{
-        int nroPaquete=ventp.getTblPaquetes().getSelectedRow()+1;
-               System.out.println(nroPaquete);
+         ventd.setVisible(true);
+           try{      
         if(nroPaquete==-1){
            JOptionPane.showMessageDialog(null,"Debe seleccionar una fila a consultar"); 
         }else{
-        Paquete paquete = datos.RepositorioPaquete.buscarById(nroPaquete);
-               
-            for (int i = 0; i < linea.length; i++) {
-            linea[0]= paquete.getNumero();
-            linea[1]=paquete.getNombre();
-            linea[2]=paquete.getDescripcion();
-            linea[3]=paquete.getItinerario();
-            linea[4]=paquete.getCondicionesComerciales();
-            linea[5]=paquete.getDias();
-            linea[6]=paquete.getNoches();
-            linea[7]=paquete.getOrigen();
-            linea[8]=paquete.getDestinos();
-            linea[9]=paquete.getTarifas();
-            linea[10]=paquete.getServicios();
-            linea[11]=paquete.getEstado();
-            //definir elementos a cada variable
-            ventd.getjTextField5().setText(linea[0].toString());
-            ventd.getjTextField2().setText(linea[1].toString());
-            ventd.getjTextField7().setText(linea[5].toString());
-            ventd.getjTextField4().setText(linea[6].toString());
-            ventd.getjTextField6().setText(linea[7].toString());
-            ventd.getjTextArea2().setText(linea[2].toString());
-            ventd.getjTextArea1().setText(linea[3].toString());
-            ventd.getjTextArea3().setText(linea[4].toString());
-            //Agregar al modelo
-            //modeldet.addRow(linea);
+        Paquete consulta = datos.RepositorioPaquete.buscarById(nroPaquete);    
+        actualizarDestinos(nroPaquete);
+        actualizarServicios(nroPaquete);
+        ventd.getjTextField5().setText(Integer.toString(consulta.getNumero()));
+        ventd.getjTextField2().setText(consulta.getNombre());
+        ventd.getjTextField3().setText(consulta.getBase().getDescripcion());
+        ventd.getjTextField6().setText(consulta.getOrigen().getNombre());
+        ventd.getjTextField7().setText(Integer.toString(consulta.getDias()));
+        ventd.getjTextField4().setText(Integer.toString(consulta.getNoches()));
+        ventd.getjTextArea1().setText(consulta.getItinerario());
+        ventd.getjTextArea2().setText(consulta.getDescripcion());
+        ventd.getjTextArea3().setText(consulta.getCondicionesComerciales());
         }
-          
-            }
          }catch(Exception e){
             JOptionPane.showMessageDialog(null,"No se pudo modificar el registro seleccionado","Error",JOptionPane.ERROR_MESSAGE);
                 }
       }
 
+     //CARGAR SERVICIOS
+         public static void mostrarDestinos(Paquete elemento) {
+        Object []linea = new Object[2];
+         DefaultTableModel modeloPaquete = (DefaultTableModel) ventd.getjTable1().getModel();
+            while(modeloPaquete.getRowCount()>0)modeloPaquete.removeRow(0);
+         //Recorrer lista         
+              for (int i = 0; i < elemento.getDestinos().size(); i++) {
+                  linea[0]=elemento.getDestinos().get(i).getCod();
+                  linea[1]=elemento.getDestinos().get(i).getNombre();
+                  //Agregar al modelo
+                  modeldetdes.addRow(linea); 
+        }
+         //Setear la Tabla
+        ventd.getjTable1().setModel(modeldetdes);
+    } 
+        //ACTUALIZAR DESTINO  
+        public static void actualizarDestinos(int nroPaquete) {
+        Paquete lista=datos.RepositorioPaquete.buscarById(nroPaquete);
+        cargarGrillaDestino();
+        mostrarDestinos(lista);
+        }
+        //CARGAR GRILLA DESTINO
+     public static void cargarGrillaDestino(){
+        ArrayList<Object> dest =new ArrayList<>();
+        dest.add("Codigo Postal");
+        dest.add("Nombre");
+              for (Object col : dest) {
+              modeldetdes.addColumn(col);
+          }
+        ventd.getjTable1().setModel(modeldetdes);
+         //MODIFICAR TAMAÑO DE COLUMNAS
+        ventd.getjTable1().getColumnModel().getColumn(0).setPreferredWidth(100);
+        ventd.getjTable1().getColumnModel().getColumn(1).setPreferredWidth(405);
+        //HABILITAR BARRA HORIZONTAL
+        ventd.getjTable1().setAutoResizeMode(ventd.getjTable1().AUTO_RESIZE_OFF);
+        ventd.getjTable1().doLayout();
+        ventd.getjTable1().setModel(modeldetdes); 
+        // FIJAR TAMAÑO
+        ventd.setResizable(false); 
+        // CENTRAR DATOS
+        DefaultTableCellRenderer centrar = new DefaultTableCellRenderer();
+        centrar.setHorizontalAlignment(SwingConstants.CENTER);
+        ventd.getjTable1().getColumnModel().getColumn(0).setCellRenderer(centrar);
+              } 
+        // CARGAR GRILLA SERVICIO
+      public static void cargarGrillaServicio(){
+        ArrayList<Object> serv =new ArrayList<>();
+        serv.add("CodPaq");
+        serv.add("Tipo Servicio");
+        serv.add("Desde");
+        serv.add("Hasta");
+        serv.add("Precio Especial");
+          for (Object col : serv) {
+              modeldetser.addColumn(col);
+          }
+        ventd.getjTable2().setModel(modeldetser);
+        }
+      //CARGAR SERVICIOS
+         public static void mostrarServicios(Paquete elemento) {
+         Object []linea = new Object[5];
+         DefaultTableModel modeloServicio = (DefaultTableModel) ventd.getjTable2().getModel();
+         while(modeloServicio.getRowCount()>0)modeloServicio.removeRow(0);
+         //Recorrer lista         
+                for (int i = 0; i < elemento.getServicios().size(); i++) {
+                  linea[0]=elemento.getServicios().get(i).getIdPaquete();
+                  linea[1]=elemento.getServicios().get(i).getTipo();
+                  linea[2]=elemento.getServicios().get(i).getDesde();
+                  linea[3]=elemento.getServicios().get(i).getHasta();
+                  linea[4]=elemento.getServicios().get(i).getPrecioEspecial();
+                  //Agregar al modelo
+                  modeldetser.addRow(linea);
+        }
+         //Setear la Tabla
+        ventd.getjTable2().setModel(modeldetser);
+    } 
+        //ACTUALIZAR DESTINO  
+        public static void actualizarServicios(int nroPaquete) {
+        Paquete lista=datos.RepositorioPaquete.buscarById(nroPaquete);
+        cargarGrillaServicio();
+        mostrarServicios(lista);
+        }
 }

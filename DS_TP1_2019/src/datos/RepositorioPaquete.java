@@ -23,9 +23,9 @@ public class RepositorioPaquete {
         return paquetes;
     }
     //AGREGAR PAQUETE
-    public static void agregarPaquete(String nombre, String descripcion, String itinerario, String condicionesComerciales, int dias, int noches, Ciudad origen, ArrayList<Ciudad> destinos, ArrayList<Servicio> servicios, ArrayList<Tarifa> tarifas,Estado estado)
+    public static void agregarPaquete(String nombre, String descripcion,Base base, String itinerario, String condicionesComerciales, int dias, int noches, Ciudad origen, ArrayList<Ciudad> destinos, ArrayList<Servicio> servicios, ArrayList<Tarifa> tarifas,Estado estado)
     {
-        Paquete nuevo = new Paquete(contadorPaquetes,nombre,descripcion,itinerario,condicionesComerciales,dias,noches,origen,destinos,servicios,tarifas,estado);
+        Paquete nuevo = new Paquete(contadorPaquetes,nombre,descripcion,base,itinerario,condicionesComerciales,dias,noches,origen,destinos,servicios,tarifas,estado);
         paquetes.add(nuevo);
         contadorPaquetes++;
     }

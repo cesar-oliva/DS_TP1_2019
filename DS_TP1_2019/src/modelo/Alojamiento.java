@@ -16,8 +16,8 @@ public class Alojamiento extends Servicio {
     
     //constructores
 
-    public Alojamiento(String idPaquete,Ciudad ciudad, Estrella estrella, int desde, int hasta, Float precioEspecial) {
-        super(idPaquete, desde, hasta, precioEspecial);
+    public Alojamiento(String idPaquete,String tipo,Ciudad ciudad, Estrella estrella, int desde, int hasta, Float precioEspecial) {
+        super(idPaquete,tipo, desde, hasta, precioEspecial);
         this.estrella = estrella;
         this.ciudad = ciudad;
     }

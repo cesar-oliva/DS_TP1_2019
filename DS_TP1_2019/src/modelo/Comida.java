@@ -17,8 +17,8 @@ public class Comida extends Servicio {
     
     
     //constructores
-    public Comida(String idPaquete,ArrayList<TipoComida> tipoCom, int desde, int hasta, Float precioEspecial) {
-        super(idPaquete, desde, hasta, precioEspecial);
+    public Comida(String idPaquete,String tipo,ArrayList<TipoComida> tipoCom, int desde, int hasta, Float precioEspecial) {
+        super(idPaquete,tipo, desde, hasta, precioEspecial);
         this.tipoCom =tipoCom;
     }
    

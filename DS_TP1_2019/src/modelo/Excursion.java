@@ -14,8 +14,8 @@ public class Excursion extends Servicio {
     private String lugar;
     private float seguro;
     //constructores
-    public Excursion(String idPaquete,String lugar,int desde, int hasta, float seguro,Float precioEspecial) {
-        super(idPaquete,desde, hasta, precioEspecial);
+    public Excursion(String idPaquete,String tipo,String lugar,int desde, int hasta, float seguro,Float precioEspecial) {
+        super(idPaquete,tipo,desde, hasta, precioEspecial);
         this.lugar = lugar;
         this.seguro = seguro;
     }

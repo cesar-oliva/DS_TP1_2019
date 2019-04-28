@@ -22,7 +22,6 @@ public class ControladorPrincipal {
     static VPrincipal ventp = new VPrincipal();
     static VServicio vents = new VServicio();
     static DefaultTableModel model= new DefaultTableModel();
-    
     //INICIAR VENTANA
      public static void iniciar(){ 
         controlador.ControladorDatos.cargarComboBase();
@@ -62,13 +61,14 @@ public class ControladorPrincipal {
           }else{
             String nombre = ventc.getjTextField2().getText();
             String descripcion = ventc.getjTextArea2().getText();
+            Base base = datos.RepositorioBase.buscarByDes(ventc.getjComboBox2().getSelectedItem().toString());
             String itinerario = ventc.getjTextArea1().getText();
             String condicionesComerciales =ventc.getjTextArea3().getText();
             int dias = Integer.parseInt(ventc.getjTextField3().getText());
             int noches =Integer.parseInt(ventc.getjTextField4().getText());
             Ciudad origen = RepositorioCiudad.buscarByNom((String)ventc.getjComboBox3().getSelectedItem());       
             Estado estado = Estado.Inactivo; 
-            RepositorioPaquete.agregarPaquete(nombre,descripcion,itinerario,condicionesComerciales,dias,noches,origen,controlador.ControladorCrear.buscarDatoDestino(),controlador.ControladorCrear.buscarDatoServicio(),controlador.ControladorCrear.buscarDatoTarifa(total),estado);                                                                                                                                                                      
+            RepositorioPaquete.agregarPaquete(nombre,descripcion,base,itinerario,condicionesComerciales,dias,noches,origen,controlador.ControladorCrear.buscarDatoDestino(),controlador.ControladorCrear.buscarDatoServicio(),controlador.ControladorCrear.buscarDatoTarifa(total),estado);                                                                                                                                                                      
             actualizarPaquetes();
              //LIMPIEZA DE FORMULARIO
             ventc.getjTextField2().setText("");
